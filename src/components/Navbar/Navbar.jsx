@@ -8,7 +8,7 @@ const Navbar = (props) => {
   return (
     <nav>
       <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-        {CONSTS.CAPITALIZED_APP} - created with IronLauncher
+        Project!
       </Link>
 
       <div className="nav__authLinks">
