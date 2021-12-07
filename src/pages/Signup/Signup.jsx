@@ -81,15 +81,15 @@ export default function Signup({ authenticate }) {
     //     </button>
     //   </form>
     // </div>
-    <div className="container">
+    <div className="container ">
       <div className="Sign-up d-flex justify-content-center align-items-center">
       <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                 <div className="form-group mb-3">
-                    <p>Enter Username:</p>
-                    <input className="form-control " type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
+                    <p className="font-weight-bold">Enter Username:</p>
+                    <input className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
                 </div>
                 <div>
-                    <p>Enter Password:</p>
+                    <p className="font-weight-bold">Enter Password:</p>
                     <input className="form-control " type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                 </div>
                 <div className="col-md-12 text-center mt-4">

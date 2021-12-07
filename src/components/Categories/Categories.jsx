@@ -1,10 +1,14 @@
 import './Categories.css'
 
-const Categories = () => {
+const Categories = (props) => {
+
+    const { text, img } = props
+
+    const style  = {}
 
     return(
-          <div className="Categories ">
-
+          <div className="Categories d-flex align-items-end" style={}>
+            <p className="text-center">{text}</p>
           </div>
     )
 }

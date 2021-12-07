@@ -49,7 +49,7 @@ const Navbar = (props) => {
           </li>
           {props.user ? (
           <li className="nav-item dropdown">
-              <Link to="" className="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link to={PATHS.PROTECTEDPAGE} className="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My profile
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -57,7 +57,7 @@ const Navbar = (props) => {
                 <Link to="" className="dropdown-item" >New Recipe</Link>
                 <div className="dropdown-divider"></div>
                 <Link to="" className="dropdown-item" >My friends?</Link>
-                <button className="nav-logoutbtn" onClick={props.handleLogout}>
+                <button className="dropdown-item" onClick={props.handleLogout}>
                  Logout
                 </button>              
               </div> 

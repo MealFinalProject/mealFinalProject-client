@@ -79,9 +79,9 @@ export default function LogIn({ authenticate }) {
     //     </button>
     //   </form>
     // </div>
-    <div className="row mt-5 Login container">
+    <div className="mt-5 Login container d-flex justify-content-center">
     <div className="col-md-5 mx-auto">
-        <div className="myform form ">
+        <div className="myform form">
             <div className="mb-3">
               <img src="" />
             </div>
@@ -113,7 +113,6 @@ export default function LogIn({ authenticate }) {
             </div>
           </div>
       </div>
-    </div>
-
+      </div>
   );
 }
