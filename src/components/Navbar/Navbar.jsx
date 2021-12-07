@@ -57,7 +57,9 @@ const Navbar = (props) => {
                 <Link to="" className="dropdown-item" >New Recipe</Link>
                 <div className="dropdown-divider"></div>
                 <Link to="" className="dropdown-item" >My friends?</Link>
-                <Link to={props.handleLogout} className="dropdown-item">Log out</Link>
+                <button className="nav-logoutbtn" onClick={props.handleLogout}>
+                 Logout
+                </button>              
               </div> 
           </li>
           ) : (
