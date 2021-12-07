@@ -3,4 +3,25 @@
     width: 150px;
     height: 150px;
     margin-top: 52px;
+    
 }
+.Categories button{
+    border: none;
+    background: none;
+    height: 150px;
+}
+@media (min-width: 700px){
+    .Categories{
+        width: 300px;
+        height: 300px;
+        
+    }
+    .Categories p {
+        font-size: 28px;
+    }
+    .Categories button{
+        height: 300px;
+        width: 300px;
+    }
+}
+   
