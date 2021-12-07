@@ -111,9 +111,9 @@ export default function LogIn({ authenticate }) {
             <div className="form-group">
                 <p className="text-center mb-0">Don't an have account? <Link className="text-decoration-none color-text" to={PATHS.SIGNUPPAGE} >Sign up here</Link></p>
             </div>
-        </div>
+          </div>
+      </div>
     </div>
-</div>
 
   );
 }
