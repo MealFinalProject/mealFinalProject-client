@@ -87,7 +87,7 @@ export default function LogIn({ authenticate }) {
             </div>
             <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                 <div className="form-group mb-3">
-                    <input className="form-control input-username" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
+                    <input className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
                     <input className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                 </div>
                 <p>Forgot password?</p>
