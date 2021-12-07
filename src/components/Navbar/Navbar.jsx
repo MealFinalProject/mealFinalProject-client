@@ -6,31 +6,66 @@ import * as CONSTS from "../../utils/consts";
 
 const Navbar = (props) => {
   return (
-    <nav>
-      <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-        Project!
-      </Link>
+    // <nav>
+    //   <Link to={PATHS.HOMEPAGE} className="nav__projectName">
+    //     Project!
+    //   </Link>
 
-      <div className="nav__authLinks">
-        {props.user ? (
-          <>
-            <Link to={PATHS.PROTECTEDPAGE} className="authLink">
-              Protected Page
-            </Link>
-            <button className="nav-logoutbtn" onClick={props.handleLogout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <Link to={PATHS.SIGNUPPAGE} className="authLink">
-              Signup
-            </Link>
-            <Link to={PATHS.LOGINPAGE} className="authLink">
-              Log In
-            </Link>
-          </>
-        )}
+    //   <div className="nav__authLinks">
+    //     {props.user ? (
+    //       <>
+    //         <Link to={PATHS.PROTECTEDPAGE} className="authLink">
+    //           Protected Page
+    //         </Link>
+    //         <button className="nav-logoutbtn" onClick={props.handleLogout}>
+    //           Logout
+    //         </button>
+    //       </>
+    //     ) : (
+    //       <>
+    //         <Link to={PATHS.SIGNUPPAGE} className="authLink">
+    //           Signup
+    //         </Link>
+    //         <Link to={PATHS.LOGINPAGE} className="authLink">
+    //           Log In
+    //         </Link>
+    //       </>
+    //     )}
+    //   </div>
+    // </nav>
+    <nav className="navbar navbar-expand-lg navbar-light color-principal">
+      <Link to={PATHS.HOMEPAGE} className="navbar-brand text-white">Project-Meal</Link>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav">
+          <li className="nav-item active">
+          <Link to={PATHS.HOMEPAGE} className="nav-link text-white">Home </Link>
+          </li>
+          <li className="nav-item">
+          <Link to='' className="nav-link text-white">Supermarket</Link>
+          </li>
+          {props.user ? (
+          <li className="nav-item dropdown">
+              <Link to="" className="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My profile
+              </Link>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link to="" className="dropdown-item" >My recipes</Link>
+                <Link to="" className="dropdown-item" >New Recipe</Link>
+                <div className="dropdown-divider"></div>
+                <Link to="" className="dropdown-item" >My friends?</Link>
+                <Link to={props.handleLogout} className="dropdown-item">Log out</Link>
+              </div> 
+          </li>
+          ) : (
+              <li className="nav-item">
+                <Link to={PATHS.LOGINPAGE} className="nav-link text-white">Log In</Link>
+              </li>           
+          )}
+        </ul>
       </div>
     </nav>
   );

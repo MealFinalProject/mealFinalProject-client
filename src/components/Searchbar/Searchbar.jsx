@@ -3,9 +3,8 @@ import "./Searchbar.css";
 
 const Searchbar = () => {
   return (
-    <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">Search</span>
-        <input type="text" class="form-control" aria-label="Search" aria-describedby="addon-wrapping"/>
+    <div className="Searchbar input-group flex-nowrap">
+        <input type="text" className="form-control search-bar" aria-label="Search" aria-describedby="addon-wrapping" placeholder=" 🔍  search recipe"/>
     </div>
   );
 };
