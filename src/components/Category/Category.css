@@ -19,9 +19,8 @@ a:-webkit-any-link {
 }
 @media (min-width: 700px){
     .Category{
-        width: 300px;
-        height: 300px;
-        
+        width: 250px;
+        height: 250px;
     }
     .Category p {
         font-size: 28px;
@@ -31,4 +30,5 @@ a:-webkit-any-link {
         width: 300px;
     }
 }
+
    
