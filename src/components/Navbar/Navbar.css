@@ -46,6 +46,9 @@
   transform: scale(1.05);
   background-color: #d13e3e;
 } */
+a:hover{
+  color: coral !important;
+}
 .color-principal{
   background-color: rgb(42, 163, 135);
 }
