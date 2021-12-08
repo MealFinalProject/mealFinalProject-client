@@ -47,12 +47,13 @@ const Navbar = (props) => {
           <li className="nav-item">
           <Link to='' className="nav-link text-white font-weight-bold">Supermarket</Link>
           </li>
-          {/* {props.user ? ( */}
+          {/* {props.user ? ( */}                                               
           <li className="nav-item dropdown">
               <Link to="" className="nav-link dropdown-toggle text-white font-weight-bold" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My profile
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <Link to={PATHS.PROFILEPAGE} className="dropdown-item " >My page</Link>
                 <Link to="" className="dropdown-item " >My recipes</Link>
                 <div className="dropdown-divider"></div>
                 <Link to="" className="dropdown-item " >My friends?</Link>

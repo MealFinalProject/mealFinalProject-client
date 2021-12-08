@@ -3,6 +3,8 @@ const APP_NAME = "mealFinalProject";
 export const CAPITALIZED_APP =
   APP_NAME[0].toUpperCase() + APP_NAME.slice(1).toLowerCase();
 
+
+  // Arrays with recipe categories and images
 export const cuisineType = [
   {name : 'American', img: 'https://thumbs.dreamstime.com/b/mixed-assorted-american-food-fast-food-assorted-american-food-fast-food-125419327.jpg' },
   {name : 'Asian', img:'https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F2950%2Ftrend20201005112101.jpg' },
@@ -29,9 +31,10 @@ export const cuisineType = [
 export const mealType = [
 {name: 'Breakfast', img: 'https://simply-delicious-food.com/wp-content/uploads/2019/07/Pancake-board-2.jpg'},
 {name: 'Lunch', img: 'https://www.brit.co/media-library/bright-rainbow-colored-salad-with-grilled-chicken-on-a-dark-plate-set-on-a-white-countertop-is-just-one-of-35-easy-lunch-ideas-and-recipes.jpg?id=21182602&width=980'},
+{name: 'Teatime', img: 'https://media-cdn.tripadvisor.com/media/photo-s/15/66/cb/90/afternoon-tea-service.jpg'},
 {name: 'Dinner', img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190815-vegan-meatballs-0094-landscape-pf-1566333710.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*'},
 {name: 'Snack', img: 'http://www.tnasolutions.es/wp-content/uploads/2017/11/gulffood.jpg'},
-{name: 'Teatime', img: 'https://media-cdn.tripadvisor.com/media/photo-s/15/66/cb/90/afternoon-tea-service.jpg'},
+
 ]
 
 

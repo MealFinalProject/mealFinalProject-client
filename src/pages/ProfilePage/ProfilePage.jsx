@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProtectedPage = () => {
+const ProfilePage = () => {
   return (
     <div>
       <h1>This page is hyper protected!</h1>
@@ -8,4 +8,4 @@ const ProtectedPage = () => {
   );
 };
 
-export default ProtectedPage;
+export default ProfilePage;

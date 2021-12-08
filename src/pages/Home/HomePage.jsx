@@ -3,6 +3,7 @@ import "./Home.css"
 
 import Categories from "../../components/Categories/Categories.jsx"
 import Searchbar from "../../components/Searchbar/Searchbar";
+import Footer from "../../components/Footer/Footer.jsx";
 
 
 function HomePage() {
@@ -14,7 +15,7 @@ function HomePage() {
           <div className="d-flex justify-content-around flex-wrap">
             <Categories 
               text={'Type of food (Country)'} 
-              img={'https://www.lux-review.com/wp-content/uploads/2020/03/Pasta-1.jpg'}
+              img={'https://www.lux-review.com/wp-content/uploads/2020/03/Pasta-1.jpg'}       //Passing the necessary props to render each type of category with its image
               name={'country'}
             />
             <Categories 
@@ -32,7 +33,7 @@ function HomePage() {
             />
           </div>
       </div>
-      
+      {/* <Footer /> */}
     </div>
   );      
     

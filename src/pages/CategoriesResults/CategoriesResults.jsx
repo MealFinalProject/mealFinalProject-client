@@ -11,7 +11,7 @@ const CategoriesResults = () => {
   
     return(
     <>
-        {name === 'country' && (
+        {name === 'country' && (                                                        //Check the name we collect from the params and render a list with the corresponding category array
         <div className="container d-flex flex-wrap justify-content-between">
             {cuisineType.map((type, index) =>{ 
             return(
