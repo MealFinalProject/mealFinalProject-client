@@ -4,14 +4,15 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const RecipeResults = () => {
+const RecipeResults = (props) => {
   const [recipes, setRecipes] = useState([]);
-  const { type } = useParams();
+  const { type, name } = useParams();
   console.log(type);
+  console.log(name);
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/category/${type}`)
+      .get(`${process.env.REACT_APP_SERVER_URL}/category/${type}/${name}`)
       .then((response) => {
         console.log("response.data", response.data);
         setRecipes(response.data);
