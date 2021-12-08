@@ -33,7 +33,7 @@ function HomePage() {
             />
           </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );      
     
