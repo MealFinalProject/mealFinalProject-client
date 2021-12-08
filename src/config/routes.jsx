@@ -1,19 +1,28 @@
-import { Navigate } from "react-router-dom";
+import { Navigate }      from "react-router-dom";
 
-import HomePage from "../pages/Home/HomePage";
-import Login from "../pages/Login/LogIn";
-import Signup from "../pages/Signup/Signup";
-import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import HomePage          from "../pages/Home/HomePage";
+import Login             from "../pages/Login/LogIn";
+import Signup            from "../pages/Signup/Signup";
+import ProfilePage       from "../pages/ProfilePage/ProfilePage";
 import CategoriesResults from "../pages/CategoriesResults/CategoriesResults";
+import RecipeResults     from "../pages/RecipesResults/RecipeResults";
 
-import * as PATHS from "../utils/paths";
+import * as PATHS        from "../utils/paths";
 
 const routes = (props) => {
   const { user } = props;
   return [
     {
+      path: PATHS.SEARCHRESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
       path: PATHS.CATEGORIESRESULTS,
       element: <CategoriesResults {...props} />,
+    },
+    {
+      path: PATHS.TYPERESULTS,
+      element: <RecipeResults {...props} />,
     },
     {
       path: PATHS.HOMEPAGE,

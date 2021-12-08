@@ -1,7 +1,7 @@
 a:-webkit-any-link {
     text-decoration:  none;
  }
-.Categories{
+.Results{
     box-shadow: 0px 0px 8px -2px #000000;
     width: 150px;
     height: 150px;
@@ -9,24 +9,24 @@ a:-webkit-any-link {
     border-radius: 15px;
    
 }
-.Categories button{
+.Results button{
     border: none;
     background: none;
     height: 150px;
 }
-.link-categories{
+.link-results{
     text-decoration: none;
 }
 @media (min-width: 700px){
-    .Categories{
+    .Results{
         width: 300px;
         height: 300px;
         
     }
-    .Categories p {
+    .Results p {
         font-size: 28px;
     }
-    .Categories button{
+    .Results button{
         height: 300px;
         width: 300px;
     }

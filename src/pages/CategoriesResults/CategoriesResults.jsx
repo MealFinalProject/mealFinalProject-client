@@ -1,54 +1,32 @@
-import './CategoriesResults.css'
+import "./CategoriesResults.css";
 
-import { cuisineType } from '../../utils/consts'
-import { mealType } from '../../utils/consts'
-import { useParams } from 'react-router'
-
+import { cuisineType } from "../../utils/consts";
+import { mealType } from "../../utils/consts";
+import { useParams } from "react-router";
+import Category from "../../components/Category/Category";
+import { Link } from "react-router-dom";
 
 const CategoriesResults = () => {
+  const name = useParams().name;
+  let arrayOfCategories = cuisineType;
+  //Check the name we collect from the params and render a list with the corresponding category array
+  if (name === "time") arrayOfCategories = mealType;
+  return (
+    <div className="container d-flex flex-wrap justify-content-between">
+      {arrayOfCategories.map((type, index) => {
+        return (
+          <div className="" key={index + 1}>
+            <Link className="link-categories" to={type.name.toLowerCase()}>
+              <Category
+                text={type.name}
+                img={type.img} //Passing the necessary props to render each type of category with its image
+              />
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-    const name   = useParams().name
-  
-    return(
-    <>
-        {name === 'country' && (                                                        //Check the name we collect from the params and render a list with the corresponding category array
-        <div className="container d-flex flex-wrap justify-content-between">
-            {cuisineType.map((type, index) =>{ 
-            return(
-                <div className="" key={index + 1}>
-                    <div className="CategoriesResults d-flex align-items-end justify-content-center" style={
-                        {backgroundImage: 'url(' + `${type.img}` + ')',
-                         backgroundSize: 'cover',
-                        }
-                     } >
-                        <p className="text-white font-weight-bold">{type.name}</p>
-                    </div>
-                </div>
-                       
-            )
-            })}
-        </div>
-        )}
-        {name === 'time' && (
-        <div className="container d-flex flex-wrap justify-content-between">
-            {mealType.map((type, index) =>{ 
-            return(
-                <div className="" key={index + 1}>
-                    <div className="CategoriesResults d-flex align-items-end justify-content-center" style={
-                        {backgroundImage: 'url(' + `${type.img}` + ')',
-                         backgroundSize: 'cover',
-                        }
-                     } >
-                        <p className="text-white font-weight-bold">{type.name}</p>
-                    </div>
-                </div>
-                       
-            )
-            })}
-        </div>
-        )}
-    </>
-)}
-
-
-export default CategoriesResults
+export default CategoriesResults;
