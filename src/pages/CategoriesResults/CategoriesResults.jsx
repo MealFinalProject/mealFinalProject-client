@@ -30,7 +30,7 @@ const CategoriesResults = () => {
         </div>
         )}
         {name === 'time' && (
-        <div className="container d-flex flex-wrap justify-content-between">
+        <div className="container d-flex flex-wrap justify-content-around">
             {mealType.map((type, index) =>{ 
             return(
                 <div className="" key={index + 1}>
