@@ -12,14 +12,14 @@ const CategoriesResults = () => {
   //Check the name we collect from the params and render a list with the corresponding category array
   if (name === "time") arrayOfCategories = mealType;
   return (
-    <div className="container d-flex flex-wrap justify-content-between">
+    <div className="container d-flex flex-wrap justify-content-around">
       {arrayOfCategories.map((type, index) => {
         return (
           <div className="" key={index + 1}>
             <Link className="link-categories" to={type.name.toLowerCase()}>
               <Category
                 text={type.name}
-                img={type.img} //Passing the necessary props to render each type of category with its image
+                img={type.img}             //Passing the necessary props to render each type of category with its image
               />
             </Link>
           </div>
