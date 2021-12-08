@@ -49,7 +49,7 @@ const Navbar = (props) => {
           </li>
           {/* {props.user ? ( */}
           <li className="nav-item dropdown">
-              <Link to={PATHS.PROTECTEDPAGE} className="nav-link dropdown-toggle text-white font-weight-bold" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link to="" className="nav-link dropdown-toggle text-white font-weight-bold" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My profile
               </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">

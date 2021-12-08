@@ -10,7 +10,8 @@ const CategoriesResults = () => {
     const name   = useParams().name
   
     return(
-        name === 'country' && (
+    <>
+        {name === 'country' && (
         <div className="container d-flex flex-wrap justify-content-between">
             {cuisineType.map((type, index) =>{ 
             return(
@@ -27,8 +28,27 @@ const CategoriesResults = () => {
             )
             })}
         </div>
-        )
-    )
-}
+        )}
+        {name === 'time' && (
+        <div className="container d-flex flex-wrap justify-content-between">
+            {mealType.map((type, index) =>{ 
+            return(
+                <div className="" key={index + 1}>
+                    <div className="CategoriesResults d-flex align-items-end justify-content-center" style={
+                        {backgroundImage: 'url(' + `${type.img}` + ')',
+                         backgroundSize: 'cover',
+                        }
+                     } >
+                        <p className="text-white font-weight-bold">{type.name}</p>
+                    </div>
+                </div>
+                       
+            )
+            })}
+        </div>
+        )}
+    </>
+)}
+
 
 export default CategoriesResults

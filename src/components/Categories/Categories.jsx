@@ -1,5 +1,4 @@
 import './Categories.css'
-import * as PATHS from "../../utils/paths";
 
 import { Link } from 'react-router-dom'
 

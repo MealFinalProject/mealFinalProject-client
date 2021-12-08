@@ -27,11 +27,11 @@ export const cuisineType = [
 
  
 export const mealType = [
-'Breakfast',
-'Lunch',
-'Dinner',
-'Snack',
-'Teatime',
+{name: 'Breakfast', img: 'https://simply-delicious-food.com/wp-content/uploads/2019/07/Pancake-board-2.jpg'},
+{name: 'Lunch', img: 'https://www.brit.co/media-library/bright-rainbow-colored-salad-with-grilled-chicken-on-a-dark-plate-set-on-a-white-countertop-is-just-one-of-35-easy-lunch-ideas-and-recipes.jpg?id=21182602&width=980'},
+{name: 'Dinner', img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190815-vegan-meatballs-0094-landscape-pf-1566333710.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=640:*'},
+{name: 'Snack', img: 'http://www.tnasolutions.es/wp-content/uploads/2017/11/gulffood.jpg'},
+{name: 'Teatime', img: 'https://media-cdn.tripadvisor.com/media/photo-s/15/66/cb/90/afternoon-tea-service.jpg'},
 ]
 
 

@@ -20,6 +20,7 @@ function HomePage() {
             <Categories 
               text={'According to time of day'} 
               img={'https://estaticos.miarevista.es/media/cache/1140x_thumb/uploads/images/article/5feb33bd5bafe860ee3e874f/captura-de-pantalla-2020-12-29-a-las-14-51-14_0.jpg'}
+              name={'time'}
             />
             <Categories 
               text={'Something fast?'} 
