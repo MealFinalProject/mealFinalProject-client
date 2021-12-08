@@ -25,6 +25,14 @@ const routes = (props) => {
       element: <RecipeResults {...props} />,
     },
     {
+      path: PATHS.COCKTAILRESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
+      path: PATHS.FASTRECIPESRESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
     },
