@@ -12,7 +12,7 @@ function HomePage() {
   let msg = ''
 
   if(hour < 12)          msg = 'for breakfast' 
-  if(hour >= 12 && hour < 19) msg= 'to eat'
+  if(hour >= 12 && hour < 19) msg= 'to eat'              //We compare the current time to display one message or the other
   if(hour >=19)           msg= 'for dinner'
 
   console.log(hour)
