@@ -47,7 +47,7 @@ const Navbar = (props) => {
           <li className="nav-item">
           <Link to='' className="nav-link text-white font-weight-bold">Supermarket</Link>
           </li>
-          {/* {props.user ? ( */}                                               
+          {props.user ? (                                               
           <li className="nav-item dropdown">
               <Link to="" className="nav-link dropdown-toggle text-white font-weight-bold" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My profile
@@ -62,11 +62,11 @@ const Navbar = (props) => {
                 </button>              
               </div> 
           </li>
-          {/* ) : ( */}
+          ) : (
               <li className="nav-item">
                 <Link to={PATHS.LOGINPAGE} className="nav-link text-white font-weight-bold">Log In</Link>
               </li>           
-          {/* )} */}
+          )}
         </ul>
       </div>
     </nav>
