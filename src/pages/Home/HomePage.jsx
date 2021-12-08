@@ -7,10 +7,19 @@ import Footer from "../../components/Footer/Footer.jsx";
 
 
 function HomePage() {
+
+  let hour = (new Date().getHours())
+  let msg = ''
+
+  if(hour < 12)          msg = 'for breakfast' 
+  if(hour >= 12 && hour < 19) msg= 'to eat'
+  if(hour >=19)           msg= 'for dinner'
+
+  console.log(hour)
   return (
     <div >
       <div className="App Home container">
-        <h1>What do you want to eat today?</h1>
+        <h1>What do you want {msg} today?</h1>
           <Searchbar />
           <div className="d-flex justify-content-around flex-wrap">
             <Categories 
