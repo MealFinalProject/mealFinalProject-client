@@ -20,7 +20,7 @@ const RecipeResults = () => {
         console.log("response.data", response.data);
         setRecipes(response.data);
       });
-  }, []);
+  });
   console.log(recipes);
   return (
     <div className="container d-flex flex-wrap justify-content-around">
