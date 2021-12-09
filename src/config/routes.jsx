@@ -12,6 +12,7 @@ import * as PATHS        from "../utils/paths";
 
 const routes = (props) => {
   const { user } = props;
+  
   return [
     {
       path: PATHS.SEARCHRESULTS,

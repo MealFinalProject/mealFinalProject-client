@@ -7,27 +7,32 @@ import axios from "axios";
 import Category from "../../components/Category/Category";
 import { Link } from "react-router-dom";
 
-const RecipeResults = () => {
+const RecipeResults = (props) => {
   const [recipes, setRecipes] = useState([]);
   const { type, name } = useParams();
+  const { searchState, setSearchState} = props
+  
   let API_URL =  `${process.env.REACT_APP_SERVER_URL}/category/${type}`
   if(name) API_URL += `/${name}`
-  console.log(type);
-  console.log(API_URL);
+  
+ 
   useEffect(() => {
     axios
       .get(API_URL)
       .then((response) => {
-        console.log("response.data", response.data);
+       
         setRecipes(response.data);
       });
   }, []);
-  console.log(recipes);
+
+  
   return (
     <div className="container d-flex flex-wrap justify-content-around">
-      {recipes.map((element) => {
+      {recipes.map((element, index) => {
         return (
-          <Link to={`/search/${element.recipe.id}`}>
+          <Link 
+          key={index + 1}
+          to={`/search/${element.recipe.id}`}>
             <Category key={element.recipe.id} text={element.recipe.label} img={element.recipe.image}/>
           </Link>
         )
