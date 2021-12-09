@@ -1,27 +1,28 @@
-// import "./RecipeResults.css";
+import "./Recipe.css";
 
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
 import axios from "axios";
 import Category from "../../components/Category/Category";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const RecipeResults = () => {
   const [recipe, setRecipe] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
   console.log(API_URL);
   useEffect(() => {
-    // axios.get(API_URL).then((response) => {
-    //   console.log("response.data", response.data);
-    //   setRecipe(response.data);
-    //   setLoading(false);
-    //   console.log("Hola");
-    // });
+    axios.get(API_URL).then((response) => {
+      console.log("response.data", response.data);
+      setRecipe(response.data);
+      setLoading(false);
+      console.log("Hola");
+    });
   }, []);
-  const JSONrecipe = {
+  const JSONrecipeTest = {
     uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
     label: "Perfect Grilled Chicken recipes",
     image:
@@ -61,33 +62,36 @@ const RecipeResults = () => {
     totalWeight: 457.1,
     totalTime: 20,
     cuisineType: ["american"],
-    mealType: ["lunch/dinner"],
+    mealType: ["lunch", "dinner"],
     dishType: ["main course"],
     totalNutrients: {},
     totalDaily: {},
     digest: [],
     id: "aee621fd197a61c324a15fec5d338802",
   };
-  const {
-    label,
-    image,
-    ingredientLines,
-    calories,
-    totalTime,
-    cuisineType,
-    mealType,
-    dishType,
-  } = JSONrecipe;
-  //   const {
-  //     label,
-  //     image,
-  //     ingredientLines,
-  //     calories,
-  //     totalTime,
-  //     cuisineType,
-  //     mealType,
-  //     dishType,
-  //   } = recipe?.recipe ?? {};
+//   const {
+//     label,
+//     image,
+//     ingredientLines,
+//     calories,
+//     totalTime,
+//     cuisineType,
+//     mealType,
+//     dishType,
+//     url,
+//   } = JSONrecipeTest;
+    const {
+      label,
+      image,
+      ingredientLines,
+      calories,
+      totalTime,
+      cuisineType,
+      mealType,
+      dishType,
+      url
+    } = recipe?.recipe ?? {};
+    const serves = recipe?.recipe?.yield ?? {}
   console.log(recipe);
   return (
     !loading && (
@@ -99,29 +103,58 @@ const RecipeResults = () => {
           <p className="fw-bold fs-2">{label}</p>
         </div>
         <div className="m-2">
-            <span className="m-2"><i class="bi bi-clock-history"></i> {totalTime} mins</span>
-            <span className="m-2"><i class="bi bi-activity"></i> {calories} kcal  </span>
+          <span className="m-2">
+            <i class="bi bi-clock-history"></i> {totalTime} mins
+          </span>
+          <span className="m-2">
+            <i class="bi bi-activity"></i> {Math.round(calories)} kcal
+          </span>
+          <span className="m-2">
+            <i class="bi bi-people-fill">{serves} serves</i>
+          </span>
         </div>
         <div className="m-2">
-            {dishType.map((dish) => (
-              <span className="m-2 text-capitalize">{dish}</span>
-            ))}
+        <span className="fw-bold">Dish type </span>
+          {dishType.map((dish) => (
+            <span className="m-2 text-capitalize">{dish}</span>
+          ))}
         </div>
         <div>
           <p className="fw-bold">Ingredients</p>
-          <ul className="list-group">
+          <ul className="list-group ">
             {ingredientLines.map((ingredient) => (
               <li className="list-group-item">{ingredient}</li>
             ))}
           </ul>
         </div>
+        <div className="m-2 mt-3 ">
+          <a
+            className="border rounded-pill p-2 text-light type-background"
+            href={url}
+          >
+            Instructions
+          </a>
+        </div>
+
+        <p className="fw-bold fs-5 m-0 mt-2 w-100 text-center">TAGS</p>
         <div className="btn-toolbar text-capitalize m-2">
-            {cuisineType.map((cuisine) => (
-              <span className="border p-2 m-2">{cuisine}</span>
-            ))}
-            {mealType.map((meal) => (
-              <span className="border p-2 m-2">{meal}</span>
-            ))}         
+          {cuisineType.map((cuisine) => (
+            <Link
+              className="m-2 text-light"
+              to={`/category/country/${cuisine}`}
+            >
+              <span className="border rounded-pill p-2 type-background ">
+                {cuisine}
+              </span>
+            </Link>
+          ))}
+          {mealType.map((meal) => (
+            <Link className="m-2 text-light" to={`/category/time/${meal}`}>
+              <span className="border rounded-pill p-2 type-background">
+                {meal}
+              </span>
+            </Link>
+          ))}
         </div>
       </div>
     )
