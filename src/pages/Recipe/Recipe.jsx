@@ -102,9 +102,9 @@ const RecipeResults = () => {
           <p className="fw-bold fs-2">{label}</p>
         </div>
         <div className="m-2">
-          <span className="m-2">
+          {totalTime !== 0 && <span className="m-2">
             <i class="bi bi-clock-history"></i> {totalTime} mins
-          </span>
+          </span>}
           <span className="m-2">
             <i class="bi bi-activity"></i> {Math.round(calories)} kcal
           </span>
