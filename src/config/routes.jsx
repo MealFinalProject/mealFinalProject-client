@@ -6,6 +6,7 @@ import Signup            from "../pages/Signup/Signup";
 import ProfilePage       from "../pages/ProfilePage/ProfilePage";
 import CategoriesResults from "../pages/CategoriesResults/CategoriesResults";
 import RecipeResults     from "../pages/RecipesResults/RecipeResults";
+import Recipe            from "../pages/Recipe/Recipe";
 
 import * as PATHS        from "../utils/paths";
 
@@ -14,7 +15,7 @@ const routes = (props) => {
   return [
     {
       path: PATHS.SEARCHRESULTS,
-      element: <RecipeResults {...props} />,
+      element: <Recipe {...props} />,
     },
     {
       path: PATHS.CATEGORIESRESULTS,

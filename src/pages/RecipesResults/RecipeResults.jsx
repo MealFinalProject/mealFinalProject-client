@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import Category from "../../components/Category/Category";
+import { Link } from "react-router-dom";
 
 const RecipeResults = () => {
   const [recipes, setRecipes] = useState([]);
@@ -20,12 +21,16 @@ const RecipeResults = () => {
         console.log("response.data", response.data);
         setRecipes(response.data);
       });
-  });
+  }, []);
   console.log(recipes);
   return (
     <div className="container d-flex flex-wrap justify-content-around">
       {recipes.map((element) => {
-        return <Category key={element.recipe.id} text={element.recipe.label} img={element.recipe.image}/>
+        return (
+          <Link to={`/search/${element.recipe.id}`}>
+            <Category key={element.recipe.id} text={element.recipe.label} img={element.recipe.image}/>
+          </Link>
+        )
       })}
     </div>
   );
