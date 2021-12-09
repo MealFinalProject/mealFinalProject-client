@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
 import axios from "axios";
+import Category from "../../components/Category/Category";
 
 const RecipeResults = () => {
   const [recipes, setRecipes] = useState([]);
@@ -22,13 +23,11 @@ const RecipeResults = () => {
   }, []);
   console.log(recipes);
   return (
-    <>
-      <ul>
-        {recipes.map((recipe) => {
-          return <li>{recipe.recipe.label}</li>;
-        })}
-      </ul>
-    </>
+    <div className="container d-flex flex-wrap justify-content-around">
+      {recipes.map((element) => {
+        return <Category key={element.recipe.id} text={element.recipe.label} img={element.recipe.image}/>
+      })}
+    </div>
   );
 };
 
