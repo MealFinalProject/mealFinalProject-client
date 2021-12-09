@@ -1,6 +1,4 @@
-#input-files{
-    
-}
+
 .Login .bg-color{
     background-color: rgb(42, 163, 135);
 }
@@ -13,7 +11,4 @@
 }
 .Login .input-password{
     border-radius: 0px 0px 10px 10px;
-}
-.Login .bg-color-purple{
-    background-color: rgba(175, 160, 252, 0.246);
 }
