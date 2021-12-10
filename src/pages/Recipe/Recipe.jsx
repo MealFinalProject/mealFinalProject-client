@@ -91,8 +91,8 @@ const RecipeResults = () => {
   // const serves = JSONrecipeTest.yield ;
   return (
     !loading && (
-      <div className="container row text-center">
-        <div className="col-12  m-2">
+      <div className="container  text-center ">
+        <div className="col-12  m-2 ">
           <img className="border border-3 rounded" src={image} alt={label}></img>
         </div>
         <div className="col-12 m-2">
@@ -164,7 +164,7 @@ const RecipeResults = () => {
         <div className="col-12 m-2 mt-4">
             <p className="m-0 fw-bold fs-5">Categories</p>
         </div>                                
-        <div className="col-12 m-2 d-flex flex-wrap justify-content-start">
+        <div className="col-12 m-2 d-flex flex-wrap justify-content-center">
           {cuisineType.map((cuisine, index) => (
             <Link
               key={index + 1}

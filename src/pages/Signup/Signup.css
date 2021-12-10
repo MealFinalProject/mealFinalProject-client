@@ -1,7 +1,4 @@
-#input-files{ 
-    max-width: 158px;
-    
-}
+
 .Sign-up{
     box-shadow: 0px 0px 8px -2px #000000;
     height: 400px;
@@ -10,7 +7,4 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 15px;
-}
-.Sign-up .bg-color-purple{
-    background-color: rgb(175, 160, 252);
 }

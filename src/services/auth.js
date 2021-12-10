@@ -62,3 +62,4 @@ export function logout() {
     .then(successStatus)
     .catch(internalServerError);
 }
+

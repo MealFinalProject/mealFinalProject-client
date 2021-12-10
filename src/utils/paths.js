@@ -8,3 +8,4 @@ export const COCKTAILRESULTS    = "/:type";
 export const FASTRECIPESRESULTS = "/:type";
 export const SEARCHRESULT       = "/search/:id";
 export const SEARCHRESULTS      = "/search/results/:q";
+export const UPDATEPROFILEINFO  = "/profile/info";       

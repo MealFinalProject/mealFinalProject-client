@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 import "./Signup.css"
 
-import axios from "axios";
-
 import * as PATHS from "../../utils/paths";
 import * as USER_HELPERS from "../../utils/userToken";
 
@@ -45,18 +43,6 @@ export default function Signup({ authenticate }) {
     });
   }
 
-  const [imageSelected, setImageSelected] = useState('')
-
-  const uploadImage = () => {
-    const formData = new FormData()
-    formData.append("file", imageSelected)
-    formData.append("upload_preset",`${process.env.CLOUD_NAME}`)
-
-    axios.post("https://api.cloudinary.com/v1_1/djosvkjof/image/upload", 
-    formData).then((response)=>{
-      console.log(response)
-    })
-  }
 
   return (
     // <div>
@@ -107,8 +93,7 @@ export default function Signup({ authenticate }) {
                 <div>
                     <p className="font-weight-bold">Enter Password:</p>
                     <input className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
-                    <input id="input-files" type="file" onChange={(event)=>{setImageSelected(event.target.files[0])}} />
-                    <button className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4"  onClick={uploadImage}>Upload image</button>
+                    
                 </div>
               
                     

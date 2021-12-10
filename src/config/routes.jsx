@@ -7,6 +7,7 @@ import ProfilePage       from "../pages/ProfilePage/ProfilePage";
 import CategoriesResults from "../pages/CategoriesResults/CategoriesResults";
 import RecipeResults     from "../pages/RecipesResults/RecipeResults";
 import Recipe            from "../pages/Recipe/Recipe";
+import UpdateProfileInfo from "../pages/UpdateProfileInfo/UpdateProfileInfo";
 
 import * as PATHS        from "../utils/paths";
 
@@ -14,6 +15,10 @@ const routes = (props) => {
   const { user } = props;
   
   return [
+    {
+      path: PATHS.UPDATEPROFILEINFO,
+      element: <UpdateProfileInfo {...props} />,
+    },
     {
       path: PATHS.SEARCHRESULT,
       element: <Recipe {...props} />,
