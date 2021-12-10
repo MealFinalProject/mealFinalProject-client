@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 import LoadingComponent from "./components/Loading";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer.jsx";
 
 import { getLoggedIn, logout } from "./services/auth";
 
@@ -64,7 +63,6 @@ export default function App() {
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
       </Routes>
-      <Footer />
     </div>
   );
 }
