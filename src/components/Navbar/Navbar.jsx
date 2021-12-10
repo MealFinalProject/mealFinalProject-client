@@ -4,6 +4,8 @@ import "./Navbar.css";
 import * as PATHS from "../../utils/paths";
 import * as CONSTS from "../../utils/consts";
 
+import {Image} from 'cloudinary-react'
+
 const Navbar = (props) => {
   return (
     // <nav>
@@ -34,6 +36,15 @@ const Navbar = (props) => {
     //   </div>
     // </nav>
     <nav className="navbar navbar-expand-lg navbar-light color-principal">
+    {props.user &&
+    <Image 
+      className="rounded-circle z-depth-0 mr-3"
+            alt="avatar image"
+      id="avatar-image" 
+      cloudName={`${process.env.CLOUD_NAME}`} 
+      publicId="https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/gtvhjeygsyoyeqgrfgmj.jpg"
+      />
+    }
       <Link to={PATHS.HOMEPAGE} className="navbar-brand font-weight-bold text-white">Project-Meal</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -47,7 +58,7 @@ const Navbar = (props) => {
           <li className="nav-item">
           <Link to='' className="nav-link text-white font-weight-bold">Supermarket</Link>
           </li>
-          {props.user ? (                                               
+          {props.user ? (                                            
           <li className="nav-item dropdown">
               <Link to="" className="nav-link dropdown-toggle text-white font-weight-bold" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My profile
@@ -60,7 +71,7 @@ const Navbar = (props) => {
                 <button className="dropdown-item " onClick={props.handleLogout}>
                  Logout
                 </button>              
-              </div> 
+              </div>
           </li>
           ) : (
               <li className="nav-item">

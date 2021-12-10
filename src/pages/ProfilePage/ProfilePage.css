@@ -1,0 +1,16 @@
+#profile-image{
+    width: 100vw;
+
+}
+@media (min-width: 1000px){
+    #profile-image{
+        margin: 50px;
+        border-radius: 15px;
+        max-width: 1000px;
+    }
+    #container-profile-image{
+        display: flex;
+        justify-content: center;
+
+    }
+}

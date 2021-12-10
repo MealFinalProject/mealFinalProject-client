@@ -113,8 +113,10 @@ const RecipeResults = () => {
         </div>
         <div className="col-12 m-2">
           <span className="fw-bold">Dish type </span>
-          {dishType.map((dish) => (
-            <span className="m-2 text-capitalize">{dish}</span>
+          {dishType.map((dish, index) => (
+            <span 
+            key={index + 1}
+            className="m-2 text-capitalize">{dish}</span>
           ))}
         </div>
         <div className="col-12 m-2 text-start">
@@ -128,8 +130,10 @@ const RecipeResults = () => {
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionRecipe">
                         <div className="accordion-body">
                             <ul className="list-group ">
-                                {ingredientLines.map((ingredient) => (
-                                <li className="list-group-item">{ingredient}</li>
+                                {ingredientLines.map((ingredient, index) => (
+                                <li 
+                                key={index + 1}
+                                className="list-group-item">{ingredient}</li>
                                 ))}
                             </ul>
                         </div>
@@ -161,8 +165,9 @@ const RecipeResults = () => {
             <p className="m-0 fw-bold fs-5">Categories</p>
         </div>                                
         <div className="col-12 m-2 d-flex flex-wrap justify-content-start">
-          {cuisineType.map((cuisine) => (
+          {cuisineType.map((cuisine, index) => (
             <Link
+              key={index + 1}
               className="me-2 mb-1 text-light"
               to={`/category/country/${cuisine.toLocaleLowerCase()}`}
             >
@@ -171,8 +176,10 @@ const RecipeResults = () => {
               </p>
             </Link>
           ))}
-          {mealType.map((meal) => (
-            <Link className="me-2 mb-1 text-light" to={`/category/time/${meal.toLocaleLowerCase()}`}>
+          {mealType.map((meal, index) => (
+            <Link 
+            key={index + 1}
+            className="me-2 mb-1 text-light" to={`/category/time/${meal.toLocaleLowerCase()}`}>
               <p className="border rounded-pill m-0 px-3 type-background opacity-75">
                 {meal.toLocaleLowerCase()}
               </p>
