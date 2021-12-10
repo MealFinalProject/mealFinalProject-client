@@ -47,12 +47,17 @@
   transform: scale(1.05);
   background-color: #d13e3e;
 } */
+
 nav{
   box-shadow: 0px 0px 8px -2px #000000;
   
 }
 a:hover{
   color: coral !important;
+}
+#avatar-image{
+  width: 50px;
+
 }
 .color-principal{
   background-color: rgb(42, 163, 135);

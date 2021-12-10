@@ -1,0 +1,15 @@
+.UpdateProfileInfo #input-files{ 
+    max-width: 158px;
+    
+}
+.UpdateProfileInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.UpdateProfileInfo button{
+    max-width: 300px;
+}
+.UpdateProfileInfo .bg-color-purple{
+    background-color: rgb(175, 160, 252);
+}

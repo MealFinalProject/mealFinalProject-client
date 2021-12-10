@@ -14,6 +14,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [searchState, setSearchState] = useState()
+  const [profileImageState, setProfileImageState] = useState()
 
   useEffect(() => {
     const accessToken = USER_HELPERS.getUserToken();
@@ -57,9 +58,11 @@ export default function App() {
   
   return (
     <div className="App">
-      <Navbar handleLogout={handleLogout} user={user} />
+      <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
       <Routes>
-        {routes({ user, authenticate, handleLogout,searchState, setSearchState }).map((route) => (
+        {routes({ user, authenticate, handleLogout,
+        searchState,setSearchState,
+        profileImageState, setProfileImageState }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
       </Routes>
