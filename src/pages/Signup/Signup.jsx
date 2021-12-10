@@ -111,7 +111,7 @@ export default function Signup({ authenticate }) {
                     <input id="input-files" type="file" onChange={(event)=>{setImageSelected(event.target.files[0])}} />
                     <button className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4"  onClick={uploadImage}>Upload image</button>
                 </div>
-                {/* <Image cloudName={`${process.env.CLOUD_NAME}`} publicId="https://res.cloudinary.com/djosvkjof/image/upload/v1639083883/murfji0pdx9prygfoh99.png"/> */}
+               {/* <Image cloudName={`${process.env.CLOUD_NAME}`} publicId="https://res.cloudinary.com/djosvkjof/image/upload/v1639083883/murfji0pdx9prygfoh99.png"/> */}
                     
                     
                 <div className="col-md-12 text-center mt-4">

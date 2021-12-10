@@ -20,7 +20,7 @@ const Searchbar = (props) => {
           to={`/search/results/${searchState}`}
         >
           <span id="basic-addon2">
-            <i class="bi bi-search"></i>
+            <i className="bi bi-search"></i>
           </span>
         </Link>
       </div>
