@@ -3,7 +3,6 @@ import "./Home.css"
 
 import Category from "../../components/Category/Category.jsx"
 import Searchbar from "../../components/Searchbar/Searchbar";
-import Footer from "../../components/Footer/Footer.jsx";
 import { Link } from "react-router-dom";
 
 
@@ -21,11 +20,8 @@ function HomePage(props) {
   return (
     <div >
       <div className="App Home container">
-        <h1>What do you want {msg} today?</h1>
-          <Searchbar setSearchState={setSearchState}/>
-          <Link to={`/search/results/${searchState}`}>
-            Search
-          </Link>
+        <h1 className="my-5">What do you want {msg} today?</h1>
+          <Searchbar searchState={searchState} setSearchState={setSearchState}/>
           <div className="d-flex justify-content-around flex-wrap">
             <Link className="link-categories" to={`category/country`} >  
               <Category 
@@ -53,7 +49,6 @@ function HomePage(props) {
             </Link>
           </div>
       </div>
-      <Footer />
     </div>
   );      
     
