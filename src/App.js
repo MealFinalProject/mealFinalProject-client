@@ -64,7 +64,6 @@ export default function App() {
           <Route key={route.path} path={route.path} element={route.element} />
         ))}
       </Routes>
-      <Footer />
     </div>
   );
 }
