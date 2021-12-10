@@ -15,8 +15,12 @@ const routes = (props) => {
   
   return [
     {
-      path: PATHS.SEARCHRESULTS,
+      path: PATHS.SEARCHRESULT,
       element: <Recipe {...props} />,
+    },
+    {
+      path: PATHS.SEARCHRESULTS,
+      element: <RecipeResults {...props} />,
     },
     {
       path: PATHS.CATEGORIESRESULTS,

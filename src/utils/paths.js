@@ -6,4 +6,5 @@ export const CATEGORIESRESULTS  = "/category/:name";
 export const TYPERESULTS        = "/category/:type/:name";
 export const COCKTAILRESULTS    = "/:type";
 export const FASTRECIPESRESULTS = "/:type";
-export const SEARCHRESULTS      = "/search/:id";
+export const SEARCHRESULT       = "/search/:id";
+export const SEARCHRESULTS      = "/search/results/:q";

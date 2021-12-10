@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function HomePage(props) {
 
-  const { setSearchState } = props
+  const {searchState, setSearchState } = props
 
   let hour = (new Date().getHours())
   let msg = ''
@@ -23,6 +23,9 @@ function HomePage(props) {
       <div className="App Home container">
         <h1>What do you want {msg} today?</h1>
           <Searchbar setSearchState={setSearchState}/>
+          <Link to={`/search/results/${searchState}`}>
+            Search
+          </Link>
           <div className="d-flex justify-content-around flex-wrap">
             <Link className="link-categories" to={`category/country`} >  
               <Category 

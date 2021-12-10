@@ -9,14 +9,14 @@ import { Link } from "react-router-dom";
 
 const RecipeResults = () => {
   const [recipe, setRecipe] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
   useEffect(() => {
-    // axios.get(API_URL).then((response) => {
-    //   setRecipe(response.data);
-    //   setLoading(false);
-    // });
+    axios.get(API_URL).then((response) => {
+      setRecipe(response.data);
+      setLoading(false);
+    });
   }, []);
     const JSONrecipeTest = {
       uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
@@ -65,30 +65,30 @@ const RecipeResults = () => {
       digest: [],
       id: "aee621fd197a61c324a15fec5d338802",
     };
-    const {
-      label,
-      image,
-      ingredientLines,
-      calories,
-      totalTime,
-      cuisineType,
-      mealType,
-      dishType,
-      url,
-    } = JSONrecipeTest;
-//   const {
-//     label,
-//     image,
-//     ingredientLines,
-//     calories,
-//     totalTime,
-//     cuisineType,
-//     mealType,
-//     dishType,
-//     url,
-//   } = recipe?.recipe ?? {};
-//   const serves = recipe?.recipe?.yield ?? {};
-  const serves = JSONrecipeTest.yield ;
+    // const {
+    //   label,
+    //   image,
+    //   ingredientLines,
+    //   calories,
+    //   totalTime,
+    //   cuisineType,
+    //   mealType,
+    //   dishType,
+    //   url,
+    // } = JSONrecipeTest;
+  const {
+    label,
+    image,
+    ingredientLines,
+    calories,
+    totalTime,
+    cuisineType,
+    mealType,
+    dishType,
+    url,
+  } = recipe?.recipe ?? {};
+  const serves = recipe?.recipe?.yield ?? {};
+  // const serves = JSONrecipeTest.yield ;
   return (
     !loading && (
       <div className="container row text-center">
