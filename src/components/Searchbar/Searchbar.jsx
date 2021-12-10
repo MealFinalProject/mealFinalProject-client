@@ -2,6 +2,9 @@ import React from "react";
 import "./Searchbar.css";
 
 const Searchbar = () => {
+  
+ 
+
   return (
     <div class="input-group flex-nowrap">
         <span class="input-group-text" id="addon-wrapping">Search</span>
