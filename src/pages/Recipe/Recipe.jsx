@@ -91,93 +91,99 @@ const RecipeResults = () => {
   // const serves = JSONrecipeTest.yield ;
   return (
     !loading && (
-      <div className="container row text-center">
-        <div className="col-12  m-2">
-          <img className="border border-3 rounded" src={image} alt={label}></img>
-        </div>
-        <div className="col-12 m-2">
-          <p className="fw-bold fs-2">{label}</p>
-        </div>
-        <div className="col-12 m-2">
-          {totalTime !== 0 && (
-            <span className="m-2">
-              <i className="bi bi-clock-history"></i> {totalTime} mins
-            </span>
-          )}
-          <span className="m-2">
-            <i className="bi bi-activity"></i> {Math.round(calories)} kcal
-          </span>
-          <span className="m-2">
-            <i className="bi bi-people-fill"></i> {serves} serves
-          </span>
-        </div>
-        <div className="col-12 m-2">
-          <span className="fw-bold">Dish type </span>
-          {dishType.map((dish) => (
-            <span className="m-2 text-capitalize">{dish}</span>
-          ))}
-        </div>
-        <div className="col-12 m-2 text-start">
-            <div className="accordion" id="accordionRecipe">
-                <div className="accordion-item">
-                    <div className="accordion-header" id="headingOne">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Ingredients
-                        </button>
-                    </div>
-                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionRecipe">
-                        <div className="accordion-body">
-                            <ul className="list-group ">
-                                {ingredientLines.map((ingredient) => (
-                                <li className="list-group-item">{ingredient}</li>
-                                ))}
-                            </ul>
+      <div className="container">
+        <div className="row text-center">
+          <div className="col-12 col-xl-4 mt-xl-5">
+            <div className="col-12  my-2 p-0">
+              <img className="border border-3 rounded" src={image} alt={label}></img>
+            </div>
+            <div className="col-12 my-2">
+              <p className="fw-bold fs-2">{label}</p>
+            </div>
+            <div className="col-12 my-2">
+              {totalTime !== 0 && (
+                <span className="m-2">
+                  <i className="bi bi-clock-history"></i> {totalTime} mins
+                </span>
+              )}
+              <span className="m-2">
+                <i className="bi bi-activity"></i> {Math.round(calories)} kcal
+              </span>
+              <span className="m-2">
+                <i className="bi bi-people-fill"></i> {serves} serves
+              </span>
+            </div>
+            <div className="col-12 my-2">
+              <span className="fw-bold">Dish type </span>
+              {dishType.map((dish) => (
+                <span className="m-2 text-capitalize">{dish}</span>
+              ))}
+            </div>
+          </div>
+          <div className="col-12 col-xl-8 mt-xl-5">
+            <div className="col-12 my-2 text-start">
+                <div className="accordion" id="accordionRecipe">
+                    <div className="accordion-item">
+                        <div className="accordion-header" id="headingOne">
+                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Ingredients
+                            </button>
+                        </div>
+                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionRecipe">
+                            <div className="accordion-body">
+                                <ul className="list-group ">
+                                    {ingredientLines.map((ingredient) => (
+                                    <li className="list-group-item">{ingredient}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="accordion-item">
-                    <div className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Nutrition
-                        </button>
-                    </div>
-                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRecipe">
-                        <div className="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <div className="accordion-item">
+                        <div className="accordion-header" id="headingTwo">
+                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Nutrition
+                            </button>
+                        </div>
+                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRecipe">
+                            <div className="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div className="col-12 m-2 mt-3">
-          <a
-            className="border rounded p-2 text-light type-background"
-            href={url}
-          >
-            <i className="bi bi-file-text"></i> Instructions
-          </a>
-        </div>
-        <div className="col-12 m-2 mt-4">
-            <p className="m-0 fw-bold fs-5">Categories</p>
-        </div>                                
-        <div className="col-12 m-2 d-flex flex-wrap justify-content-start">
-          {cuisineType.map((cuisine) => (
-            <Link
-              className="me-2 mb-1 text-light"
-              to={`/category/country/${cuisine.toLocaleLowerCase()}`}
-            >
-              <p className="border rounded-pill m-0 px-3 type-background opacity-75">
-                {cuisine.toLocaleLowerCase()}
-              </p>
-            </Link>
-          ))}
-          {mealType.map((meal) => (
-            <Link className="me-2 mb-1 text-light" to={`/category/time/${meal.toLocaleLowerCase()}`}>
-              <p className="border rounded-pill m-0 px-3 type-background opacity-75">
-                {meal.toLocaleLowerCase()}
-              </p>
-            </Link>
-          ))}
+            <div className="col-12 mb-2 mt-3">
+              <a
+                className="border rounded p-2 text-light type-background"
+                href={url}
+              >
+                <i className="bi bi-file-text"></i> Instructions
+              </a>
+            </div>
+            <div className="col-12 mb-2 mt-4">
+                <p className="m-0 fw-bold fs-5">Categories</p>
+            </div>                                
+            <div className="col-12 my-2 d-flex flex-wrap justify-content-start">
+              {cuisineType.map((cuisine) => (
+                <Link
+                  className="me-2 mb-1 text-light"
+                  to={`/category/country/${cuisine.toLocaleLowerCase()}`}
+                >
+                  <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                    {cuisine.toLocaleLowerCase()}
+                  </p>
+                </Link>
+              ))}
+              {mealType.map((meal) => (
+                <Link className="me-2 mb-1 text-light" to={`/category/time/${meal.toLocaleLowerCase()}`}>
+                  <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                    {meal.toLocaleLowerCase()}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     )
