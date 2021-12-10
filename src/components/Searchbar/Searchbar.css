@@ -1,0 +1,24 @@
+.Searchbar{
+    display: flex;
+    justify-content: center;
+}
+.Searchbar .search-bar{
+   border-radius: 12px;
+   border-width: 1px 0px 1px 1px
+    /* max-width: 500px; */
+    /* margin-bottom: 34px; */
+    
+}
+.Searchbar ::-webkit-input-placeholder{
+   text-align: center;
+}
+
+.search-button {
+    background-color: white;
+    border-radius: 12px;
+    border-width: 1px 1px 1px 0px
+}
+
+.search-button i {
+    color: rgba(175, 160, 252)
+}

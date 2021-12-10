@@ -1,13 +1,43 @@
-import { Navigate } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import Login from "../pages/LogIn";
-import Signup from "../pages/Signup";
-import ProtectedPage from "../pages/ProtectedPage";
-import * as PATHS from "../utils/paths";
+import { Navigate }      from "react-router-dom";
+
+import HomePage          from "../pages/Home/HomePage";
+import Login             from "../pages/Login/LogIn";
+import Signup            from "../pages/Signup/Signup";
+import ProfilePage       from "../pages/ProfilePage/ProfilePage";
+import CategoriesResults from "../pages/CategoriesResults/CategoriesResults";
+import RecipeResults     from "../pages/RecipesResults/RecipeResults";
+import Recipe            from "../pages/Recipe/Recipe";
+
+import * as PATHS        from "../utils/paths";
 
 const routes = (props) => {
   const { user } = props;
+  
   return [
+    {
+      path: PATHS.SEARCHRESULT,
+      element: <Recipe {...props} />,
+    },
+    {
+      path: PATHS.SEARCHRESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
+      path: PATHS.CATEGORIESRESULTS,
+      element: <CategoriesResults {...props} />,
+    },
+    {
+      path: PATHS.TYPERESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
+      path: PATHS.COCKTAILRESULTS,
+      element: <RecipeResults {...props} />,
+    },
+    {
+      path: PATHS.FASTRECIPESRESULTS,
+      element: <RecipeResults {...props} />,
+    },
     {
       path: PATHS.HOMEPAGE,
       element: <HomePage {...props} />,
@@ -22,9 +52,9 @@ const routes = (props) => {
       element: <Login {...props} />,
     },
     {
-      path: PATHS.PROTECTEDPAGE,
+      path: PATHS.PROFILEPAGE,
       element: user ? (
-        <ProtectedPage {...props} />
+        <ProfilePage {...props} />
       ) : (
         <Navigate to={PATHS.LOGINPAGE} replace />
       ),

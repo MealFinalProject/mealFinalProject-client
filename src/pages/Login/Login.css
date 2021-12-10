@@ -1,0 +1,14 @@
+
+.Login .bg-color{
+    background-color: rgb(42, 163, 135);
+}
+.Login .color-text{
+    color: rgb(42, 163, 135);
+}
+.Login .input-username{
+    border-bottom: none;
+    border-radius: 10px 10px 0px 0px;
+}
+.Login .input-password{
+    border-radius: 0px 0px 10px 10px;
+}

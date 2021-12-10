@@ -1,0 +1,18 @@
+.CategoriesResults{
+    box-shadow: 0px 0px 8px -2px #000000;
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    margin: 12px;
+    margin-top: 52px;
+}
+@media (min-width: 700px){
+    .CategoriesResults{
+        width: 250px;
+        height: 250px;
+       
+    }
+    .CategoriesResults p {
+        font-size: 28px;
+    }
+}
