@@ -81,10 +81,13 @@ export default function LogIn({ authenticate }) {
     //     </button>
     //   </form>
     // </div>
+    <div className="d-flex flex-column align-items-center">
+      <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" />
        <div className="mt-5 Login container d-flex justify-content-center">
         <div className="col-md-5 mx-auto">
+        
             <div className="myform form">
-                <div className="mb-3">
+                <div className="">
                 </div>
                 <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                     <div className="form-group mb-3">
@@ -116,6 +119,8 @@ export default function LogIn({ authenticate }) {
               </div>
           </div>
           </div>
+    </div>
+    
    
   );
 }

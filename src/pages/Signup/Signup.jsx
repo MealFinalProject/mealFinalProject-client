@@ -28,6 +28,7 @@ export default function Signup({ authenticate }) {
       username,
       password,
     };
+   
     signup(credentials).then((res) => {
       if (!res.status) {
         // unsuccessful signup
@@ -42,7 +43,7 @@ export default function Signup({ authenticate }) {
       navigate(PATHS.HOMEPAGE);
     });
   }
-
+ 
 
   return (
     // <div>
