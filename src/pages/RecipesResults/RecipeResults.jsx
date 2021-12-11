@@ -15,16 +15,20 @@ const RecipeResults = (props) => {
   let API_URL = `${process.env.REACT_APP_SERVER_URL}/category/${type}`;
   
   if (name) API_URL += `/${name}`;
-
-  if (searchState) {
-    API_URL = `${process.env.REACT_APP_SERVER_URL}/search/results/${searchState}`;
-    setSearchState("");
-  }
+  useEffect(() => {
+    if (searchState) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      API_URL = `${process.env.REACT_APP_SERVER_URL}/search/results/${searchState}`;
+      setSearchState("");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchState])
 
   useEffect(() => {
     axios.get(API_URL).then((response) => {
       setRecipes(response.data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
