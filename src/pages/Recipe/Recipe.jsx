@@ -16,8 +16,10 @@ const RecipeResults = () => {
     axios.get(API_URL).then((response) => {
       setRecipe(response.data);
       setLoading(false);
+      
     });
   }, []);
+
     const JSONrecipeTest = {
       uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
       label: "Perfect Grilled Chicken recipes",
@@ -155,11 +157,12 @@ const RecipeResults = () => {
             </div>
             <div className="col-12 mb-2 mt-3">
               <a
-                className="border rounded p-2 text-light type-background"
+                className="border rounded p-2 text-light type-background mr-4"
                 href={url}
               >
                 <i className="bi bi-file-text"></i> Instructions
               </a>
+              <button className=" btn btn-block mybtn button-favorites tx-tfm ">Add Favorites</button>
             </div>
             <div className="col-12 mb-2 mt-4">
                 <p className="m-0 fw-bold fs-5">Categories</p>
