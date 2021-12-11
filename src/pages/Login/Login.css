@@ -12,3 +12,14 @@
 .Login .input-password{
     border-radius: 0px 0px 10px 10px;
 }
+#login-image{
+    width: 100vw;
+    max-width: 600px;
+}
+@media (min-width: 600px){
+    #login-image{
+        margin: 20px;
+        border-radius: 15px;
+    }
+
+}
