@@ -11,6 +11,7 @@ const RecipeResults = (props) => {
   const [recipe, setRecipe] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isFav, setIsFav] = useState(false);
+  const [numberFavs, setNumberFavs] = useState(0);
 
   const { id } = useParams();
   const { user } = props;
@@ -21,11 +22,12 @@ const RecipeResults = (props) => {
       setRecipe(response.data);
       setLoading(false);
     });
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/favs/get-fav-number`).then((response) => {
+      setNumberFavs(response.data.numberOfLikes)
+    });
+    setIsFav(user.favs_recipes_idApi.includes(id))
   }, []);
 
-  useEffect(() => {
-    setIsFav(user.favs_recipes_idApi.includes(id))
-  }, [])
 
 
   console.log(user);
@@ -42,6 +44,7 @@ const RecipeResults = (props) => {
       })
       .then((response) => {
         setIsFav(true)
+        setNumberFavs(numberFavs + 1)
         console.log(response);
       });
   };
@@ -56,6 +59,7 @@ const RecipeResults = (props) => {
       })
       .then((response) => {
         setIsFav(false)
+        setNumberFavs(numberFavs - 1)
         console.log(response);
       });
   };
@@ -248,14 +252,15 @@ const RecipeResults = (props) => {
                className="btn button-not-fav" 
                 onClick={(event) => addFavorite(event)}
               >
-                <i className="bi bi-heart"></i>
+                <i className="bi bi-heart">  {numberFavs !== 0 && numberFavs}</i>
               </button>}
               {isFav && <button
                 className="btn button-fav"
                 onClick={(event) => deleteFavorite(event)}
               >
-                <i className="bi bi-heart-fill"></i>
+                <i className="bi bi-heart-fill"> {numberFavs !== 0 && numberFavs}</i>
               </button>}
+              
             </div>
             <div className="col-12 mb-2 mt-4">
               <p className="m-0 fw-bold fs-5">Categories</p>
