@@ -2,7 +2,7 @@ import react from "react";
 
 import './UpddateProfileInfo.css'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 
@@ -27,11 +27,23 @@ const UpdateProfileInfo = (props) => {
     })
     console.log(profileImage)
   }
+  const credentials = {
+    profileImage
+  }
 
+    const UpdateProfile = () => {
+      const API_URL = `${process.env.REACT_APP_SERVER_URL}/user/profile/update`
+      useEffect((credentials) => {
+        axios.post(API_URL, credentials).then(() => {
+          console.log('okay')
+        })
+      }, [])
+    }
     return(
         <div className="UpdateProfileInfo">
             <input id="input-files" className="mt-4" type="file" onChange={(event)=>{setImageSelected(event.target.files[0])}} />
             <button className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4"  onClick={uploadImage}>Upload image</button>
+            <button className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4" onClick={UpdateProfile(credentials)}>Upload profile</button>
         </div>
     )
 }
