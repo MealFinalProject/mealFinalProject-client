@@ -26,13 +26,14 @@ const ProfilePage = (props) => {
   }, []);
 
   if (userFromDB) console.log("fuera del effect ", userFromDB);
+
   return (
     <div className="ProfilePage">
       <div id="container-profile-image">
         <Image
           id="profile-image"
           cloudName={`${process.env.CLOUD_NAME}`}
-          publicId="https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/gtvhjeygsyoyeqgrfgmj.jpg"
+          publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${user.avatar_url} .jpg`}
         />
       </div>
       <div className="d-flex flex-column align-items-center mt-5">

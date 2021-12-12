@@ -8,6 +8,8 @@ import {Image} from 'cloudinary-react'
 
 const Navbar = (props) => {
   
+  const { user } = props
+
   return (
     // <nav>
     //   <Link to={PATHS.HOMEPAGE} className="nav__projectName">
@@ -43,7 +45,7 @@ const Navbar = (props) => {
             alt="avatar image"
       id="avatar-image" 
       cloudName={`${process.env.CLOUD_NAME}`} 
-      publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/gtvhjeygsyoyeqgrfgmj.jpg`}
+      publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${user.avatar_url}.jpg`}
       />
     }
       <Link to={PATHS.HOMEPAGE} className="navbar-brand font-weight-bold text-white">Project-Meal</Link>
