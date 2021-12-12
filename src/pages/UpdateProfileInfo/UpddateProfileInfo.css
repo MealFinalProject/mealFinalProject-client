@@ -13,3 +13,6 @@
 .UpdateProfileInfo .bg-color-purple{
     background-color: rgb(175, 160, 252);
 }
+.UpdateProfileInfo p{
+    font-weight: bold;
+}
