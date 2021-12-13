@@ -5,9 +5,11 @@ import * as PATHS from "../../utils/paths";
 import * as CONSTS from "../../utils/consts";
 
 import {Image} from 'cloudinary-react'
+import { useState } from "react/cjs/react.development";
 
 const Navbar = (props) => {
   
+
   const { user } = props
 
   return (
@@ -39,7 +41,7 @@ const Navbar = (props) => {
     //   </div>
     // </nav>
     <nav className="navbar navbar-expand-lg navbar-light color-principal">
-    {props.user &&
+    {user && user.avatar_url &&
     <Image 
       className="rounded-circle z-depth-0 mr-3"
             alt="avatar image"
@@ -70,7 +72,6 @@ const Navbar = (props) => {
                 <Link to={PATHS.PROFILEPAGE} className="dropdown-item " >My page</Link>
                 <Link to="" className="dropdown-item " >My recipes</Link>
                 <div className="dropdown-divider"></div>
-                <Link to="" className="dropdown-item " >My friends?</Link>
                 <button className="dropdown-item " onClick={props.handleLogout}>
                  Logout
                 </button>              
