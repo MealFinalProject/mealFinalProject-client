@@ -32,7 +32,7 @@ export default function Signup({ authenticate }) {
     };
    
     signup(credentials).then((res) => {
-      if(res.errorMessage){
+      if(res.errorMessage && res.errorMessage !== 'Internal server error. Please check your server'){
         setErrorMessage(res.errorMessage)
       }
       if (!res.status) {
@@ -47,6 +47,7 @@ export default function Signup({ authenticate }) {
       authenticate(res.data.user);
       navigate(PATHS.HOMEPAGE);
     });
+  
   }
  
 

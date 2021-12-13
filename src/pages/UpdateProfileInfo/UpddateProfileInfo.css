@@ -1,7 +1,14 @@
 .UpdateProfileInfo #input-files{ 
-    max-width: 158px;
-    
+   
+    display: none;
 }
+.UpdateProfileInfo #input-image{
+    padding: 10px;
+    background-color: rgb(42, 163, 135);
+    max-width: 300px;
+    max-height: 50px;
+}
+
 .UpdateProfileInfo{
     display: flex;
     flex-direction: column;
@@ -15,4 +22,7 @@
 }
 .UpdateProfileInfo p{
     font-weight: bold;
+}
+.UpdateProfileInfo .color-text{
+    color:rgb(42, 163, 135);
 }

@@ -14,7 +14,9 @@ const UpdateProfileInfo = (props) => {
     const [imageLoaded, setImageLoaded]     = useState(false)
     const [newUsername, setNewUsername]     = useState()
     const [newPassword, setNewPassword]     = useState()
-    console.log(user)
+    const [errorMessage, setErrorMessage]   = useState()
+    const [updateMessage, setUpdateMessage] = useState()
+
     
     const uploadImage = async () => {
     const formData = new FormData()
@@ -25,11 +27,12 @@ const UpdateProfileInfo = (props) => {
     formData).then((response)=>{
       setProfileImage(response.data.public_id)
       setImageLoaded(true)
-      console.log(response)
       
     })
     
   }
+
+  
 
   const updateInfo = async (event) => {
     event.preventDefault()
@@ -39,31 +42,44 @@ const UpdateProfileInfo = (props) => {
         userId: user._id,
         newUsername: newUsername,
         newPassword: newPassword,
+        oldPassword: user.password
       }
-    }).then((response) => {
+    }).then((res) => {
+      if(profileImage || newPassword || newUsername){    
+        setUpdateMessage(res.data.msg)
+      }
       
-      console.log(response)
+    })
+    .catch((err) => {
+      if(err.response.data.errorMessage){
+        setErrorMessage(err.response.data.errorMessage)
+      }
     })
   }
     return(
         <div className="UpdateProfileInfo">
           
             <div className="form-group mb-3 mt-5">
+            {user && <p className="font-weight-bold">Welcome {user.username}</p>}
                 <p className="font-weight-bold">Enter new Username:</p>
-                <input className="form-control" type="text" name="username" placeholder="Username" onChange={(event) => setNewUsername(event.target.value)}/>
+                <input onClick={() => setErrorMessage(false)}  className="form-control" type="text" name="username" placeholder="Username" onChange={(event) => setNewUsername(event.target.value)}/>
             </div>
             <div>
                 <p className="font-weight-bold">Enter new Password:</p>
-                <input className="form-control mb-2" type="password" name="password" placeholder="Password"  onChange={(event) => setNewPassword(event.target.value)} minLength="8" /> 
+                <input onClick={() => setErrorMessage(false)} className="form-control mb-2" type="password" name="password" placeholder="Password"  onChange={(event) => setNewPassword(event.target.value)} minLength="8" /> 
             </div>
             <p className="mt-4">Upload profile image:</p>
-            <input id="input-files" className="mt-1" type="file" onClick={() => setImageLoaded(false)} onChange={(event)=>{setImageSelected(event.target.files[0])}} />
+            <label id="input-image" className="btn btn-block mybtn tx-tfm">
+            <p>Select file </p>
+               <input id="input-files" className="mt-1" type="file" onClick={() => setImageLoaded(false) } onChange={(event)=>{setImageSelected(event.target.files[0])}} />
+            </label>
             <button className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4"  onClick={uploadImage}>Upload image</button>
-          {imageLoaded && <p>Image loaded successfully</p>}
+            {imageLoaded && <p className="color-text">Image loaded successfully</p>}
             <button 
             className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4" 
             onClick={(event) => updateInfo(event)}>Update Info</button>
-         
+            {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
+            {updateMessage && <p className="color-text">{updateMessage}</p>}
         </div>
     )
 }

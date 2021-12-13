@@ -37,7 +37,7 @@ export default function LogIn({ authenticate }) {
       password,
     };
     login(credentials).then((res) => {
-      if(res.errorMessage){
+      if(res.errorMessage && res.errorMessage !== 'Internal server error. Please check your server'){
         setErrorMessage(res.errorMessage)
       }
       
