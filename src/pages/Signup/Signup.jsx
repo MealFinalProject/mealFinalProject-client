@@ -22,6 +22,8 @@ export default function Signup({ authenticate }) {
     return setForm({ ...form, [name]: value });
   }
 
+  const [errorMessage, setErrorMessage] = useState()
+
   function handleFormSubmission(event) {
     event.preventDefault();
     const credentials = {
@@ -30,6 +32,9 @@ export default function Signup({ authenticate }) {
     };
    
     signup(credentials).then((res) => {
+      if(res.errorMessage){
+        setErrorMessage(res.errorMessage)
+      }
       if (!res.status) {
         // unsuccessful signup
         console.error("Signup was unsuccessful: ", res);
@@ -89,22 +94,20 @@ export default function Signup({ authenticate }) {
       <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                 <div className="form-group mb-3">
                     <p className="font-weight-bold">Enter Username:</p>
-                    <input className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
+                    <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
                 </div>
                 <div>
                     <p className="font-weight-bold">Enter Password:</p>
-                    <input className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                    <input onClick={() => setErrorMessage(null)} className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                     
                 </div>
-              
-                    
-                    
+
                 <div className="col-md-12 text-center mt-4">
                     <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>
                 </div>
             </form>
       </div>
-    
+      {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
     </div>
   );
 }

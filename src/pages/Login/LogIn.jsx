@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { login } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
+
 import "../Signup/Signup";
+
 import * as PATHS from "../../utils/paths";
 import * as USER_HELPERS from "../../utils/userToken";
 
 import { Link } from 'react-router-dom'
 
 import './Login.css'
+
 
 
 export default function LogIn({ authenticate }) {
@@ -24,6 +27,8 @@ export default function LogIn({ authenticate }) {
 
     return setForm({ ...form, [name]: value });
   }
+  
+  const [errorMessage, setErrorMessage] = useState()
 
   function handleFormSubmission(event) {
     event.preventDefault();
@@ -32,13 +37,19 @@ export default function LogIn({ authenticate }) {
       password,
     };
     login(credentials).then((res) => {
+      if(res.errorMessage){
+        setErrorMessage(res.errorMessage)
+      }
+      
       if (!res.status) {
         return setError({ message: "Invalid credentials" });
+        
       }
       USER_HELPERS.setUserToken(res.data.accessToken);
       authenticate(res.data.user);
       navigate(PATHS.HOMEPAGE);
-    });
+      
+    })
   }
 
  
@@ -91,9 +102,10 @@ export default function LogIn({ authenticate }) {
                 </div>
                 <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                     <div className="form-group mb-3">
-                        <input className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
-                        <input className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                        <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
+                        <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                         <p>Forgot password?</p>
+                        {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
                     </div>
                     
                     <div className="col-md-12 text-center">

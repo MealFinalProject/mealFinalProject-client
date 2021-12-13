@@ -32,6 +32,7 @@ export function login(credentials) {
     .post("/login", credentials)
     .then(successStatus)
     .catch(internalServerError);
+    
 }
 
 export function getLoggedIn() {
