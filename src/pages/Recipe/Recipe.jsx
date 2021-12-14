@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
+import NewComment from "../../components/NewComment/NewComment";
+import Comments from "../../components/Comments/Comments";
 // import { Link } from "react-router-dom";
 
 const RecipeResults = (props) => {
@@ -12,6 +14,7 @@ const RecipeResults = (props) => {
   const [loading, setLoading] = useState(false);
   const [isFav, setIsFav] = useState(false);
   const [numberFavs, setNumberFavs] = useState(0);
+  const [comments, setComments] = useState([]);
 
   const { id } = useParams();
   const { user, authenticate } = props;
@@ -25,6 +28,12 @@ const RecipeResults = (props) => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/favs/get-fav-number?idApiRecipe=${id}`).then((response) => {
       setNumberFavs(response.data.numberOfLikes)
     });
+
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/comments/get-recipe-comments?idApiRecipe=${id}`).then((response) => {
+      setComments(response.data.comments)
+    });
+   
+
     axios.get(`${process.env.REACT_APP_SERVER_URL}/profile`, {
         headers: {
           id: user._id,
@@ -70,6 +79,21 @@ const RecipeResults = (props) => {
   };
 
   
+  const newComment = (content) => {
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/comments/add-new-comment`, {
+        data: {
+          idUser: user._id,
+          idApiRecipe: id,
+          nameRecipe: label,
+          photoRecipe: image,
+          content: content
+        }
+      })
+      .then((response) => {
+        setComments([...comments, response.data.newComment])
+      });
+  }
+
   const JSONrecipeTest = {
     uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
     label: "Perfect Grilled Chicken recipes",
@@ -292,6 +316,12 @@ const RecipeResults = (props) => {
                   </p>
                 </Link>
               ))}
+            </div>
+            <div className="col-12 my-4">
+              <NewComment newComment={newComment}/>
+            </div>
+            <div className="col-12 my-2">
+              <Comments comments={comments}/>
             </div>
           </div>
         </div>
