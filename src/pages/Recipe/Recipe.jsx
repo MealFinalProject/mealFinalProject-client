@@ -1,4 +1,5 @@
 import "./Recipe.css";
+import Navbar from "../../components/Navbar/Navbar";
 
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
@@ -14,7 +15,7 @@ const RecipeResults = (props) => {
   const [numberFavs, setNumberFavs] = useState(0);
 
   const { id } = useParams();
-  const { user } = props;
+  const { user, handleLogout, profileImageState  } = props;
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
 
   useEffect(() => {
@@ -139,7 +140,9 @@ const RecipeResults = (props) => {
   const serves = JSONrecipeTest.yield ;
   return (
     !loading && (
-      <div className="container">
+      <div>
+        <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+         <div className="container">
         <div className="row text-center">
           <div className="col-12 col-xl-4 mt-xl-5">
             <div className="col-12  my-2 p-0">
@@ -292,6 +295,9 @@ const RecipeResults = (props) => {
           </div>
         </div>
       </div>
+      </div>
+      
+     
     )
   );
 };

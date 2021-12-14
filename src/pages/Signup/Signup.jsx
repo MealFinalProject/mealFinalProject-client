@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { signup } from "../../services/auth";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Signup.css"
 
@@ -91,20 +92,24 @@ export default function Signup({ authenticate }) {
     //   </form>
     // </div>
     <div className="container ">
+    <h1 className="text-center m-5">Project Meal</h1>
       <div className="Sign-up d-flex justify-content-center align-items-center">
       <form onSubmit={handleFormSubmission} className="mb-2 Login" >
                 <div className="form-group mb-3">
-                    <p className="font-weight-bold">Enter Username:</p>
+                    <p className="font-weight-bold text-white">Enter Username:</p>
                     <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
                 </div>
                 <div>
-                    <p className="font-weight-bold">Enter Password:</p>
+                    <p className="font-weight-bold text-white">Enter Password:</p>
                     <input onClick={() => setErrorMessage(null)} className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                     
                 </div>
 
                 <div className="col-md-12 text-center mt-4">
                     <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>
+                </div>
+                <div>
+                <p className="text-center text-white font-weight-bold mt-5">Already have an account? <Link className="text-decoration-none font-weight-bold color-log-in" to={PATHS.LOGINPAGE} >Log in</Link></p>
                 </div>
             </form>
       </div>

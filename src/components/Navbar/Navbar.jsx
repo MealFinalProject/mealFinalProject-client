@@ -73,7 +73,9 @@ const Navbar = (props) => {
                 <Link to="" className="dropdown-item " >My recipes</Link>
                 <div className="dropdown-divider"></div>
                 <button className="dropdown-item " onClick={props.handleLogout}>
-                 Logout
+                <Link className="text-black" to={PATHS.HOMEPAGE}>
+                   Logout
+                </Link>
                 </button>              
               </div>
           </li>

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import LoadingComponent from "./components/Loading";
-import Navbar from "./components/Navbar/Navbar";
 
 import { getLoggedIn, logout } from "./services/auth";
 
@@ -58,7 +57,7 @@ export default function App() {
   
   return (
     <div className="App">
-      <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+      
       <Routes>
         {routes({ user, setUser, authenticate, handleLogout,
         searchState,setSearchState,

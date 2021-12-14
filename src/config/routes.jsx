@@ -45,7 +45,12 @@ const routes = (props) => {
     },
     {
       path: PATHS.HOMEPAGE,
-      element: <HomePage {...props} />,
+      element: user ? (
+        <HomePage {...props} />
+      ) : (
+        <Navigate to={PATHS.LOGINPAGE} replace />
+      ),
+       
     },
     {
       path: PATHS.SIGNUPPAGE,

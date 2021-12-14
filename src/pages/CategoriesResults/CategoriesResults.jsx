@@ -1,18 +1,26 @@
 import "./CategoriesResults.css";
 
+import { Link } from "react-router-dom";
 import { cuisineType } from "../../utils/consts";
 import { mealType } from "../../utils/consts";
 import { useParams } from "react-router";
-import Category from "../../components/Category/Category";
-import { Link } from "react-router-dom";
 
-const CategoriesResults = () => {
+import Category from "../../components/Category/Category";
+import Navbar from "../../components/Navbar/Navbar";
+
+const CategoriesResults = (props) => {
+
+  const { user, handleLogout, profileImageState } = props;
+
   const name = useParams().name;
   let arrayOfCategories = cuisineType;
   //Check the name we collect from the params and render a list with the corresponding category array
   if (name === "time") arrayOfCategories = mealType;
   return (
-    <div className="container d-flex flex-wrap justify-content-around">
+    <div>
+      <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+      <div className="container d-flex flex-wrap justify-content-around">
+    
       {arrayOfCategories.map((type, index) => {
         return (
           <div className="" key={index + 1}>
@@ -26,6 +34,8 @@ const CategoriesResults = () => {
         );
       })}
     </div>
+    </div>
+    
   );
 };
 

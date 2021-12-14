@@ -1,7 +1,7 @@
-import react, { useCallback } from "react";
 
 import './UpddateProfileInfo.css'
-import { Cloudinary } from "cloudinary-core";
+
+import Navbar from "../../components/Navbar/Navbar";
 
 import { useState, } from "react";
 import axios from "axios";
@@ -9,7 +9,7 @@ import axios from "axios";
 
 const UpdateProfileInfo = (props) => {
 
-    const { user, setUser} = props
+    const { user, setUser, handleLogout, profileImageState } = props
     const [imageSelected, setImageSelected] = useState('')
     const [profileImage, setProfileImage]   = useState()
     const [imageLoaded, setImageLoaded]     = useState(false)
@@ -19,10 +19,12 @@ const UpdateProfileInfo = (props) => {
     const [updateMessage, setUpdateMessage] = useState(false)
 
     
-    const uploadImage = () => {
+    const uploadImage = () => {                                       
     const formData = new FormData()
-    formData.append("file", imageSelected)
-    formData.append("upload_preset",`mgkyabfx`)
+    formData.append("file", imageSelected)                                          //Axios call to cloudinary to load the image
+    formData.append("upload_preset", 'mgkyabfx')
+
+    
 
     axios.post("https://api.cloudinary.com/v1_1/djosvkjof/image/upload", 
     formData).then((response)=>{
@@ -38,7 +40,7 @@ const UpdateProfileInfo = (props) => {
     event.preventDefault()
     axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/update`, {
       data: {
-        oldProfileImage: user.avatar_url,
+        oldProfileImage: user.avatar_url,                                       //Post call to the database to update the profile
         profileImage: profileImage,
         userId: user._id,
         newUsername: newUsername,
@@ -60,12 +62,15 @@ const UpdateProfileInfo = (props) => {
 
   const hiddenMsg = () => {
     setErrorMessage(false)
-    setImageLoaded(false)
+    setImageLoaded(false)                       
     setUpdateMessage(false)
   }
   
     return (
-      <div className="UpdateProfileInfo">
+      <div>
+        <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+        <div className="UpdateProfileInfo">
+      
         <div className="form-group mb-3 mt-5">
 
           <p className="font-weight-bold">Enter new Username:</p>
@@ -134,6 +139,8 @@ const UpdateProfileInfo = (props) => {
         )}
         {updateMessage && <p className="color-text m-2">{updateMessage}</p>}
       </div>
+      </div>
+      
     );
 }
 
