@@ -14,23 +14,30 @@ const RecipeResults = (props) => {
   const [numberFavs, setNumberFavs] = useState(0);
 
   const { id } = useParams();
-  const { user } = props;
+  const { user, authenticate } = props;
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
 
   useEffect(() => {
-    axios.get(API_URL).then((response) => {
-      setRecipe(response.data);
-      setLoading(false);
-    });
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/favs/get-fav-number`).then((response) => {
+    // axios.get(API_URL).then((response) => {
+    //   setRecipe(response.data);
+    //   setLoading(false);
+    // });
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/favs/get-fav-number?idApiRecipe=${id}`).then((response) => {
       setNumberFavs(response.data.numberOfLikes)
     });
-    setIsFav(user.favs_recipes_idApi.includes(id))
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/profile`, {
+        headers: {
+          id: user._id,
+        }
+    }).then((response) => {
+      authenticate(response.data)
+    })
   }, []);
 
+  useEffect(() => {
+    setIsFav(user.favs_recipes_idApi.includes(id))
+  }, [user, id])
 
-
-  console.log(user);
   const addFavorite = (event) => {
     event.preventDefault();
     axios
@@ -40,12 +47,11 @@ const RecipeResults = (props) => {
           idApiRecipe: id,
           nameRecipe: label,
           photoRecipe: image,
-        },
+        }
       })
       .then((response) => {
         setIsFav(true)
         setNumberFavs(numberFavs + 1)
-        console.log(response);
       });
   };
   const deleteFavorite = (event) => {
@@ -60,12 +66,10 @@ const RecipeResults = (props) => {
       .then((response) => {
         setIsFav(false)
         setNumberFavs(numberFavs - 1)
-        console.log(response);
       });
   };
 
   
-  console.log("fav ", isFav)
   const JSONrecipeTest = {
     uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
     label: "Perfect Grilled Chicken recipes",
