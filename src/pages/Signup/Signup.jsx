@@ -91,7 +91,7 @@ export default function Signup({ authenticate }) {
     //     </button>
     //   </form>
     // </div>
-    <div className="container ">
+    <div className="container d-flex flex-column justify-content-center">
     <h1 className="text-center m-5">Project Meal</h1>
       <div className="Sign-up d-flex justify-content-center align-items-center">
       <form onSubmit={handleFormSubmission} className="mb-2 Login" >

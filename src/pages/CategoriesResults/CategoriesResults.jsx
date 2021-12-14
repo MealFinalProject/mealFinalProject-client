@@ -19,11 +19,11 @@ const CategoriesResults = (props) => {
   return (
     <div>
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className="container d-flex flex-wrap justify-content-around">
+      <div className=" container d-flex flex-wrap justify-content-around">
     
       {arrayOfCategories.map((type, index) => {
         return (
-          <div className="" key={index + 1}>
+          <div className="CategoriesResults" key={index + 1}>
             <Link className="link-categories" to={type.name.toLowerCase()}>
               <Category
                 text={type.name}

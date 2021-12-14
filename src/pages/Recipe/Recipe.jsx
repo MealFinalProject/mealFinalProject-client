@@ -142,8 +142,8 @@ const RecipeResults = (props) => {
     !loading && (
       <div>
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-         <div className="container">
-        <div className="row text-center">
+         <div className="container ">
+        <div className="row text-center ">
           <div className="col-12 col-xl-4 mt-xl-5">
             <div className="col-12  my-2 p-0">
               <img

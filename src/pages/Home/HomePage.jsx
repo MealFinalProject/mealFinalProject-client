@@ -24,9 +24,9 @@ function HomePage(props) {
     <div >
     <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
       <div className="App Home container">
-        <h1 className="my-5">What do you want {msg} today?</h1>
+        <h1 className="mb-5">What do you want {msg} today?</h1>
           <Searchbar searchState={searchState} setSearchState={setSearchState}/>
-          <div className="d-flex justify-content-around flex-wrap">
+          <div className="d-flex justify-content-around flex-wrap categories">
             <Link className="link-categories" to={`category/country`} >  
               <Category 
                 text={'Type of food (Country)'} 

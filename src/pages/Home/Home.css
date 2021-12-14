@@ -4,3 +4,12 @@
     font-size: 22px;
     text-align: center;
 }
+@media (min-width: 600px){
+    .Home .categories{
+    margin-top: 100px;
+    }
+    .Home h1{
+        font-size: 32px;
+    }
+}
+

@@ -3,7 +3,8 @@ import './Footer.css'
 const Footer = () => {
 
     return(
-        <div className="Footer mt-5 fixed-bottom d-flex align-items-center flex-column">
+        
+          <div className="Footer mt-5 fixed-bottom d-flex align-items-center flex-column justify-content-center">
             <ul>
                 <li className="text-white mt-4">Santiago Jiménez 
                 <a href="https://github.com/Santys"><i className="fab fa-github m-2"></i></a>
@@ -17,7 +18,8 @@ const Footer = () => {
                 
 
             </ul>
-        </div>
+            </div> 
+        
     )
 }
 

@@ -22,3 +22,8 @@
 .search-button i {
     color: rgba(175, 160, 252)
 }
+@media (min-width: 600px){
+    .Searchbar .search-bar{
+        font-size: 18px;
+    }
+}
