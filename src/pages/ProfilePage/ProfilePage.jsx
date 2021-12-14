@@ -40,6 +40,7 @@ const ProfilePage = (props) => {
         />
       }
       </div>
+      {user && <p className="font-weight-bold text-center mt-5">Welcome {user.username}</p>}
       <div className="d-flex flex-column align-items-center mt-5">
         <Link to={PATHS.UPDATEPROFILEINFO}>
           <div className="profile-card mt-4">

@@ -60,7 +60,7 @@ export default function App() {
     <div className="App">
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
       <Routes>
-        {routes({ user, authenticate, handleLogout,
+        {routes({ user, setUser, authenticate, handleLogout,
         searchState,setSearchState,
         profileImageState, setProfileImageState }).map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
