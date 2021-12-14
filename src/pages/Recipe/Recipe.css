@@ -21,9 +21,18 @@
     background-color: rgb(175, 160, 252);
     border-color: rgb(175, 160, 252)
 }
+.button-fav:hover{
+    color: white;
+    background-color: rgba(175, 160, 252, 0.733);
+    border-color: rgb(175, 160, 252)
+}
 
 .button-not-fav{
     color: rgb(175, 160, 252);
     border-color: rgb(175, 160, 252)
 }
 
+.button-not-fav:hover{
+    color: white;
+    background-color: rgb(175, 160, 252)
+}
