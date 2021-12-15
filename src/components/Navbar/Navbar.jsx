@@ -46,7 +46,7 @@ const Navbar = (props) => {
     //     )}
     //   </div>
     // </nav>
-    <nav className="navbar navbar-expand-lg navbar-light color-principal">
+    <nav className="navbar navbar-expand-lg navbar-light color-principal fixed-top">
     {user && user.avatar_url &&
     <Image 
       className="rounded-circle z-depth-0 mr-3"

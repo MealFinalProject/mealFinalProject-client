@@ -17,7 +17,7 @@ function HomePage(props) {
   let msg = ''
 
   if(hour < 12)          msg = 'for breakfast' 
-  if(hour >= 12 && hour < 19) msg= 'to eat'              //We compare the current time to display one message or the other
+  if(hour >= 12 && hour < 19) msg= 'for lunch'              //We compare the current time to display one message or the other
   if(hour >=19)           msg= 'for dinner'
 
   return (
@@ -47,7 +47,7 @@ function HomePage(props) {
             </Link>
             <Link className="link-categories" to={`cocktails`} >  
               <Category 
-                text={"Do we have a drink?"} 
+                text={"Do you want a drink?"} 
                 img={'https://images.unsplash.com/photo-1536935338788-846bb9981813?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'}
               />
             </Link>

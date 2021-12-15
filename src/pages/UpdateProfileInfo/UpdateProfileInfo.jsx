@@ -10,6 +10,7 @@ import axios from "axios";
 const UpdateProfileInfo = (props) => {
 
     const { user, setUser, handleLogout, profileImageState } = props
+    
     const [imageSelected, setImageSelected] = useState('')
     const [profileImage, setProfileImage]   = useState()
     const [imageLoaded, setImageLoaded]     = useState(false)
@@ -70,7 +71,7 @@ const UpdateProfileInfo = (props) => {
     return (
       <div>
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-        <div className="UpdateProfileInfo">
+        <div className="UpdateProfileInfo container">
       
         <div className="form-group mb-3 mt-5">
 

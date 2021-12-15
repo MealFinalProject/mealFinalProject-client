@@ -65,3 +65,8 @@ background-color:white;
 .color-principal{
   background-color: rgb(42, 163, 135);
 }
+@media (min-width: 992px){
+  nav{
+    font-size: 22px;
+  }
+}

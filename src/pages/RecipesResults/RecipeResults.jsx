@@ -34,21 +34,21 @@ const RecipeResults = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-5">
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className="container d-flex flex-wrap justify-content-around">
+      <div className="container d-flex flex-wrap justify-content-center">
     
       {recipes.map((element, index) => {
         return (
-          <Link key={index + 1} to={`/search/${element.recipe.id}`}>
-            <Category
-              key={element.recipe.id}
-              text={element.recipe.label}
-              img={element.recipe.image}
-            />
-          </Link>
-        );
-      })}
+             <Link key={index + 1} to={`/search/${element.recipe.id}`}>
+                <Category
+                  key={element.recipe.id}
+                  text={element.recipe.label}
+                  img={element.recipe.image}
+                />
+              </Link>
+          );
+            })}
     </div>
     </div>
     

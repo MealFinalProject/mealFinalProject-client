@@ -170,14 +170,14 @@ const RecipeResults = (props) => {
   const serves = JSONrecipeTest.yield ;
   return (
     !loading && (
-      <div>
+      <div className="Recipe">
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-         <div className="container ">
+         <div className="container mt-5">
         <div className="row text-center ">
           <div className="col-12 col-xl-4 mt-xl-5">
             <div className="col-12  my-2 p-0">
               <img
-                className="border border-3 rounded"
+                className="border border-3 rounded mt-5"
                 src={image}
                 alt={label}
               ></img>

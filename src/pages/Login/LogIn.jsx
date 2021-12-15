@@ -101,7 +101,7 @@ export default function LogIn({ authenticate }) {
                 <div className="">
                 </div>
                 <form onSubmit={handleFormSubmission} className="mb-2 Login" >
-                    <div className="form-group mb-3">
+                    <div className="form-group mb-2">
                         <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
                         <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                         <p>Forgot password?</p>
@@ -118,7 +118,7 @@ export default function LogIn({ authenticate }) {
                             <span className="span-or d-flex justify-content-center">or</span>
                         </div>
                 </div>
-                <div className="col-md-12 mb-3 text-center mb-4">
+                <div className="col-md-12 mb-2 text-center mb-2">
                     <form id="demo" onSubmit={handleFormSubmission}>
                         <input className="form-control" type="hidden" name="username" />               
                         <input className="form-control" type="hidden" name="password" />

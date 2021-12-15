@@ -44,7 +44,7 @@ const ProfilePage = (props) => {
         )}
       </div>
       {user && (
-        <p className="font-weight-bold text-center mt-5">
+        <p className="font-weight-bold text-center mt-2">
           Welcome <span>{user.username}</span> 
         </p>
       )}

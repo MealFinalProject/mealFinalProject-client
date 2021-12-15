@@ -7,7 +7,7 @@
 }
 .ProfilePage #profile-image{
     width: 100vw;
-    
+   
 }
 .ProfilePage .profile-card {
     box-shadow: 0px 0px 4px -2px #000000;
@@ -18,11 +18,13 @@
     margin: 10x;
     padding: 10px 30px 10px 30px
 }
-@media (min-width: 1000px){
+@media (min-width: 992px){
     .ProfilePage #profile-image{
         margin: 50px;
         border-radius: 15px;
-        max-width: 1000px;
+        max-width: 600px;
+        max-height: 600px;
+        margin-top: 122px;
     }
     .ProfilePage #container-profile-image{
         display: flex;
@@ -36,6 +38,9 @@
     }
     .ProfilePage .profile-card  p{
         margin: 10px;
-        font-size: 20px;
+        font-size: 18px;
+    }
+    .ProfilePage p{
+        font-size: 18px;
     }
 }
