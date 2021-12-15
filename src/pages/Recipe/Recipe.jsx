@@ -8,11 +8,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import NewComment from "../../components/NewComment/NewComment";
 import Comments from "../../components/Comments/Comments";
+import DonutChart from "../../components/DonutChart/DonutChart";
 // import { Link } from "react-router-dom";
 
 const RecipeResults = (props) => {
   const [recipe, setRecipe] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [isFav, setIsFav] = useState(false);
   const [numberFavs, setNumberFavs] = useState(0);
   const [comments, setComments] = useState([]);
@@ -24,10 +25,10 @@ const RecipeResults = (props) => {
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
 
   useEffect(() => {
-    // axios.get(API_URL).then((response) => {
-    //   setRecipe(response.data);
-    //   setLoading(false);
-    // });
+    axios.get(API_URL).then((response) => {
+      setRecipe(response.data);
+      setLoading(false);
+    });
     axios.get(`${process.env.REACT_APP_SERVER_URL}/favs/get-fav-number?idApiRecipe=${id}`).then((response) => {
       setNumberFavs(response.data.numberOfLikes)
     });
@@ -139,22 +140,62 @@ const RecipeResults = (props) => {
     cuisineType: ["american", "italian"],
     mealType: ["lunch", "dinner", "breakfast", "dinner", "lunch", "dinner"],
     dishType: ["main course"],
-    totalNutrients: {},
+    totalNutrients: {
+      ENERC_KCAL: {
+        label: "Energy",
+        quantity: 5500.776949937501,
+        unit: "kcal"
+        },
+        FAT: {
+        label: "Fat",
+        quantity: 318.187832452,
+        unit: "g"
+        },
+        FASAT: {
+        label: "Saturated",
+        quantity: 170.77673228805003,
+        unit: "g"
+        },
+        FATRN: {
+        label: "Trans",
+        quantity: 0.06860000000000001,
+        unit: "g"
+        },
+        FAMS: {
+        label: "Monounsaturated",
+        quantity: 98.50478431885,
+        unit: "g"
+        },
+        FAPU: {
+        label: "Polyunsaturated",
+        quantity: 21.451428536650003,
+        unit: "g"
+        },
+        CHOCDF: {
+        label: "Carbs",
+        quantity: 654.639979165375,
+        unit: "g"
+        },
+        FIBTG: {
+        label: "Fiber",
+        quantity: 31.8314623725,
+        unit: "g"
+        },
+        SUGAR: {
+        label: "Sugars",
+        quantity: 390.93881316087504,
+        unit: "g"
+        },
+        PROCNT: {
+        label: "Protein",
+        quantity: 72.315883773,
+        unit: "g"
+        },
+    },
     totalDaily: {},
     digest: [],
     id: "aee621fd197a61c324a15fec5d338802",
   };
-  const {
-    label,
-    image,
-    ingredientLines,
-    calories,
-    totalTime,
-    cuisineType,
-    mealType,
-    dishType,
-    url,
-  } = JSONrecipeTest;
   // const {
   //   label,
   //   image,
@@ -165,9 +206,29 @@ const RecipeResults = (props) => {
   //   mealType,
   //   dishType,
   //   url,
-  // } = recipe?.recipe ?? {};
-  // const serves = recipe?.recipe?.yield ?? {};
-  const serves = JSONrecipeTest.yield ;
+  // } = JSONrecipeTest;
+  const {
+    label,
+    image,
+    ingredientLines,
+    calories,
+    totalTime,
+    cuisineType,
+    mealType,
+    dishType,
+    url,
+  } = recipe?.recipe ?? {};
+  const serves = recipe?.recipe?.yield ?? {};
+  const fat = recipe?.recipe?.totalNutrients.FAT ?? {}
+  const carbs = recipe?.recipe?.totalNutrients.CHOCDF ?? {}
+  const protein = recipe?.recipe?.totalNutrients.PROCNT ?? {}
+  const kcal = recipe?.recipe?.totalNutrients.ENERC_KCAL ?? {}
+  // const fat = JSONrecipeTest.totalNutrients.FAT
+  // const carbs = JSONrecipeTest.totalNutrients.CHOCDF
+  // const protein = JSONrecipeTest.totalNutrients.PROCNT
+  // const kcal = JSONrecipeTest.totalNutrients.ENERC_KCAL
+  // const serves = JSONrecipeTest.yield ;
+  const macro = {fat, carbs, protein, kcal}
   return (
     !loading && (
       <div>
@@ -260,15 +321,7 @@ const RecipeResults = (props) => {
                     data-bs-parent="#accordionRecipe"
                   >
                     <div className="accordion-body">
-                      <strong>This is the second item's accordion body.</strong>{" "}
-                      It is hidden by default, until the collapse plugin adds
-                      the appropriate classes that we use to style each element.
-                      These classes control the overall appearance, as well as
-                      the showing and hiding via CSS transitions. You can modify
-                      any of this with custom CSS or overriding our default
-                      variables. It's also worth noting that just about any HTML
-                      can go within the <code>.accordion-body</code>, though the
-                      transition does limit overflow.
+                      <DonutChart macronutrients={macro}/>
                     </div>
                   </div>
                 </div>
