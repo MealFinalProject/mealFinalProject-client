@@ -44,7 +44,7 @@ const ProfilePage = (props) => {
         )}
       </div>
       {user && (
-        <p className="font-weight-bold text-center mt-5">
+        <p className="font-weight-bold text-center mt-2">
           Welcome <span>{user.username}</span> 
         </p>
       )}
@@ -56,7 +56,7 @@ const ProfilePage = (props) => {
             </p>
           </div>
         </Link>
-        <Link to="">
+        <Link to={`/profile/my-recipes/${user._id}`}>
           <div className="profile-card mt-4">
             <p>
               <i className="fas fa-utensils mr-3"></i>My recipes

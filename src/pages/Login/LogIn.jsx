@@ -101,7 +101,7 @@ export default function LogIn({ authenticate }) {
                 <div className="">
                 </div>
                 <form onSubmit={handleFormSubmission} className="mb-2 Login" >
-                    <div className="form-group mb-3">
+                    <div className="form-group mb-2">
                         <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
                         <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                         <p>Forgot password?</p>
@@ -118,11 +118,14 @@ export default function LogIn({ authenticate }) {
                             <span className="span-or d-flex justify-content-center">or</span>
                         </div>
                 </div>
-                <div className="col-md-12 mb-3 text-center mb-4">
+                <div className="col-md-12 mb-2 text-center mb-2">
                     <form id="demo" onSubmit={handleFormSubmission}>
-                        <input className="form-control" type="hidden" name="username" value="emperorpenguin" onChange={handleInputChange}/>               
-                        <input className="form-control" type="hidden" name="password" value="12345678" onChange={handleInputChange}/>
-                        <button form="demo" className="col-11 btn active bg-color" type="submit">Try demo</button>
+                        <input className="form-control" type="hidden" name="username" />               
+                        <input className="form-control" type="hidden" name="password" />
+                        <button form="demo" className="col-11 btn active bg-color" type="submit" 
+                        onClick={() => {
+                          setForm({username: "emperorpenguin", password: "12345678" })
+                        }}>Try demo</button>
                     </form>
                 </div>
                 <div className="form-group">

@@ -8,6 +8,7 @@ import CategoriesResults from "../pages/CategoriesResults/CategoriesResults";
 import RecipeResults     from "../pages/RecipesResults/RecipeResults";
 import Recipe            from "../pages/Recipe/Recipe";
 import UpdateProfileInfo from "../pages/UpdateProfileInfo/UpdateProfileInfo";
+import MyRecipes         from "../pages/MyRecipes/MyRecipes";
 
 import * as PATHS        from "../utils/paths";
 
@@ -16,8 +17,20 @@ const routes = (props) => {
   
   return [
     {
+      path: PATHS.MYRECIPES,
+      element: user ? (
+        <MyRecipes {...props} />
+      ) : (
+        <Navigate to={PATHS.LOGINPAGE} replace />
+      ),
+    },
+    {
       path: PATHS.UPDATEPROFILEINFO,
-      element: <UpdateProfileInfo {...props} />,
+      element: user ? (
+        <UpdateProfileInfo {...props} />
+      ) : (
+        <Navigate to={PATHS.LOGINPAGE} replace />
+      ),
     },
     {
       path: PATHS.SEARCHRESULT,

@@ -7,7 +7,7 @@ a:-webkit-any-link {
     height: 150px;
     margin-top: 52px;
     border-radius: 15px;
-   
+    
 }
 .Category button{
     border: none;
@@ -17,6 +17,7 @@ a:-webkit-any-link {
 .link-category{
     text-decoration: none;
 }
+
 @media (min-width: 700px){
     .Category{
         width: 250px;

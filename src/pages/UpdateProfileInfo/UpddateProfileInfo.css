@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 98px;
 }
 .UpdateProfileInfo button{
     max-width: 300px;
@@ -26,3 +27,4 @@
 .UpdateProfileInfo .color-text{
     color:rgb(42, 163, 135);
 }
+
