@@ -46,7 +46,6 @@ const UpdateProfileInfo = (props) => {
         newUsername: newUsername,
         newPassword: newPassword,
         oldPassword: user.password,
-        oldUserName: user.username
       }
     }).then((res) => {
       setUpdateMessage(res.data.msg)
@@ -57,6 +56,8 @@ const UpdateProfileInfo = (props) => {
       if(err.response){
         setErrorMessage(err.response.data.errorMessage)
       }
+      
+      
     })
   }
 

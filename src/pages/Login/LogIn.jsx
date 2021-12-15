@@ -120,9 +120,12 @@ export default function LogIn({ authenticate }) {
                 </div>
                 <div className="col-md-12 mb-3 text-center mb-4">
                     <form id="demo" onSubmit={handleFormSubmission}>
-                        <input className="form-control" type="hidden" name="username" value="emperorpenguin" onChange={handleInputChange}/>               
-                        <input className="form-control" type="hidden" name="password" value="12345678" onChange={handleInputChange}/>
-                        <button form="demo" className="col-11 btn active bg-color" type="submit">Try demo</button>
+                        <input className="form-control" type="hidden" name="username" />               
+                        <input className="form-control" type="hidden" name="password" />
+                        <button form="demo" className="col-11 btn active bg-color" type="submit" 
+                        onClick={() => {
+                          setForm({username: "emperorpenguin", password: "12345678" })
+                        }}>Try demo</button>
                     </form>
                 </div>
                 <div className="form-group">
