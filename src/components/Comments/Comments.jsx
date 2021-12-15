@@ -14,10 +14,10 @@ const Comments = ({comments}) => {
       <div className="mt-3">
         {sortedComments.map(comment => {
             return (
-                <div className="card mb-3 text-start">
+                <div key={comment._id} className="card mb-3 text-start">
                     <div className="card-body">
                         <p className="h6 card-title">{comment.username}</p>
-                        <p class="card-subtitle mb-2 text-muted ">{new Date(comment.updatedAt).toDateString()}</p>
+                        <p className="card-subtitle mb-2 text-muted ">{new Date(comment.updatedAt).toDateString()}</p>
                         <p className="card-text">{comment.content}</p>
                     </div>
                 </div>

@@ -27,8 +27,8 @@ const NewComment = ({newComment}) => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          <button className="btn btn-outline-secondary mx-2" type="button" onClick={() => setSelected(!selected)}><i class="bi bi-x"></i> Cancel</button>  
-          <button className="btn button-new-comment mx-2" type="submit"><i class="bi bi-chat-square-text"></i> Save</button>
+          <button className="btn btn-outline-secondary mx-2" type="button" onClick={() => setSelected(!selected)}><i className="bi bi-x"></i> Cancel</button>  
+          <button className="btn button-new-comment mx-2" type="submit"><i className="bi bi-chat-square-text"></i> Save</button>
         </form>}
       </>
     );
