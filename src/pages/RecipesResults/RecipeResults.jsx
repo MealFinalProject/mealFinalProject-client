@@ -48,13 +48,15 @@ const RecipeResults = (props) => {
         </div>
         {recipes.map((element, index) => {
           return (
-            <Link key={index + 1} to={`/search/${element.recipe.id}`}>
-              <Category
-                key={element.recipe.id}
-                text={element.recipe.label}
-                img={element.recipe.image}
-              />
-            </Link>
+            <div className="m-2">
+              <Link key={index + 1} to={`/search/${element.recipe.id}`}>
+                <Category
+                  key={element.recipe.id}
+                  text={element.recipe.label}
+                  img={element.recipe.image}
+                />
+              </Link>
+            </div>
           );
         })}
       </div>
