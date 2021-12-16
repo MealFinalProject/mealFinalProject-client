@@ -22,9 +22,9 @@ const DonutChart = ({macronutrients}) => {
                 "#ffa600"
             ],
             hoverBackgroundColor: [
-              "#FF5A5E",
-              "#5AD3D1",
-              "#FFC870",
+              "#00db9780",
+              "#a3cb3780",
+              "#ffa60080",
             //   "#A8B3C5",
             //   "#616774",
             //   "#DA92DB"
@@ -37,8 +37,19 @@ const DonutChart = ({macronutrients}) => {
     
       return (
         <MDBContainer>
-          <p className="mt-2">KCAL: {Math.round(kcal.quantity)}</p>
-          <Pie data={dataPie} options={{ responsive: true }} />
+        <div className="row align-items-center">
+          <div className="col-12 col-xl-4">
+            <ul className="list-group">
+              <li className="list-group-item">{kcal.label}: {Math.round(kcal.quantity)}{kcal.unit}</li>
+              <li className="list-group-item">{fat.label}: {Math.round(fat.quantity)}{fat.unit}</li>
+              <li className="list-group-item">{carbs.label}: {Math.round(carbs.quantity)}{carbs.unit}</li>
+              <li className="list-group-item">{protein.label}: {Math.round(protein.quantity)}{protein.unit}</li>
+            </ul>
+          </div>
+          <div className="col-12 col-xl-8 mt-3 mt-xl-0">
+            <Pie data={dataPie} options={{ responsive: true }} />
+          </div>
+        </div>
         </MDBContainer>
       );
     
