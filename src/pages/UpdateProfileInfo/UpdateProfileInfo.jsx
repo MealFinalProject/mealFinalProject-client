@@ -32,7 +32,7 @@ const UpdateProfileInfo = (props) => {
       
       setProfileImage(response.data.public_id)
       setImageLoaded(true)
-      console.log(response)
+      
     })
     
   }
@@ -67,7 +67,7 @@ const UpdateProfileInfo = (props) => {
     setImageLoaded(false)                       
     setUpdateMessage(false)
   }
-  
+
     return (
       <div>
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />

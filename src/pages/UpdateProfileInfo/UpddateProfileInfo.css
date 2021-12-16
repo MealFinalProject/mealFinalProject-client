@@ -9,11 +9,12 @@
     max-height: 50px;
 }
 
+
 .UpdateProfileInfo{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 98px;
+    padding-top: 98px;
 }
 .UpdateProfileInfo button{
     max-width: 300px;
@@ -27,4 +28,24 @@
 .UpdateProfileInfo .color-text{
     color:rgb(42, 163, 135);
 }
-
+@media (min-width: 992px){
+    .UpdateProfileInfo{
+        padding-top: 144px;
+    }
+    .UpdateProfileInfo button{
+        max-width: 400px;
+        height: 48px;
+        font-size: 22px
+}
+.UpdateProfileInfo p{
+    font-size: 22px;
+}
+.UpdateProfileInfo #input-image{
+    max-width: 400px;
+  
+}
+.UpdateProfileInfo input{
+    width: 300px;
+    font-size: 18px;
+}
+}

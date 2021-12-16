@@ -36,17 +36,22 @@ const RecipeResults = (props) => {
   return (
     <div className="mt-5">
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className="container d-flex flex-wrap justify-content-center">
+      <div className="container d-flex flex-wrap justify-content-center ">
     
       {recipes.map((element, index) => {
         return (
-             <Link key={index + 1} to={`/search/${element.recipe.id}`}>
+          <div className="m-2"
+               key={index + 1}
+                >
+            <Link  to={`/search/${element.recipe.id}`}>
                 <Category
                   key={element.recipe.id}
                   text={element.recipe.label}
                   img={element.recipe.image}
                 />
               </Link>
+          </div>
+             
           );
             })}
     </div>
