@@ -52,7 +52,7 @@ const Navbar = (props) => {
       className="rounded-circle z-depth-0 mr-3"
             alt="avatar image"
       id="avatar-image" 
-      cloudName={`${process.env.CLOUD_NAME}`} 
+      cloudName={`${process.env.REACT_APP_CLOUD_NAME}`} 
       publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${user.avatar_url}.jpg`}
       />
     }

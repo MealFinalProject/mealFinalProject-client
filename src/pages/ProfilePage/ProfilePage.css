@@ -18,6 +18,11 @@
     margin: 10x;
     padding: 10px 30px 10px 30px
 }
+.ProfilePage #accordionFlushExample{
+    width: 300px;
+    box-shadow: 0px 0px 4px -2px #000000;
+    
+}
 @media (min-width: 992px){
     .ProfilePage #profile-image{
         margin: 50px;
@@ -30,6 +35,9 @@
         display: flex;
         justify-content: center;
 
+    }
+    .ProfilePage #accordionFlushExample{
+        width: 600px;
     }
     .ProfilePage .profile-card {
         box-shadow: 0px 0px 8px -2px #000000;

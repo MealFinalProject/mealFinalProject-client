@@ -34,11 +34,13 @@ const MyRecipes = (props) => {
     return (
         <div>
             <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-            <div className="container d-flex flex-wrap justify-content-around">
+            <div className="container d-flex flex-wrap justify-content-around mt-5">
             {checkrecipes ? (
             recipesFavoritesOfUser.map((element) => {
                 return (
-                <Link  to={`/search/${element.idApi}`}>
+                <Link  to={`/search/${element.idApi}`}
+                key={element.idApi}
+                >
                     <Category
                     key={element.idApi}
                     text={element.name}
