@@ -234,11 +234,11 @@ const RecipeResults = (props) => {
       <div className="Recipe">
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
          <div className="container mt-5">
-        <div className="row text-center align-items-center">
+        <div className="row text-center">
           <div className="col-12 col-xl-4 mt-xl-5">
             <div className="col-12  my-2 p-0">
               <img
-                className="border border-3 rounded mt-5"
+                className="border border-3 rounded mt-5 mt-xl-0"
                 src={image}
                 alt={label}
               ></img>
