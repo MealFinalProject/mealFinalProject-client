@@ -54,18 +54,17 @@ const ProfilePage = (props) => {
       {userFromDB && (
         <>
           <div className="">
-          <UserIcons userFromDB={userFromDB}/>
-            <p className="font-weight-bold text-center welcome-user">
+            <p className="font-weight-bold text-center welcome-user ">
               Welcome <span>{user.username}</span>
             </p>
-
+            <UserIcons userFromDB={userFromDB}/>
             </div>
         </>
       )}
 
       <div className="d-flex flex-column align-items-center">
         <Link to={PATHS.UPDATEPROFILEINFO}>
-          <div className="profile-card mt-4">
+          <div className="profile-card mt-2">
             <p>
               <i className="fas fa-user mr-3"></i>Update User
             </p>
