@@ -48,8 +48,9 @@ const RecipeResults = (props) => {
         </div>
         {recipes.map((element, index) => {
           return (
-            <div className="m-2">
-              <Link key={index + 1} to={`/search/${element.recipe.id}`}>
+            <div key={index + 1} 
+            className="m-2">
+              <Link to={`/search/${element.recipe.id}`}>
                 <Category
                   key={element.recipe.id}
                   text={element.recipe.label}
