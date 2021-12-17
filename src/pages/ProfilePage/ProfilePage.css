@@ -22,14 +22,22 @@
     width: 300px;
     box-shadow: 0px 0px 4px -2px #000000;
     
+    
 }
+.ProfilePage .welcome-user{
+    margin-top: 58px;
+}
+.ProfilePage #container-profile-image{
+   margin-top: 42px
+}
+
 @media (min-width: 992px){
     .ProfilePage #profile-image{
         margin: 50px;
         border-radius: 15px;
         max-width: 600px;
         max-height: 600px;
-        margin-top: 122px;
+        margin-top: 88px;
     }
     .ProfilePage #container-profile-image{
         display: flex;

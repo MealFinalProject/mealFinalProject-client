@@ -39,7 +39,7 @@ const UpdateProfileInfo = (props) => {
 
   const updateInfo = (event) => {
     event.preventDefault()
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/profile/update`, {
+    axios.put(`${process.env.REACT_APP_SERVER_URL}/profile/update`, {
       data: {
         oldProfileImage: user.avatar_url,                                       //Post call to the database to update the profile
         profileImage: profileImage,

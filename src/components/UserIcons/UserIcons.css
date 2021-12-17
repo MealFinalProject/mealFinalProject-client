@@ -1,0 +1,36 @@
+.UserIcons{
+    max-width: 600px;
+}
+.UserIcons #favsIcon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-right:4px ;
+    margin-top: 8px;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+    background-color: rgb(175, 160, 252);
+    border-radius: 15px;
+
+}
+.UserIcons #commentsIcon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-left: 4px;
+    margin-top: 8px;
+    font-size: 12px;
+    padding: 8px;
+    color: white;
+    background-color: rgb(175, 160, 252);
+    border-radius: 15px;
+}
+@media (min-width:992px){
+    .UserIcons #favsIcon{
+        font-size: 18px;
+    }
+    .UserIcons #commentsIcon {
+        font-size: 18px;
+    }
+}

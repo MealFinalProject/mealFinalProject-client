@@ -52,6 +52,19 @@ export default function LogIn({ authenticate }) {
     })
   }
 
+  const [passwordType, setPasswordType] = useState('password')
+  const [passwordShow, setPasswordShow] = useState(false)
+
+  const showPassword = () => {
+    if(passwordType === 'password') {
+      setPasswordType('text')
+      setPasswordShow(true)
+    }else {
+      setPasswordType('password')
+      setPasswordShow(false)
+    }
+    
+  }
  
   return (
     <>
@@ -64,6 +77,8 @@ export default function LogIn({ authenticate }) {
             <div className="col-12 form-group mb-2">
                 <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
                 <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
+                  :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
                 <p>Forgot password?</p>
                 {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
             </div>
