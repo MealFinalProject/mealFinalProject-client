@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import NewComment from "../../components/NewComment/NewComment";
 import Comments from "../../components/Comments/Comments";
 import DonutChart from "../../components/DonutChart/DonutChart";
+import LoadingComponent from "../../components/Loading";
 // import { Link } from "react-router-dom";
 
 const RecipeResults = (props) => {
@@ -230,160 +231,161 @@ const RecipeResults = (props) => {
   // const serves = JSONrecipeTest.yield ;
   const macro = {fat, carbs, protein, kcal}
   return (
-    !loading && (
+    (
       <div className="Recipe">
         <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-         <div className="container mt-5">
-        <div className="row text-center">
-          <div className="col-12 col-xl-4 mt-xl-5">
-            <div className="col-12  my-2 p-0">
-              <img
-                className="border border-3 rounded mt-5 mt-xl-0"
-                src={image}
-                alt={label}
-              ></img>
-            </div>
-            <div className="col-12 my-2">
-              <p className="fw-bold fs-2">{label}</p>
-            </div>
-            <div className="col-12 my-2">
-              {totalTime !== 0 && (
+        {loading ? <LoadingComponent/> :  
+        <div className="container mt-5">
+          <div className="row text-center">
+            <div className="col-12 col-xl-4 mt-xl-5">
+              <div className="col-12  my-2 p-0">
+                <img
+                  className="border border-3 rounded mt-5 mt-xl-0"
+                  src={image}
+                  alt={label}
+                ></img>
+              </div>
+              <div className="col-12 my-2">
+                <p className="fw-bold fs-2">{label}</p>
+              </div>
+              <div className="col-12 my-2">
+                {totalTime !== 0 && (
+                  <span className="m-2">
+                    <i className="bi bi-clock-history"></i> {totalTime} mins
+                  </span>
+                )}
                 <span className="m-2">
-                  <i className="bi bi-clock-history"></i> {totalTime} mins
+                  <i className="bi bi-activity"></i> {Math.round(calories)} kcal
                 </span>
-              )}
-              <span className="m-2">
-                <i className="bi bi-activity"></i> {Math.round(calories)} kcal
-              </span>
-              <span className="m-2">
-                <i className="bi bi-people-fill"></i> {serves} serves
-              </span>
-            </div>
-            <div className="col-12 my-2">
-              <span className="fw-bold">Dish type </span>
-              {dishType.map((dish, index) => (
-                <span key={index + 1} className="m-2 text-capitalize">
-                  {dish}
+                <span className="m-2">
+                  <i className="bi bi-people-fill"></i> {serves} serves
                 </span>
-              ))}
+              </div>
+              <div className="col-12 my-2">
+                <span className="fw-bold">Dish type </span>
+                {dishType.map((dish, index) => (
+                  <span key={index + 1} className="m-2 text-capitalize">
+                    {dish}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <div className="col-12 col-xl-8 mt-xl-5">
-            <div className="col-12 my-2 text-start">
-              <div className="accordion" id="accordionRecipe">
-                <div className="accordion-item">
-                  <div className="accordion-header" id="headingOne">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="false"
-                      aria-controls="collapseOne"
+            <div className="col-12 col-xl-8 mt-xl-5">
+              <div className="col-12 my-2 text-start">
+                <div className="accordion" id="accordionRecipe">
+                  <div className="accordion-item">
+                    <div className="accordion-header" id="headingOne">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="false"
+                        aria-controls="collapseOne"
+                      >
+                        Ingredients
+                      </button>
+                    </div>
+                    <div
+                      id="collapseOne"
+                      className="accordion-collapse collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#accordionRecipe"
                     >
-                      Ingredients
-                    </button>
-                  </div>
-                  <div
-                    id="collapseOne"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionRecipe"
-                  >
-                    <div className="accordion-body">
-                      <ul className="list-group ">
-                        {ingredientLines.map((ingredient, index) => (
-                          <li key={index + 1} className="list-group-item">
-                            {ingredient}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="accordion-body">
+                        <ul className="list-group ">
+                          {ingredientLines.map((ingredient, index) => (
+                            <li key={index + 1} className="list-group-item">
+                              {ingredient}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="accordion-item">
-                  <div className="accordion-header" id="headingTwo">
-                    <button
-                      className="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
+                  <div className="accordion-item">
+                    <div className="accordion-header" id="headingTwo">
+                      <button
+                        className="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Nutrition
+                      </button>
+                    </div>
+                    <div
+                      id="collapseTwo"
+                      className="accordion-collapse collapse"
+                      aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionRecipe"
                     >
-                      Nutrition
-                    </button>
-                  </div>
-                  <div
-                    id="collapseTwo"
-                    className="accordion-collapse collapse"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionRecipe"
-                  >
-                    <div className="accordion-body">
-                      <DonutChart macronutrients={macro}/>
+                      <div className="accordion-body">
+                        <DonutChart macronutrients={macro}/>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 d-flex justify-content-center mb-2 mt-3">
-              <a
-                className="border rounded p-2 text-light type-background mr-3"
-                href={url}
-              >
-                <i className="bi bi-file-text"></i> Instructions
-              </a>
-              {!isFav && <button
-               className="btn button-not-fav" 
-                onClick={(event) => addFavorite(event)}
-              >
-                <i className="bi bi-heart">  {numberFavs !== 0 && numberFavs}</i>
-              </button>}
-              {isFav && <button
-                className="btn button-fav"
-                onClick={(event) => deleteFavorite(event)}
-              >
-                <i className="bi bi-heart-fill"> {numberFavs !== 0 && numberFavs}</i>
-              </button>}
-              
-            </div>
-            <div className="col-12 mb-2 mt-4">
-              <p className="m-0 fw-bold fs-5">Categories</p>
-            </div>
-            <div className="col-12 my-2 d-flex flex-wrap justify-content-start">
-              {cuisineType.map((cuisine, index) => (
-                <Link
-                  key={index + 1}
-                  className="me-2 mb-1 text-light"
-                  to={`/category/country/${cuisine.toLocaleLowerCase()}`}
+              <div className="col-12 d-flex justify-content-center mb-2 mt-3">
+                <a
+                  className="border rounded p-2 text-light type-background mr-3"
+                  href={url}
                 >
-                  <p className="border rounded-pill m-0 px-3 type-background opacity-75">
-                    {cuisine.toLocaleLowerCase()}
-                  </p>
-                </Link>
-              ))}
-              {mealType.map((meal, index) => (
-                <Link
-                  key={index + 1}
-                  className="me-2 mb-1 text-light"
-                  to={`/category/time/${meal.toLocaleLowerCase()}`}
+                  <i className="bi bi-file-text"></i> Instructions
+                </a>
+                {!isFav && <button
+                className="btn button-not-fav" 
+                  onClick={(event) => addFavorite(event)}
                 >
-                  <p className="border rounded-pill m-0 px-3 type-background opacity-75">
-                    {meal.toLocaleLowerCase()}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <div className="col-12 my-4">
-              <NewComment newComment={newComment}/>
-            </div>
-            <div className="col-12 my-2">
-              <Comments comments={comments}/>
+                  <i className="bi bi-heart">  {numberFavs !== 0 && numberFavs}</i>
+                </button>}
+                {isFav && <button
+                  className="btn button-fav"
+                  onClick={(event) => deleteFavorite(event)}
+                >
+                  <i className="bi bi-heart-fill"> {numberFavs !== 0 && numberFavs}</i>
+                </button>}
+                
+              </div>
+              <div className="col-12 mb-2 mt-4">
+                <p className="m-0 fw-bold fs-5">Categories</p>
+              </div>
+              <div className="col-12 my-2 d-flex flex-wrap justify-content-start">
+                {cuisineType.map((cuisine, index) => (
+                  <Link
+                    key={index + 1}
+                    className="me-2 mb-1 text-light"
+                    to={`/category/country/${cuisine.toLocaleLowerCase()}`}
+                  >
+                    <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                      {cuisine.toLocaleLowerCase()}
+                    </p>
+                  </Link>
+                ))}
+                {mealType.map((meal, index) => (
+                  <Link
+                    key={index + 1}
+                    className="me-2 mb-1 text-light"
+                    to={`/category/time/${meal.toLocaleLowerCase()}`}
+                  >
+                    <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                      {meal.toLocaleLowerCase()}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <div className="col-12 my-4">
+                <NewComment newComment={newComment}/>
+              </div>
+              <div className="col-12 my-2">
+                <Comments comments={comments}/>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div>}
       </div>
       
      
