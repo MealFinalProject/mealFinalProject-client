@@ -77,6 +77,13 @@ const ProfilePage = (props) => {
             </p>
           </div>
         </Link>
+        <Link to="">
+          <div className="profile-card mt-4">
+            <p>
+              <i className="fas fa-users mr-2"></i>Follow users
+            </p>
+          </div>
+        </Link>
       </div>
     </div>
   );

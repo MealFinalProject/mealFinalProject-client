@@ -2,7 +2,6 @@ import './UserIcons.css'
 
 const UserIcons = ( {userFromDB} ) => {
 
-    console.log(userFromDB)
 
     return(
         <div className='UserIcons container d-flex justify-content-end'>
