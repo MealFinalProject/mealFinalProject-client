@@ -18,6 +18,33 @@
     max-height: 500px;
     
 }
+
+.login-or {
+    position: relative;
+    color: #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.span-or {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0px;
+    margin-left: -25px;
+    background-color: white;
+    width: 50px;
+    text-align: center;
+}
+
+.hr-or {
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
 @media (min-width: 600px){
     #login-image{
         margin: 20px;

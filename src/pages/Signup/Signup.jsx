@@ -54,12 +54,13 @@ export default function Signup({ authenticate }) {
 
   return (
     <>
-      <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5">
-        <div className="col-12 col-xl-6 p-0 mb-3 text-end">
-          <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Log in"/>
+      <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5 align-items-center">
+        <div className="col-12 mt-3 p-0 mb-3 text-center">
+          <div className="h1"><i class="bi bi-egg-fried"></i><span className=" prueba-color">  Project-Meal</span></div>
+          {/* <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Sign up"/> */}
         </div>
-        <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-3">
-            <form onSubmit={handleFormSubmission} className="col-12 col-xl-6 mb-2 Login" >
+        <div className="col-12 p-0 d-flex justify-content-center mt-xl-3">
+            <form onSubmit={handleFormSubmission} className="col-12 col-xl-4 mb-2 Login border rounded py-3 shadow-lg" >
               <div className="form-group mb-3 col-12">
                 <p className="font-weight-bold">Enter Username:</p>
                 <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
@@ -72,7 +73,7 @@ export default function Signup({ authenticate }) {
                   <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>
               </div>
               <div className="form-group col-12">
-                <p className="text-center font-weight-bold mt-5">Already have an account? <Link className="text-decoration-none font-weight-bold color-log-in" to={PATHS.LOGINPAGE} >Log in</Link></p>
+                <p className="text-center font-weight-bold mt-5">Already have an account? <Link className="text-decoration-none font-weight-bold color-text" to={PATHS.LOGINPAGE} >Log in</Link></p>
               </div>
             </form>
         </div>
