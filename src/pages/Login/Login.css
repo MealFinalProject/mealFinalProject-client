@@ -8,9 +8,15 @@
 .Login .input-username{
     border-bottom: none;
     border-radius: 10px 10px 0px 0px;
+    width: 298px;
+
 }
 .Login .input-password{
     border-radius: 0px 0px 10px 10px;
+    width: 298px;
+}
+.Login i{
+    font-size: 18px;
 }
 #login-image{
     width: 100vw;
@@ -33,5 +39,15 @@
         height: 50px;
         font-size: 20px;
     }
-
+    .Login .input-username{
+        width: 472px;
+    
+    }
+    .Login .input-password{
+        width: 472px;
+    
+    }
+    .Login i{
+        font-size: 30px;
+    }
 }
