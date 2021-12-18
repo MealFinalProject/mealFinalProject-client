@@ -8,16 +8,16 @@ import Navbar    from "../../components/Navbar/Navbar"
 
 import "./SearchUsers.css"
 
-const SearchUsers = ({handleLogout, user, profileImageState}) => {
+const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
 
     const [allUsers, setAllUsers]             = useState()
     const [loadUsers, setloadUsers]           = useState(false)
     const [valueSearchbar, setValueSearchbar] = useState()
 
-    const API_URL = `${process.env.REACT_APP_SERVER_URL}/users/search`;
+    const API_URL = `${process.env.REACT_APP_SERVER_URL}`;
     
     useEffect(() => {
-        axios.get(API_URL).then((response) => {
+        axios.get(API_URL + "/users/search").then((response) => {
             setAllUsers(response.data)
             setloadUsers(true)
         })
@@ -40,13 +40,29 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
     const followUser = (event, userId) => {
         event.preventDefault()
         axios
-        .put(API_URL+`/${userId}`,{
+        .put(API_URL + `/users/follow/${userId}`,{
             data: {
                 userInSessionId: user._id
-            }
+            }})
+        .then((response) => {
+            setUser(response.data.userInSession)
+            console.log(response.data.msg)
         })
     }
-    console.log(user)
+
+    const unFollowUser = (event, userId) => {
+        event.preventDefault()
+        axios
+        .put(API_URL + `/users/unfollow/${userId}`,{
+            data: {
+                userInSessionId: user._id
+            }})
+        .then((response) => {
+            setUser(response.data.userInSession)
+            console.log(response.data.msg)
+        })
+    }   
+    
     return(
         <div className="SearchUsers">
             <Navbar
@@ -96,7 +112,8 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                                  to="" className="">
                                     <i id="button-follow" className="fas fa-user-plus"></i>
                                 </Link>
-                                <Link to="" className=" ">
+                                <Link onClick={(event) => {unFollowUser(event, user._id)}}
+                                to="" className=" ">
                                     <i id="button-unfollow" className="fas fa-user-minus"></i>
                                 </Link>
                           
