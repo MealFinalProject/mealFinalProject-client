@@ -8,6 +8,7 @@ import Category from "../../components/Category/Category.jsx"
 import Searchbar from "../../components/Searchbar/Searchbar";
 import Footer from "../../components/Footer/Footer.jsx";
 import { Link } from "react-router-dom";
+import RecipeResults from "../RecipesResults/RecipeResults.jsx";
 
 
 

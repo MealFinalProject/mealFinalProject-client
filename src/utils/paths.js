@@ -10,3 +10,4 @@ export const SEARCHRESULT       = "/search/:id";
 export const SEARCHRESULTS      = "/search/results/:q";
 export const UPDATEPROFILEINFO  = "/profile/info";       
 export const MYRECIPES          = "/profile/my-recipes/:id"
+export const SEARCHUSERS        = "/search/users"

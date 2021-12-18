@@ -77,7 +77,7 @@ const ProfilePage = (props) => {
             </p>
           </div>
         </Link>
-        <Link to="">
+        <Link to={PATHS.SEARCHUSERS} data-toggle="modal" data-target="#exampleModal">
           <div className="profile-card mt-4">
             <p>
               <i className="fas fa-users mr-2"></i>Follow users

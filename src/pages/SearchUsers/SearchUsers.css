@@ -1,0 +1,18 @@
+
+.SearchUsers h1{
+    margin-top: 112px;
+    margin-bottom: 44px;
+    text-align: center;
+}
+.SearchUsers .users-found :hover{
+    text-decoration: underline;
+}
+
+@media (min-width: 992px){
+    .SearchUsers #avatar-image{
+        width: 82px;
+    }
+    .SearchUsers .users-found{
+        font-size: 22px;
+    }
+}

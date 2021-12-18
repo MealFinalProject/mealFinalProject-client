@@ -50,24 +50,43 @@ export default function Signup({ authenticate }) {
     });
   
   }
+  
+  const [passwordType, setPasswordType] = useState('password')
+  const [passwordShow, setPasswordShow] = useState(false)
+
+  const showPassword = () => {
+    if(passwordType === 'password') {
+      setPasswordType('text')
+      setPasswordShow(true)
+    }else {
+      setPasswordType('password')
+      setPasswordShow(false)
+    }
+    
+  }
  
 
   return (
     <>
       <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5 align-items-center">
         <div className="col-12 mt-3 p-0 mb-3 text-center">
-          <div className="h1"><i class="bi bi-egg-fried"></i><span className=" prueba-color">  Project-Meal</span></div>
+          <div className="h1"><i className="bi bi-egg-fried"></i><span className=" prueba-color">  Project-Meal </span></div>
           {/* <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Sign up"/> */}
         </div>
         <div className="col-12 p-0 d-flex justify-content-center mt-xl-3">
             <form onSubmit={handleFormSubmission} className="col-12 col-xl-4 mb-2 Login border rounded py-3 shadow-lg" >
               <div className="form-group mb-3 col-12">
                 <p className="font-weight-bold">Enter Username:</p>
-                <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
+                <input id="username-input" onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
               </div>
               <div className="form-group mb-3 col-12">
                 <p className="font-weight-bold">Enter Password:</p>
-                <input onClick={() => setErrorMessage(null)} className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                <div className="d-flex align-items-center">
+                  <input id="password-input" onClick={() => setErrorMessage(null)} className="form-control mb-2 mr-1" type={passwordType} name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                    {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
+                      :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
+                </div>
+               
               </div>
               <div className="form-group col-12 text-center mt-4">
                   <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>
