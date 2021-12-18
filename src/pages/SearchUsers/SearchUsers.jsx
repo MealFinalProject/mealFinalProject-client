@@ -69,8 +69,7 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                 filteredUsers.map((user) => {
                 return (
                     <>
-                       <div className="container m-4  users-found">
-                       <Link to="" className="d-flex align-items-center text-black">
+                       <div className="d-flex align-items-center container m-4  users-found">
                         {user.avatar_url &&
                         
                             <Image 
@@ -82,7 +81,6 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                             />
                         }
                             <p className="ml-3">{user.username}</p>
-                        </Link>
                         </div> 
                         <hr />
                     </>

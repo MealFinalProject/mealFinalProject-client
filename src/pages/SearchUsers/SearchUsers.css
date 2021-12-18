@@ -4,9 +4,6 @@
     margin-bottom: 44px;
     text-align: center;
 }
-.SearchUsers .users-found :hover{
-    text-decoration: underline;
-}
 
 @media (min-width: 992px){
     .SearchUsers #avatar-image{
