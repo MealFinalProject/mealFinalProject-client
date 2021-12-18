@@ -1,4 +1,17 @@
-
+.SearchUsers #button-follow{
+    color: black;
+    margin-left: 44px;
+}
+.SearchUsers #button-follow:hover{
+    color: rgb(42, 163, 135);
+}
+.SearchUsers #button-unfollow{
+    color: black;
+    margin-left: 44px;
+}
+.SearchUsers #button-unfollow:hover{
+    color: rgb(42, 163, 135);
+}
 .SearchUsers h1{
     margin-top: 112px;
     margin-bottom: 44px;
@@ -11,5 +24,6 @@
     }
     .SearchUsers .users-found{
         font-size: 22px;
+      
     }
 }

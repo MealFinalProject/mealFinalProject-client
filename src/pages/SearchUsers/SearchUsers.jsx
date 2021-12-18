@@ -37,6 +37,16 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
        })
     }
 
+    const followUser = (event, userId) => {
+        event.preventDefault()
+        axios
+        .put(API_URL+`/${userId}`,{
+            data: {
+                userInSessionId: user._id
+            }
+        })
+    }
+    console.log(user)
     return(
         <div className="SearchUsers">
             <Navbar
@@ -53,7 +63,7 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                     className="form-control search-bar"
                     aria-label="Search"
                     aria-describedby="addon-wrapping"
-                    placeholder="search users"
+                    placeholder="search users..."
                     />
                     <Link
                     className="input-group-text search-button"
@@ -66,10 +76,11 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                 </div>
             </div>    
             {filteredUsers.length > 0 &&
-                filteredUsers.map((user) => {
+                filteredUsers.map((user, index) => {
                 return (
                     <>
-                       <div className="d-flex align-items-center container m-4  users-found">
+                       <div key={index + 1}
+                       className="d-flex align-items-center container m-4  users-found">
                         {user.avatar_url &&
                         
                             <Image 
@@ -80,9 +91,17 @@ const SearchUsers = ({handleLogout, user, profileImageState}) => {
                                 publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${user.avatar_url}.jpg`}
                             />
                         }
-                            <p className="ml-3">{user.username}</p>
+                            <p className="ml-3 ">{user.username}</p>
+                                 <Link onClick={(event) => {followUser(event, user._id)}}
+                                 to="" className="">
+                                    <i id="button-follow" className="fas fa-user-plus"></i>
+                                </Link>
+                                <Link to="" className=" ">
+                                    <i id="button-unfollow" className="fas fa-user-minus"></i>
+                                </Link>
+                          
                         </div> 
-                        <hr />
+                         <hr />
                     </>
                     
                 )
