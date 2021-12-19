@@ -1,29 +1,17 @@
-.SearchUsers #button-follow{
+.button-follow{
     color: black;
-    margin-left: 44px;
 }
-.SearchUsers #button-follow:hover{
+.button-follow:hover{
     color: rgb(42, 163, 135);
 }
-.SearchUsers #button-unfollow{
-    color: black;
-    margin-left: 44px;
-}
-.SearchUsers #button-unfollow:hover{
+.button-unfollow{
     color: rgb(42, 163, 135);
 }
-.SearchUsers h1{
-    margin-top: 112px;
-    margin-bottom: 44px;
-    text-align: center;
+.button-unfollow:hover{
+    color: black;
 }
 
-@media (min-width: 992px){
-    .SearchUsers #avatar-image{
-        width: 82px;
-    }
-    .SearchUsers .users-found{
-        font-size: 22px;
-      
-    }
-}
+.search-user{
+    border-radius: 12px;
+    border-width: 1px 0px 1px 1px
+ }

@@ -18,7 +18,7 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
     
     useEffect(() => {
         axios.get(API_URL + "/users/search").then((response) => {
-            setAllUsers(response.data)
+            setAllUsers(response.data.filter(users => users._id !== user._id))
             setloadUsers(true)
         })
     }, [])
@@ -64,69 +64,85 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
 
     
     return(
-        <div className="SearchUsers">
+        <>
             <Navbar
                 handleLogout={handleLogout}
                 user={user}
                 profileImageState={profileImageState}
             />
-            <div className="container">
-               <h1 className="">Find chefs</h1>
-                <div className="input-group col-12">
-                    <input
-                    type="text"
-                    onChange={(event) => setValueSearchbar(event.target.value)}
-                    className="form-control search-bar"
-                    aria-label="Search"
-                    aria-describedby="addon-wrapping"
-                    placeholder="search users..."
-                    />
-                    <Link
-                    className="input-group-text search-button"
-                    to=""
-                    >
-                    <span id="basic-addon2">
-                        <i className="bi bi-search"></i>
-                    </span>
-                   </Link>
+            <div className="container-fluid m-0 p-0 row SearchUsers mt-5 text-center justify-content-center">
+                <div className="col-12 mt-5 mb-2">
+                    <p className="h1">Find chefs</p>
                 </div>
-            </div>    
-            {filteredUsers.length > 0 &&
-                filteredUsers.map((userSearched, index) => {
-                return (
-                    <>
-                       <div key={index + 1}
-                       className="d-flex align-items-center container m-4  users-found">
-                        {user.avatar_url &&
+                <div className="col-12 col-xl-6 mb-3">
+                    <div className="input-group">
+                        <input
+                        type="text"
+                        onChange={(event) => setValueSearchbar(event.target.value)}
+                        className="form-control search-user"
+                        aria-label="Search"
+                        aria-describedby="addon-wrapping"
+                        placeholder="search users..."
+                        />
                         
-                            <Image 
-                                className="rounded-circle z-depth-0 mr-3"
-                                alt="avatar image"
-                                id="avatar-image" 
-                                cloudName={`${process.env.REACT_APP_CLOUD_NAME}`} 
-                                publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${userSearched.avatar_url}.jpg`}
-                            />
-                        }
-                            <p className="ml-3 ">{userSearched.username}</p>
+                        <span className="input-group-text search-button">
+                            <i className="bi bi-search"></i>
+                        </span>
+                    </div>
+                </div>
+                <div className="col-12 col-xl-8">
+                    {filteredUsers.length > 0 &&
+                        filteredUsers.map((userSearched, index) => {
+                        return (
+                            <>
+                            <div className="col-12 mt-2">
+                                <div className="row m-0 p-0 align-items-center text-start">
+                                    <div className="col-3 text-center">
+                                        {userSearched.avatar_url ?
+                                            <Image 
+                                                className="rounded-circle z-depth-0 mr-3"
+                                                alt="avatar image"
+                                                id="avatar-image" 
+                                                cloudName={`${process.env.REACT_APP_CLOUD_NAME}`} 
+                                                publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${userSearched.avatar_url}.jpg`}
+                                            /> :
+                                            <img className="rounded-circle z-depth-0 mr-3" id="avatar-image" src="https://ibalz.com/wp-content/uploads/2019/10/default-profile.png" alt="Default avatar" />
+                                        }
+                                    </div>
+                                    <div className="col-5">
+                                        <Link to={`/user/${userSearched._id}`}>
+                                            <p className="m-0 text-dark">{userSearched.username}</p>
+                                        </Link>
+                                    </div>
+                                    <div className="col-4 text-end">
+                                        {user.followed.includes(userSearched._id) ? 
+                                            <button onClick={(event) => {unFollowUser(event, userSearched._id)}}
+                                            className="btn button-unfollow" >
+                                                <i className="fas fa-user-minus"></i>
+                                            </button>
+                                            :
+                                            <button onClick={(event) => {followUser(event, userSearched._id)}}
+                                            className="btn button-follow">
+                                                <i  className="fas fa-user-plus"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                    <div className="col-12">
+                                        <hr />
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            </>
                             
-                            {user.followed.includes(userSearched._id) ? 
-                                <Link onClick={(event) => {unFollowUser(event, userSearched._id)}}
-                                to="" className=" ">
-                                    <i id="button-unfollow" className="fas fa-user-minus"></i>
-                                </Link>
-                                :
-                                <Link onClick={(event) => {followUser(event, userSearched._id)}}
-                                 to="" className="">
-                                    <i id="button-follow" className="fas fa-user-plus"></i>
-                                </Link>
-                            }
-                        </div> 
-                         <hr />
-                    </>
-                    
-                )
-            })}
-        </div>
+                        )
+                    })}
+
+                </div>
+
+            </div>
+
+        </>
         
         )
 }
