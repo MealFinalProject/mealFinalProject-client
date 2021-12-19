@@ -46,7 +46,6 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
             }})
         .then((response) => {
             setUser(response.data.userInSession)
-            console.log(response.data.msg)
         })
     }
 
@@ -59,9 +58,10 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
             }})
         .then((response) => {
             setUser(response.data.userInSession)
-            console.log(response.data.msg)
         })
-    }   
+    }
+    
+
     
     return(
         <div className="SearchUsers">
@@ -92,7 +92,7 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                 </div>
             </div>    
             {filteredUsers.length > 0 &&
-                filteredUsers.map((user, index) => {
+                filteredUsers.map((userSearched, index) => {
                 return (
                     <>
                        <div key={index + 1}
@@ -104,19 +104,22 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                                 alt="avatar image"
                                 id="avatar-image" 
                                 cloudName={`${process.env.REACT_APP_CLOUD_NAME}`} 
-                                publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${user.avatar_url}.jpg`}
+                                publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${userSearched.avatar_url}.jpg`}
                             />
                         }
-                            <p className="ml-3 ">{user.username}</p>
-                                 <Link onClick={(event) => {followUser(event, user._id)}}
-                                 to="" className="">
-                                    <i id="button-follow" className="fas fa-user-plus"></i>
-                                </Link>
-                                <Link onClick={(event) => {unFollowUser(event, user._id)}}
+                            <p className="ml-3 ">{userSearched.username}</p>
+                            
+                            {user.followed.includes(userSearched._id) ? 
+                                <Link onClick={(event) => {unFollowUser(event, userSearched._id)}}
                                 to="" className=" ">
                                     <i id="button-unfollow" className="fas fa-user-minus"></i>
                                 </Link>
-                          
+                                :
+                                <Link onClick={(event) => {followUser(event, userSearched._id)}}
+                                 to="" className="">
+                                    <i id="button-follow" className="fas fa-user-plus"></i>
+                                </Link>
+                            }
                         </div> 
                          <hr />
                     </>
