@@ -46,24 +46,29 @@ const RecipeResults = (props) => {
         profileImageState={profileImageState}
       />
       {isLoading ? <LoadingComponent /> : 
-      <div className="container d-flex flex-wrap justify-content-center">
-        <div className="mt-5">
-          {noResults && <p>Oops nothing seems to have been found. <Link to={"/"}>Maybe you want to try again?</Link></p>}
+      <div className="container-fluid m-0 p-0 row mt-3 mt-xl-3 text-center justify-content-center">
+        {noResults && <div className="mt-5 col-12">
+            <p>Oops nothing seems to have been found. <Link to={"/"}>Maybe you want to try again?</Link></p>
+        </div>}
+        <div className="col-12 col-xl-8 mt-5 mt-xl-0">
+          <div className="row">
+           {recipes.map((element, index) => {
+              return (
+                <div key={element.recipe.id}  className="col-6 col-xl-3 px-4 my-3 my-xl-0">
+                  <div className="RecipeResults">
+                    <Link to={`/search/${element.recipe.id}`}>
+                      <Category
+                        key={element.recipe.id}
+                        text={element.recipe.label}
+                        img={element.recipe.image}
+                      />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
-        {recipes.map((element, index) => {
-          return (
-            <div key={index + 1} 
-            className="m-2">
-              <Link to={`/search/${element.recipe.id}`}>
-                <Category
-                  key={element.recipe.id}
-                  text={element.recipe.label}
-                  img={element.recipe.image}
-                />
-              </Link>
-            </div>
-          );
-        })}
       </div>
       }
     </div>

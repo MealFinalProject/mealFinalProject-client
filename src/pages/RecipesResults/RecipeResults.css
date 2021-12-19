@@ -1,0 +1,17 @@
+.RecipeResults{
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    /* margin: 10px;
+    margin-top: 52px; */
+}
+@media (min-width: 700px){
+    .RecipeResults{
+        width: 250px;
+        height: 250px;
+        margin-top: 100px;
+    }
+    .RecipeResults p {
+        font-size: 28px;
+    }
+}

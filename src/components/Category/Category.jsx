@@ -9,12 +9,11 @@ const Category = (props) => {
   };
 
   return (
-    <div className="container-category">
-      <div className="Category d-flex align-items-end" style={style}>
+    // <div className="container-category">
+      <div className="Category d-flex align-items-end m-0" style={style}>
         <p className=" m-2 text-left text-white font-weight-bold">{text}</p>
       </div>
-    </div>
-    
+    // </div>
   );
 };
 

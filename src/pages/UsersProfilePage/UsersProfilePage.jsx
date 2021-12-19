@@ -14,6 +14,7 @@ import { Link, useParams }   from "react-router-dom";
 
 import axios from "axios";
 import CategoryCard from "../../components/CategoryCard/CategoryCard";
+import FavsRecipeList from "../../components/FavsRecipeList/FavsRecipeList";
 
 const UsersProfilePage = (props) => {
     const { user, handleLogout, profileImageState } = props;
@@ -56,28 +57,7 @@ const UsersProfilePage = (props) => {
                 <UserIconsCol userFromDB={targetedUser} />
             </div>
             <div className="col-12 mb-2">
-                <p className="h4">Favorite recipes</p>
-                <hr/>
-                <div className="row p-0 m-0">
-                        {targetedUser.favs_recipes && targetedUser.favs_recipes.map((element) => {
-                            return (
-                                <div key={element.idApi} className="col-6 col-xl-2 px-4 mb-4">
-                                    <Link  to={`/search/${element.idApi}`}>
-                                        {/* <Category
-                                        key={element.idApi}
-                                        text={element.name}
-                                        img={element.photo}
-                                        /> */}
-                                        <CategoryCard
-                                        key={element.idApi}
-                                        text={element.name}
-                                        img={element.photo}
-                                        />
-                                    </Link>
-                                </div>
-                            );
-                        })}
-                </div>
+                {targetedUser.favs_recipes && <FavsRecipeList favsList={targetedUser.favs_recipes} />}
             </div>
         </div>
         }

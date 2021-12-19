@@ -17,25 +17,29 @@ const CategoriesResults = (props) => {
   //Check the name we collect from the params and render a list with the corresponding category array
   if (name === "time") arrayOfCategories = mealType;
   return (
-    <div>
+    <>
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className=" container d-flex flex-wrap justify-content-around">
-    
-      {arrayOfCategories.map((type, index) => {
-        return (
-          <div className="CategoriesResults" key={index + 1}>
-            <Link className="link-categories" to={type.name.toLowerCase()}>
-              <Category
-                text={type.name}
-                img={type.img}             //Passing the necessary props to render each type of category with its image
-              />
-            </Link>
+      <div className="container-fluid m-0 p-0 row mt-5 mt-xl-3 text-center justify-content-center">
+        <div className="col-12 col-xl-8 mt-5 mt-xl-0">
+          <div className="row">
+              {arrayOfCategories.map((type, index) => {
+              return (
+                <div className="col-6 col-xl-3 px-4 my-3 my-xl-0">
+                  <div className="CategoriesResults" key={index + 1}>
+                    <Link className="link-categories" to={type.name.toLowerCase()}>
+                      <Category
+                        text={type.name}
+                        img={type.img}             //Passing the necessary props to render each type of category with its image
+                      />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-    </div>
-    
+        </div>
+      </div>
+    </>
   );
 };
 

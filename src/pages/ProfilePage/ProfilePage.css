@@ -6,58 +6,14 @@
     background-color: rgb(175, 160, 252);
    border-radius: 15px;
 }
-.ProfilePage #profile-image{
-    width: 100vw;
-   
-}
+
 .ProfilePage .profile-card {
     box-shadow: 0px 0px 4px -2px #000000;
     border-radius: 15px;
-    width: 300px;
+    /* width: 300px; */
 }
 .ProfilePage .profile-card  p{
     margin: 10x;
     padding: 10px 30px 10px 30px
 }
-.ProfilePage #accordionFlushExample{
-    width: 300px;
-    box-shadow: 0px 0px 4px -2px #000000;
-    
-    
-}
-.ProfilePage .welcome-user{
-    margin-top: 58px;
-}
-.ProfilePage #container-profile-image{
-   margin-top: 42px
-}
 
-@media (min-width: 992px){
-    .ProfilePage #profile-image{
-        margin: 50px;
-        border-radius: 15px;
-        max-width: 600px;
-        max-height: 600px;
-        margin-top: 88px;
-    }
-    .ProfilePage #container-profile-image{
-        display: flex;
-        justify-content: center;
-
-    }
-    .ProfilePage #accordionFlushExample{
-        width: 600px;
-    }
-    .ProfilePage .profile-card {
-        box-shadow: 0px 0px 8px -2px #000000;
-        border-radius: 15px;
-        width: 600px;
-    }
-    .ProfilePage .profile-card  p{
-        margin: 10px;
-        font-size: 18px;
-    }
-    .ProfilePage p{
-        font-size: 18px;
-    }
-}
