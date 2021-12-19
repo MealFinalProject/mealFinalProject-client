@@ -6,6 +6,7 @@ import "./UsersProfilePage.css";
 import Navbar     from "../../components/Navbar/Navbar";
 import UserIcons  from "../../components/UserIcons/UserIcons";
 import LoadingComponent from "../../components/Loading";
+import Category from '../../components/Category/Category'
 
 import * as PATHS from "../../utils/paths";
 
@@ -52,11 +53,27 @@ const UsersProfilePage = (props) => {
             <div className="col-12 mb-2">
                 <p className="h2">{targetedUser.username}</p>
             </div>
-            <div className="col-12">
-                {/* <UserIcons userFromDB={targetedUser} /> */}
+            <div className="col-12 mb-2">
+                <UserIcons userFromDB={targetedUser} />
             </div>
-            <div className="col-12">
-                {/* recetas */}
+            <div className="col-12 mb-2">
+                <p className="h4">Favorite recipes</p>
+                <hr/>
+                <div className="row p-0 m-0">
+                        {targetedUser.favs_recipes && targetedUser.favs_recipes.map((element) => {
+                            return (
+                                <div key={element.idApi} className="col-6 px-4">
+                                    <Link  to={`/search/${element.idApi}`}>
+                                        <Category
+                                        key={element.idApi}
+                                        text={element.name}
+                                        img={element.photo}
+                                        />
+                                    </Link>
+                                </div>
+                            );
+                        })}
+                </div>
             </div>
         </div>
         }
