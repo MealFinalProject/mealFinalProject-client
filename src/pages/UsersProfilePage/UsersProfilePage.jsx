@@ -8,8 +8,6 @@ import UserIcons  from "../../components/UserIcons/UserIcons";
 import LoadingComponent from "../../components/Loading";
 import Category from '../../components/Category/Category'
 
-import * as PATHS from "../../utils/paths";
-
 import { Image }  from "cloudinary-react";
 import { Link, useParams }   from "react-router-dom";
 
@@ -29,7 +27,7 @@ const UsersProfilePage = (props) => {
             setTargetedUser(response.data);
             setIsLoading(false)
           });
-      }, []);
+      }, [id]);
 
   return (
       <>
