@@ -75,14 +75,18 @@ export default function LogIn({ authenticate }) {
         <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-5">
           <form onSubmit={handleFormSubmission} className="col-12 col-xl-6 mb-2 Login" >
             <div className="col-12 form-group mb-2">
-                <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
-                <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
-                {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
-                  :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
+                <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
+                <div className="input-group">
+                  <input onClick={() => setErrorMessage(null)} className="form-control login-eye-input" type={passwordType} name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                  <span className="input-group-text login-eye">
+                    {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
+                      :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
+                  </span>
+                </div>
                 <p>Forgot password?</p>
                 {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
             </div>
-            <div className="form-group col-12 text-center mt-4">
+            <div className="form-group col-12 mt-4">
               <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Login</button>
             </div>
           </form>
@@ -107,59 +111,7 @@ export default function LogIn({ authenticate }) {
           </form>
         </div>
       </div>
-      
-      
-      {/* <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5">
-        <div className="col-12 col-xl-6 p-0 text-end">
-          <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Log in"/>
-        </div>
-        <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-3">
-          <div className="mt-5 Login">
-            <div className="col-md-5 mx-auto">
-              <div className="myform form">
-                <form onSubmit={handleFormSubmission} className="mb-2 Login" >
-                  <div className="form-group mb-2">
-                      <input onClick={() => setErrorMessage(null)} className="form-control input-username" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
-                      <input onClick={() => setErrorMessage(null)} className="form-control input-password" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
-                      <p>Forgot password?</p>
-                      {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
-                  </div>
-                  
-                  <div className="col-md-12 text-center">
-                    <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Login</button>
-                  </div>
-                </form>
-                  <div className="col-md-12 mb-2">
-                          <div className="login-or ">
-                              <hr className="hr-or" />
-                              <span className="span-or d-flex justify-content-center">or</span>
-                          </div>
-                  </div>
-                  <div className="col-md-12 mb-2 text-center mb-2">
-                      <form id="demo" onSubmit={handleFormSubmission}>
-                          <input className="form-control" type="hidden" name="username" />               
-                          <input className="form-control" type="hidden" name="password" />
-                          <button form="demo" className="col-11 btn active bg-color" type="submit" 
-                          onClick={() => {
-                            setForm({username: "emperorpenguin", password: "12345678" })
-                          }}>Try demo</button>
-                      </form>
-                  </div>
-                  <div className="form-group">
-                      <p className="text-center mb-0">Don't an have account? <Link className="text-decoration-none color-text" to={PATHS.SIGNUPPAGE} >Sign up here</Link></p>
-                  </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div className="d-flex flex-column align-items-center">
-      </div> */}
-      
-
     </>
-   
   );
 }
 

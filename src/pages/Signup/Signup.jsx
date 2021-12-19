@@ -82,9 +82,13 @@ export default function Signup({ authenticate }) {
               <div className="form-group mb-3 col-12">
                 <p className="font-weight-bold">Enter Password:</p>
                 <div className="d-flex align-items-center">
-                  <input id="password-input" onClick={() => setErrorMessage(null)} className="form-control mb-2 mr-1" type={passwordType} name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
-                    {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
-                      :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
+                  <div className="input-group">
+                    <input id="password-input" onClick={() => setErrorMessage(null)} className="form-control signup-eye-input" type={passwordType} name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
+                    <span className="input-group-text signup-eye">
+                      {passwordShow ? <i onClick={() => showPassword()} className="far fa-eye"></i> 
+                        :  <i onClick={() => showPassword()} className="far fa-eye-slash"></i>}
+                    </span>
+                  </div>
                 </div>
                
               </div>
@@ -97,30 +101,6 @@ export default function Signup({ authenticate }) {
             </form>
         </div>
       </div>
-      {/* <div className="container d-flex flex-column justify-content-center">
-        <h1 className="text-center m-5">Project Meal</h1>
-        <div className="Sign-up d-flex justify-content-center align-items-center">
-        <form onSubmit={handleFormSubmission} className="mb-2 Login" >
-                  <div className="form-group mb-3">
-                      <p className="font-weight-bold text-white">Enter Username:</p>
-                      <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username"value={username} onChange={handleInputChange} required />
-                  </div>
-                  <div>
-                      <p className="font-weight-bold text-white">Enter Password:</p>
-                      <input onClick={() => setErrorMessage(null)} className="form-control mb-2" type="password" name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
-                      
-                  </div>
-
-                  <div className="col-md-12 text-center mt-4">
-                      <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>
-                  </div>
-                  <div>
-                  <p className="text-center text-white font-weight-bold mt-5">Already have an account? <Link className="text-decoration-none font-weight-bold color-log-in" to={PATHS.LOGINPAGE} >Log in</Link></p>
-                  </div>
-              </form>
-        </div>
-        {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
-      </div> */}
     </>
   );
 }

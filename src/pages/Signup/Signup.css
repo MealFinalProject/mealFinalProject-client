@@ -13,6 +13,14 @@
     color: rgb(175, 160, 252)
 }
 
+.signup-eye-input{
+border-width: 1px 0px 1px 1px
+}
+.signup-eye{
+    background-color: white;
+    border-width: 1px 1px 1px 0px
+}
+
 .prueba-color{
     color: rgb(42, 163, 135);
 }
