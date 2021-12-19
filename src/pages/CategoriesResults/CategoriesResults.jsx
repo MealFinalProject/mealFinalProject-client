@@ -5,7 +5,7 @@ import { cuisineType } from "../../utils/consts";
 import { mealType } from "../../utils/consts";
 import { useParams } from "react-router";
 
-import Category from "../../components/Category/Category";
+import Card1 from "../../components/Card1/Card1";
 import Navbar from "../../components/Navbar/Navbar";
 
 const CategoriesResults = (props) => {
@@ -27,7 +27,7 @@ const CategoriesResults = (props) => {
                 <div className="col-6 col-xl-3 px-4 my-3 my-xl-0">
                   <div className="CategoriesResults" key={index + 1}>
                     <Link className="link-categories" to={type.name.toLowerCase()}>
-                      <Category
+                      <Card1
                         text={type.name}
                         img={type.img}             //Passing the necessary props to render each type of category with its image
                       />

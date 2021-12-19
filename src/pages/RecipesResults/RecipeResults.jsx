@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 
 import axios from "axios";
-import Category from "../../components/Category/Category";
+import Card1 from "../../components/Card1/Card1";
 import Navbar from "../../components/Navbar/Navbar";
 import LoadingComponent from "../../components/Loading";
 
@@ -57,7 +57,7 @@ const RecipeResults = (props) => {
                 <div key={element.recipe.id}  className="col-6 col-xl-3 px-4 my-3 my-xl-0">
                   <div className="RecipeResults">
                     <Link to={`/search/${element.recipe.id}`}>
-                      <Category
+                      <Card1
                         key={element.recipe.id}
                         text={element.recipe.label}
                         img={element.recipe.image}

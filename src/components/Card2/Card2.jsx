@@ -1,12 +1,5 @@
-// import "./Category.css";
-
-const CategoryCard = (props) => {
+const Card2 = (props) => {
   const { text, img } = props;
-
-//   const style = {
-//     backgroundImage: `url(${img})`, //We use the last image as props for inline styling
-//     backgroundSize: "cover",
-//   };
 
   return (
       <>
@@ -21,4 +14,4 @@ const CategoryCard = (props) => {
   );
 };
 
-export default CategoryCard;
+export default Card2;

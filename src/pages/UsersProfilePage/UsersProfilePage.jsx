@@ -6,14 +6,12 @@ import "./UsersProfilePage.css";
 import Navbar     from "../../components/Navbar/Navbar";
 import UserIconsCol  from "../../components/UserIconsCol/UserIconsCol";
 import LoadingComponent from "../../components/Loading";
-import Category from '../../components/Category/Category'
 
 import { Image }  from "cloudinary-react";
-import { Link, useParams }   from "react-router-dom";
+import { useParams }   from "react-router-dom";
 
 
 import axios from "axios";
-import CategoryCard from "../../components/CategoryCard/CategoryCard";
 import FavsRecipeList from "../../components/FavsRecipeList/FavsRecipeList";
 
 const UsersProfilePage = (props) => {

@@ -19,33 +19,6 @@ const Navbar = (props) => {
   const { user } = props
 
   return (
-    // <nav>
-    //   <Link to={PATHS.HOMEPAGE} className="nav__projectName">
-    //     Project!
-    //   </Link>
-
-    //   <div className="nav__authLinks">
-    //     {props.user ? (
-    //       <>
-    //         <Link to={PATHS.PROTECTEDPAGE} className="authLink">
-    //           Protected Page
-    //         </Link>
-    //         <button className="nav-logoutbtn" onClick={props.handleLogout}>
-    //           Logout
-    //         </button>
-    //       </>
-    //     ) : (
-    //       <>
-    //         <Link to={PATHS.SIGNUPPAGE} className="authLink">
-    //           Signup
-    //         </Link>
-    //         <Link to={PATHS.LOGINPAGE} className="authLink">
-    //           Log In
-    //         </Link>
-    //       </>
-    //     )}
-    //   </div>
-    // </nav>
     <nav className="navbar navbar-expand-lg navbar-light color-principal fixed-top">
     {user && user.avatar_url &&
     <Image 
@@ -65,9 +38,6 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           <li className="nav-item active">
           <NavLink to={PATHS.HOMEPAGE} style={({ isActive }) => isActive ? activeStyle : noActiveWhite } className="nav-link font-weight-bold">Home </NavLink>
-          </li>
-          <li className="nav-item">
-          <NavLink style={({ isActive }) => isActive ? activeStyle : noActiveWhite } to='' className="nav-link text-white font-weight-bold">Supermarket</NavLink>
           </li>
           {props.user ? (                                            
           <li className="nav-item dropdown">

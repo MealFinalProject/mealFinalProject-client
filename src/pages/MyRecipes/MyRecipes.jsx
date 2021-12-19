@@ -1,6 +1,5 @@
 import './MyRecipes.css'
 import Navbar   from '../../components/Navbar/Navbar'
-import Category from '../../components/Category/Category'
 
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CategoryCard from "../CategoryCard/CategoryCard";
+import Card2 from "../Card2/Card2";
 
 const FavsRecipeList = ({favsList}) => {
     
@@ -12,7 +12,7 @@ const FavsRecipeList = ({favsList}) => {
                     return (
                         <div key={element.idApi} className="col-6 col-xl-2 px-4 mb-4">
                             <Link  to={`/search/${element.idApi}`}>
-                                <CategoryCard
+                                <Card2
                                 key={element.idApi}
                                 text={element.name}
                                 img={element.photo}
