@@ -12,6 +12,7 @@ import MyRecipes         from "../pages/MyRecipes/MyRecipes";
 import SearchUsers       from "../pages/SearchUsers/SearchUsers"
 import UsersProfilePage from "../pages/UsersProfilePage/UsersProfilePage";
 import FollowListPage from "../pages/FollowListPage/FollowListPage";
+import Page404           from "../pages/Page404/Page404"
 
 
 
@@ -21,7 +22,7 @@ const routes = (props) => {
   const { user } = props;
   
   return [
-    {
+        {
       path: PATHS.SEARCHUSERS,
       element: user ? (
         <SearchUsers {...props} />
@@ -119,6 +120,10 @@ const routes = (props) => {
         <Navigate to={PATHS.LOGINPAGE} replace />
       ),
     },
+    {
+      path: PATHS.PATH404,
+      element: <Page404 {...props} />
+    }
   ];
 };
 

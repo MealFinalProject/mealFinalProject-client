@@ -134,7 +134,7 @@ const UpdateProfileInfo = (props) => {
           className=" btn btn-block mybtn bg-color-purple tx-tfm mb-2 mt-4"
           onClick={(event) => updateInfo(event)}
         >
-          Update Info
+        Update Info
         </button>
         {errorMessage && (
           <p className="text-center text-danger m-2">{errorMessage}</p>

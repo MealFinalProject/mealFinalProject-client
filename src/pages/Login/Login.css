@@ -7,14 +7,9 @@
 }
 .Login .input-username{
     border-bottom: none;
-    border-radius: 10px 10px 0px 0px;
-    width: 298px;
 
 }
-.Login .input-password{
-    border-radius: 0px 0px 10px 10px;
-    width: 298px;
-}
+
 .Login i{
     font-size: 18px;
 }
@@ -26,7 +21,9 @@
 }
 
 .login-eye-input{
-    border-width: 1px 0px 1px 1px
+    border-width: 1px 0px 1px 1px;
+    
+
 }
 
 .login-eye{
