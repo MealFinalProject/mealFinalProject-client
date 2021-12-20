@@ -5,3 +5,11 @@
     background-color: rgb(175, 160, 252);
     border-radius: 15px;
 }
+
+.UserIconsCol a{
+    color: black;
+}
+.UserIconsCol a :hover{
+    background-color: rgb(175, 160, 252);
+   border-radius: 15px;
+}

@@ -11,6 +11,8 @@ import UpdateProfileInfo from "../pages/UpdateProfileInfo/UpdateProfileInfo";
 import MyRecipes         from "../pages/MyRecipes/MyRecipes";
 import SearchUsers       from "../pages/SearchUsers/SearchUsers"
 import UsersProfilePage from "../pages/UsersProfilePage/UsersProfilePage";
+import FollowListPage from "../pages/FollowListPage/FollowListPage";
+
 
 
 import * as PATHS        from "../utils/paths";
@@ -47,6 +49,22 @@ const routes = (props) => {
       path: PATHS.UPDATEPROFILEINFO,
       element: user ? (
         <UpdateProfileInfo {...props} />
+      ) : (
+        <Navigate to={PATHS.LOGINPAGE} replace />
+      ),
+    },
+    {
+      path: PATHS.FOLLOWERSPAGE,
+      element: user ? (
+        <FollowListPage {...props}/>
+      ) : (
+        <Navigate to={PATHS.LOGINPAGE} replace />
+      ),
+    },
+    {
+      path: PATHS.FOLLOWINGPAGE,
+      element: user ? (
+        <FollowListPage {...props}/>
       ) : (
         <Navigate to={PATHS.LOGINPAGE} replace />
       ),

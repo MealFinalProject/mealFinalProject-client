@@ -1,12 +1,11 @@
 import axios from "axios"
 
 import { useEffect, useState } from "react"
-import { Image } from "cloudinary-react"
-import { Link } from "react-router-dom"
 
 import Navbar    from "../../components/Navbar/Navbar"
 
 import "./SearchUsers.css"
+import UserList from "../../components/UserList/UserList"
 
 const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
 
@@ -35,33 +34,7 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                return -1
            }
        })
-    }
-
-    const followUser = (event, userId) => {
-        event.preventDefault()
-        axios
-        .put(API_URL + `/users/follow/${userId}`,{
-            data: {
-                userInSessionId: user._id
-            }})
-        .then((response) => {
-            setUser(response.data.userInSession)
-        })
-    }
-
-    const unFollowUser = (event, userId) => {
-        event.preventDefault()
-        axios
-        .put(API_URL + `/users/unfollow/${userId}`,{
-            data: {
-                userInSessionId: user._id
-            }})
-        .then((response) => {
-            setUser(response.data.userInSession)
-        })
-    }
-    
-
+    }   
     
     return(
         <>
@@ -92,55 +65,8 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                 </div>
                 <div className="col-12"></div>
                 <div className="col-12 col-xl-6 mt-3">
-                    {filteredUsers.length > 0 &&
-                        filteredUsers.map((userSearched, index) => {
-                        return (
-                            <>
-                            <div className="col-12 mt-2">
-                                <div className="row m-0 p-0 align-items-center text-start">
-                                    <div className="col-3 text-center">
-                                        {userSearched.avatar_url ?
-                                            <Image 
-                                                className="rounded-circle z-depth-0 mr-3"
-                                                alt="avatar image"
-                                                id="avatar-image" 
-                                                cloudName={`${process.env.REACT_APP_CLOUD_NAME}`} 
-                                                publicId={`https://res.cloudinary.com/djosvkjof/image/upload/v1639149584/${userSearched.avatar_url}.jpg`}
-                                            /> :
-                                            <img className="rounded-circle z-depth-0 mr-3" id="avatar-image" src="https://ibalz.com/wp-content/uploads/2019/10/default-profile.png" alt="Default avatar" />
-                                        }
-                                    </div>
-                                    <div className="col-5">
-                                        <Link to={`/user/${userSearched._id}`}>
-                                            <p className="m-0 text-dark">{userSearched.username}</p>
-                                        </Link>
-                                    </div>
-                                    <div className="col-4 text-end">
-                                        {user.followed.includes(userSearched._id) ? 
-                                            <button onClick={(event) => {unFollowUser(event, userSearched._id)}}
-                                            className="btn button-unfollow" >
-                                                <i className="fas fa-user-minus"></i>
-                                            </button>
-                                            :
-                                            <button onClick={(event) => {followUser(event, userSearched._id)}}
-                                            className="btn button-follow">
-                                                <i  className="fas fa-user-plus"></i>
-                                            </button>
-                                        }
-                                    </div>
-                                    <div className="col-12">
-                                        <hr />
-                                    </div>
-                                </div>
-                            </div>
-                                
-                            </>
-                            
-                        )
-                    })}
-
+                    <UserList list={filteredUsers} title={""} user={user} setUser={setUser} />
                 </div>
-
             </div>
 
         </>

@@ -35,8 +35,6 @@ const ProfilePage = (props) => {
         setIsLoading(false)
       });
   }, []);
-
-  if (userFromDB) console.log("fuera del effect ", userFromDB);
   
   return (
     <>

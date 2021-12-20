@@ -12,3 +12,5 @@ export const UPDATEPROFILEINFO  = "/profile/info";
 export const MYRECIPES          = "/profile/my-recipes/:id"
 export const SEARCHUSERS        = "/users/search"
 export const USERSPROFILEPAGE  = "/user/:id"
+export const FOLLOWERSPAGE  = "/:path/:path/followers"
+export const FOLLOWINGPAGE  = "/:path/:path/following"
