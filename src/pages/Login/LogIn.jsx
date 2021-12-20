@@ -75,7 +75,7 @@ export default function LogIn({ authenticate }) {
         <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-5">
           <form onSubmit={handleFormSubmission} className="col-12 col-xl-6 mb-2 Login" >
             <div className="col-12 form-group mb-2">
-                <input onClick={() => setErrorMessage(null)} className="form-control" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
+                <input onClick={() => setErrorMessage(null)} className="form-control input-username{" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />
                 <div className="input-group">
                   <input onClick={() => setErrorMessage(null)} className="form-control login-eye-input" type={passwordType} name="password" placeholder="Password"  value={password} onChange={handleInputChange} required minLength="8" />
                   <span className="input-group-text login-eye">

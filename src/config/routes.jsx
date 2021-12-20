@@ -10,7 +10,8 @@ import Recipe            from "../pages/Recipe/Recipe";
 import UpdateProfileInfo from "../pages/UpdateProfileInfo/UpdateProfileInfo";
 import MyRecipes         from "../pages/MyRecipes/MyRecipes";
 import SearchUsers       from "../pages/SearchUsers/SearchUsers"
-import UsersProfilePage from "../pages/UsersProfilePage/UsersProfilePage";
+import UsersProfilePage  from "../pages/UsersProfilePage/UsersProfilePage";
+import Page404           from "../pages/Page404/Page404"
 
 
 import * as PATHS        from "../utils/paths";
@@ -19,6 +20,10 @@ const routes = (props) => {
   const { user } = props;
   
   return [
+    {
+      path: PATHS.PATH404,
+      element: <Page404 {...props} />
+    },
     {
       path: PATHS.SEARCHUSERS,
       element: user ? (

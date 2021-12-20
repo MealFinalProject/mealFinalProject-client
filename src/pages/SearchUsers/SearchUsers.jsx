@@ -92,10 +92,10 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                 </div>
                 <div className="col-12 col-xl-8">
                     {filteredUsers.length > 0 &&
-                        filteredUsers.map((userSearched, index) => {
+                        filteredUsers.map((userSearched) => {
                         return (
                             <>
-                            <div className="col-12 mt-2">
+                            <div key={userSearched._id} className="col-12 mt-2">
                                 <div className="row m-0 p-0 align-items-center text-start">
                                     <div className="col-3 text-center">
                                         {userSearched.avatar_url ?
