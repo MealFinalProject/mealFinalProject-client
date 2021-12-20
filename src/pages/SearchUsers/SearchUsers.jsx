@@ -90,7 +90,8 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
                         </span>
                     </div>
                 </div>
-                <div className="col-12 col-xl-8">
+                <div className="col-12"></div>
+                <div className="col-12 col-xl-6 mt-3">
                     {filteredUsers.length > 0 &&
                         filteredUsers.map((userSearched, index) => {
                         return (
