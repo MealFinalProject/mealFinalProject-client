@@ -31,13 +31,9 @@ const UsersProfilePage = (props) => {
 
   return (
       <>
-        <Navbar
-            handleLogout={handleLogout}
-            user={user}
-            profileImageState={profileImageState}
-        />
+        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         {isLoading ? <LoadingComponent /> : 
-        <div className="container-fluid row p-0 m-0 text-center justify-content-xl-center">
+        <div className="row p-0 m-0 text-center justify-content-xl-center">
             <div className="col-12 p-0 mb-2 col-xl-4">
                 {targetedUser.avatar_url ? 
                     <Image

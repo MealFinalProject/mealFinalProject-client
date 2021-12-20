@@ -38,14 +38,10 @@ const ProfilePage = (props) => {
   
   return (
     <>
-      <Navbar
-        handleLogout={handleLogout}
-        user={user}
-        profileImageState={profileImageState}
-      />
+      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
        {isLoading ? <LoadingComponent /> :
         userFromDB && (
-        <div className="ProfilePage container-fluid row p-0 m-0 text-center justify-content-center">
+        <div className="ProfilePage row p-0 m-0 text-center justify-content-center">
           <div className="col-12 p-0 mb-3 col-xl-4">
             {userFromDB.avatar_url ? 
                 <Image

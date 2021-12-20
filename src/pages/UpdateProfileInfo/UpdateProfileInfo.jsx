@@ -70,10 +70,10 @@ const UpdateProfileInfo = (props) => {
 
     return (
       <div>
-        <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         <div className="UpdateProfileInfo container">
       
-        <div className="form-group mb-3 mt-5">
+        <div className="form-group mb-3">
 
           <p className="font-weight-bold">Enter new Username:</p>
           <input

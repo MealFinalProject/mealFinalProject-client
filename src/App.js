@@ -8,6 +8,7 @@ import { getLoggedIn, logout } from "./services/auth";
 import routes from "./config/routes";
 
 import * as USER_HELPERS from "./utils/userToken";
+import Navbar from "./components/Navbar/Navbar";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -51,20 +52,28 @@ export default function App() {
     setUser(user);
   }
 
+  console.log(window.location.pathname)
   if (isLoading) {
     return <LoadingComponent />;
   }
-  
   return (
     <div className="App">
-      
-      <Routes>
-        {routes({ user, setUser, authenticate, handleLogout,
-        searchState,setSearchState,
-        profileImageState, setProfileImageState }).map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-      </Routes>
+      <div className="container-fluid m-0 p-0 row">
+        <div className="col-12">
+          {user &&<Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />}
+
+        </div>
+        <div className="col-12 mt-5 m-0 p-0">
+          <Routes>
+            {routes({ user, setUser, authenticate, handleLogout,
+            searchState,setSearchState,
+            profileImageState, setProfileImageState }).map((route) => (
+              <Route key={route.path} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+
+        </div>
+      </div>
     </div>
   );
 }

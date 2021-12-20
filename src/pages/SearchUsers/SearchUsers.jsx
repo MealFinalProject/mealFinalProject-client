@@ -38,12 +38,8 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
     
     return(
         <>
-            <Navbar
-                handleLogout={handleLogout}
-                user={user}
-                profileImageState={profileImageState}
-            />
-            <div className="container-fluid m-0 p-0 row SearchUsers mt-5 text-center justify-content-center">
+            {/* <Navbar  handleLogout={handleLogout}  user={user} profileImageState={profileImageState} /> */}
+            <div className="container-fluid m-0 p-0 row SearchUsers text-center justify-content-center">
                 <div className="col-12 mt-5 mb-2">
                     <p className="h1">Find chefs</p>
                 </div>

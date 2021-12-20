@@ -33,8 +33,8 @@ const MyRecipes = (props) => {
 
     return (
         <div>
-            <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-            <div className="container-fluid row m-0 p-0 mt-5 text-center justify-content-center">
+            {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
+            <div className="row m-0 p-0 text-center justify-content-center">
             {checkrecipes ? (
                 <div className="col-12 col-xl-9 mb-2 mt-5">
                     {recipesFavoritesOfUser && <FavsRecipeList favsList={recipesFavoritesOfUser} />}

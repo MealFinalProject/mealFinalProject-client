@@ -233,9 +233,9 @@ const RecipeResults = (props) => {
   return (
     (
       <div className="Recipe">
-        <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         {loading ? <LoadingComponent/> :  
-        <div className="container mt-5">
+        <div className="container mt-xl-5">
           <div className="row text-center">
             <div className="col-12 col-xl-4 mt-xl-5">
               <div className="col-12  my-2 p-0">

@@ -5,7 +5,7 @@ const Page404 = ({handleLogout, user, profileImageState}) => {
 
     return (
         <div className="Page404">
-            <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+            {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
             <div className="container">
             <div className="row">
                 <div className="col-sm-12 col-md-12 mt-5 mb-5">

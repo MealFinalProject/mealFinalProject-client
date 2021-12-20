@@ -25,8 +25,8 @@ function HomePage(props) {
 
   return (
     <>
-      <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className="container-fluid m-0 p-0 row mt-5 text-center justify-content-center">
+      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
+      <div className="row m-0 p-0 text-center justify-content-center">
         <div className="col-12 mt-5 mb-4">
           <p className="h3 mt-3">What do you want {msg} today?</p>
         </div>

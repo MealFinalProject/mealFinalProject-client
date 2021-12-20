@@ -40,17 +40,13 @@ const RecipeResults = (props) => {
 
   return (
     <div className="mt-5">
-      <Navbar
-        handleLogout={handleLogout}
-        user={user}
-        profileImageState={profileImageState}
-      />
+      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
       {isLoading ? <LoadingComponent /> : 
-      <div className="container-fluid m-0 p-0 row mt-3 mt-xl-3 text-center justify-content-center">
-        {noResults && <div className="mt-5 col-12">
+      <div className="row m-0 p-0 text-center justify-content-center">
+        {noResults && <div className="col-12">
             <p>Oops nothing seems to have been found. <Link to={"/"}>Maybe you want to try again?</Link></p>
         </div>}
-        <div className="col-12 col-xl-10 mt-3 mt-xl-0 ms-xl-5">
+        <div className="col-12 col-xl-10 mt-xl-0 ms-xl-5">
           <div className="row">
            {recipes.map((element, index) => {
               return (
