@@ -59,11 +59,12 @@ export default function App() {
   return (
     <div className="App">
       <div className="container-fluid m-0 p-0 row">
-        <div className="col-12">
-          {user &&<Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />}
-
-        </div>
-        <div className="col-12 mt-5 m-0 p-0">
+        {user &&
+          <div className="col-12 mb-5">
+            <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
+          </div>
+        }
+        <div className="col-12 m-0 p-0">
           <Routes>
             {routes({ user, setUser, authenticate, handleLogout,
             searchState,setSearchState,
