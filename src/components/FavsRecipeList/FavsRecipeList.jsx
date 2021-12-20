@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
+import BackButton from "../BackButton/BackButton";
 import Card2 from "../Card2/Card2";
 
 const FavsRecipeList = ({favsList}) => {
     
     return (
-        <>
-            <p className="h4">Favorite recipes</p>
-            <hr/>
+        <>  
+            <div className="col-12">
+                <div className="row m-0 p-0 align-items-center text-start">
+                    <div className="col-4 col-xl-5 ">
+                    <BackButton />
+                    </div>
+                    <div className="col-8 col-xl-7">
+                        <p className="h4">Favorite recipes</p>
+                    </div>
+                </div>
+                <hr />
+            </div>
             <div className="row p-0 m-0">
                 {favsList.map((element) => {
                     return (

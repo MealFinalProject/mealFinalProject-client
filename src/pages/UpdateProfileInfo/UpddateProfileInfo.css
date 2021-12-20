@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 98px;
+    /* padding-top: 98px; */
 }
 .UpdateProfileInfo button{
     max-width: 300px;
@@ -30,7 +30,7 @@
 }
 @media (min-width: 992px){
     .UpdateProfileInfo{
-        padding-top: 144px;
+        /* padding-top: 144px; */
     }
     .UpdateProfileInfo button{
         max-width: 400px;

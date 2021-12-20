@@ -3,6 +3,7 @@ import './UpddateProfileInfo.css'
 
 import { useState, } from "react";
 import axios from "axios";
+import BackButton from '../../components/BackButton/BackButton';
 
 
 const UpdateProfileInfo = (props) => {
@@ -69,8 +70,18 @@ const UpdateProfileInfo = (props) => {
     return (
       <div>
         {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
-        <div className="UpdateProfileInfo container">
-      
+        <div className="UpdateProfileInfo container mt-5">
+          <div className="col-12 col-xl-8 mb-3">
+            <div className="row m-0 p-0 align-items-center text-start">
+                <div className="col-4 col-xl-5 ">
+                  <BackButton />
+                </div>
+                <div className="col-8 col-xl-7">
+                  <p className="h4">Update profile</p>
+                </div>
+            </div>
+            <hr />
+          </div>
         <div className="form-group mb-3">
 
           <p className="font-weight-bold">Enter new Username:</p>

@@ -52,7 +52,7 @@ export default function App() {
     setUser(user);
   }
 
-  console.log(window.location.pathname)
+  
   if (isLoading) {
     return <LoadingComponent />;
   }

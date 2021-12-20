@@ -13,25 +13,31 @@ const RecipeResults = (props) => {
   const [recipes, setRecipes] = useState([]);
   const [noResults, setNoResults] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchMessage, setSearchMessage] = useState("")
   const { type, name } = useParams();
   const { searchState, setSearchState } = props;
 
   let API_URL = `${process.env.REACT_APP_SERVER_URL}/category/${type}`;
 
   if (name) API_URL += `/${name}`;
+  
   useEffect(() => {
     if (searchState) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       API_URL = `${process.env.REACT_APP_SERVER_URL}/search/results/${searchState}`;
+      setSearchMessage(`"${searchState}"`)
       setSearchState("");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchState]);
-
+  
   useEffect(() => {
     axios.get(API_URL).then((response) => {
       setRecipes(response.data);
       if(response.data.length === 0) setNoResults(true)
+
+      setSearchMessage(prevstate => `Found ${response.data.length} results for ` + prevstate)
+      console.log(searchMessage)
       setIsLoading(false)
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -47,6 +53,12 @@ const RecipeResults = (props) => {
         </div>}
         <div className="col-12 col-xl-10 mt-xl-0 ms-xl-5">
           <div className="row">
+           {searchMessage && !name && !noResults && 
+            <div className="col-12">
+              <p className="h3">{searchMessage}</p>
+              <hr/>
+            </div>
+           }
            {recipes.map((element, index) => {
               return (
                 <div key={element.recipe.id}  className="col-6 col-lg-4 col-xl-3 px-3 my-3 my-xl-0">

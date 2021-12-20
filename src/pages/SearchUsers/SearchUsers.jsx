@@ -6,6 +6,7 @@ import Navbar    from "../../components/Navbar/Navbar"
 
 import "./SearchUsers.css"
 import UserList from "../../components/UserList/UserList"
+import BackButton from "../../components/BackButton/BackButton"
 
 const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
 
@@ -40,9 +41,18 @@ const SearchUsers = ({handleLogout, user, profileImageState, setUser}) => {
         <>
             {/* <Navbar  handleLogout={handleLogout}  user={user} profileImageState={profileImageState} /> */}
             <div className="container-fluid m-0 p-0 row SearchUsers text-center justify-content-center">
-                <div className="col-12 mt-5 mb-2">
-                    <p className="h1">Find chefs</p>
+                <div className="col-12 col-xl-6 mt-5 mb-3">
+                    <div className="row m-0 p-0 align-items-center text-start">
+                        <div className="col-4 col-xl-5 ">
+                        <BackButton />
+                        </div>
+                        <div className="col-8 col-xl-7">
+                        <p className="h1">Find chefs</p>
+                        </div>
+                    </div>
+                    <hr/>
                 </div>
+                <div className="col-12"></div>
                 <div className="col-12 col-xl-6 mb-3">
                     <div className="input-group">
                         <input
