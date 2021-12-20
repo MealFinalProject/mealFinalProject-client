@@ -1,11 +1,10 @@
 import React from "react";
 
-import Navbar from "../../components/Navbar/Navbar";
 import { useLocation } from "react-router-dom";
 import UserList from "../../components/UserList/UserList";
 
 const FollowListPage = (props) => {
-  const { user, setUser, handleLogout, profileImageState } = props;
+  const { user, setUser } = props;
 
   const location = useLocation();
   const { list, title } = location.state;

@@ -1,8 +1,6 @@
 import "../../App.js"
 import "./Home.css"
 
-import Navbar from "../../components/Navbar/Navbar";
-
 
 import Card1 from "../../components/Card1/Card1.jsx"
 import Searchbar from "../../components/Searchbar/Searchbar";
@@ -14,7 +12,7 @@ import RecipeResults from "../RecipesResults/RecipeResults.jsx";
 
 function HomePage(props) {
 
-  const {searchState, setSearchState, handleLogout, user, profileImageState} = props
+  const {searchState, setSearchState } = props
 
   let hour = (new Date().getHours())
   let msg = ''

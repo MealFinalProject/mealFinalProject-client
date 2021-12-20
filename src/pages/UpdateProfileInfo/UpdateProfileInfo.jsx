@@ -1,15 +1,13 @@
 
 import './UpddateProfileInfo.css'
 
-import Navbar from "../../components/Navbar/Navbar";
-
 import { useState, } from "react";
 import axios from "axios";
 
 
 const UpdateProfileInfo = (props) => {
 
-    const { user, setUser, handleLogout, profileImageState } = props
+    const { user, setUser  } = props
     
     const [imageSelected, setImageSelected] = useState('')
     const [profileImage, setProfileImage]   = useState()

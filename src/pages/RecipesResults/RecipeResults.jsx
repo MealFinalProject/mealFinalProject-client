@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import Card1 from "../../components/Card1/Card1";
-import Navbar from "../../components/Navbar/Navbar";
 import LoadingComponent from "../../components/Loading";
 
 import { Link } from "react-router-dom";
@@ -15,7 +14,7 @@ const RecipeResults = (props) => {
   const [noResults, setNoResults] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { type, name } = useParams();
-  const { searchState, setSearchState, user, handleLogout, profileImageState } = props;
+  const { searchState, setSearchState } = props;
 
   let API_URL = `${process.env.REACT_APP_SERVER_URL}/category/${type}`;
 

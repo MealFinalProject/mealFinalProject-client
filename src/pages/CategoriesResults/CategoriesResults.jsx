@@ -6,12 +6,8 @@ import { mealType } from "../../utils/consts";
 import { useParams } from "react-router";
 
 import Card1 from "../../components/Card1/Card1";
-import Navbar from "../../components/Navbar/Navbar";
-import BackButton from "../../components/BackButton/BackButton";
 
 const CategoriesResults = (props) => {
-
-  const { user, handleLogout, profileImageState } = props;
 
   const name = useParams().name;
   let arrayOfCategories = cuisineType;
@@ -23,9 +19,6 @@ const CategoriesResults = (props) => {
       <div className="row m-0 p-0 text-center justify-content-center">
         <div className="col-12 col-xl-10 mt-4 mt-xl-0 ms-xl-5">
           <div className="row">
-            {/* <div className="col-12">
-              <BackButton />
-            </div> */}
               {arrayOfCategories.map((type, index) => {
               return (
                 <div className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0">

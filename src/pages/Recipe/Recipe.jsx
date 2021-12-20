@@ -1,5 +1,4 @@
 import "./Recipe.css";
-import Navbar from "../../components/Navbar/Navbar";
 
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
@@ -21,7 +20,7 @@ const RecipeResults = (props) => {
 
   const { id } = useParams();
   
-  const { user, handleLogout, profileImageState, authenticate  } = props;
+  const { user, authenticate  } = props;
 
   const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
 
