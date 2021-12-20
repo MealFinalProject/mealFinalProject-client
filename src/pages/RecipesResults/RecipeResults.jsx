@@ -50,11 +50,11 @@ const RecipeResults = (props) => {
         {noResults && <div className="mt-5 col-12">
             <p>Oops nothing seems to have been found. <Link to={"/"}>Maybe you want to try again?</Link></p>
         </div>}
-        <div className="col-12 col-xl-8 mt-5 mt-xl-0">
+        <div className="col-12 col-xl-10 mt-3 mt-xl-0 ms-xl-5">
           <div className="row">
            {recipes.map((element, index) => {
               return (
-                <div key={element.recipe.id}  className="col-6 col-xl-3 px-4 my-3 my-xl-0">
+                <div key={element.recipe.id}  className="col-6 col-lg-4 col-xl-3 px-3 my-3 my-xl-0">
                   <div className="RecipeResults">
                     <Link to={`/search/${element.recipe.id}`}>
                       <Card1

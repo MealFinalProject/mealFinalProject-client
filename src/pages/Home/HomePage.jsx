@@ -33,9 +33,9 @@ function HomePage(props) {
         <div className="col-12 col-xl-6 mb-3">
           <Searchbar searchState={searchState} setSearchState={setSearchState}/>
         </div>
-        <div className="col-12">
+        <div className="col-12 col-xl-10">
           <div className="row p-0 m-0  justify-content-center">
-            <div className="col-6 col-xl-2 px-4 my-4">
+            <div className="col-6 col-xl-2 mx-xl-5 my-4">
               <Link className="link-categories" to={`category/country`} >  
                 <Card1 
                   text={'Type of food (Country)'} 
@@ -43,7 +43,7 @@ function HomePage(props) {
                 />
               </Link>
             </div>
-            <div className="col-6 col-xl-2 px-4 my-4">
+            <div className="col-6  col-xl-2 mx-xl-5 my-4 ">
               <Link className="link-categories" to={`category/time`} >  
                 <Card1 
                   text={'According to time of day'} 
@@ -51,7 +51,7 @@ function HomePage(props) {
                 />
               </Link>
             </div>
-            <div className="col-6 col-xl-2 px-4 my-4">
+            <div className="col-6 col-xl-2 mx-xl-5 my-4">
               <Link className="link-categories" to={`fastrecipes`} >  
                 <Card1 
                   text={'Something fast?'} 
@@ -59,7 +59,7 @@ function HomePage(props) {
                 />
               </Link>
             </div>
-            <div className="col-6 col-xl-2 px-4 my-4">
+            <div className="col-6 col-xl-2 mx-xl-5 my-4">
               <Link className="link-categories" to={`cocktails`} >  
                 <Card1 
                   text={"Do you want a drink?"} 

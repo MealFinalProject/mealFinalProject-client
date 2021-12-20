@@ -19,12 +19,12 @@ const CategoriesResults = (props) => {
   return (
     <>
       <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} />
-      <div className="container-fluid m-0 p-0 row mt-5 mt-xl-3 text-center justify-content-center">
-        <div className="col-12 col-xl-8 mt-5 mt-xl-0">
+      <div className="container-fluid m-0 p-0 row mt-5 mt-xl-3 justify-content-center">
+        <div className="col-12 col-xl-10 mt-3 mt-xl-0 ms-xl-5">
           <div className="row">
               {arrayOfCategories.map((type, index) => {
               return (
-                <div className="col-6 col-xl-3 px-4 my-3 my-xl-0">
+                <div className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0">
                   <div className="CategoriesResults" key={index + 1}>
                     <Link className="link-categories" to={type.name.toLowerCase()}>
                       <Card1
