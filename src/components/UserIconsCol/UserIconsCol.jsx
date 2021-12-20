@@ -8,17 +8,17 @@ const UserIconsCol = ( {userFromDB} ) => {
     const comments = (userFromDB.comments ? userFromDB.comments.length : 0)
 
     return(
-        <div className="row UserIconsCol justify-content-xl-center">
-            <div className="col-4 col-xl-1">
+        <div className="row UserIconsCol justify-content-xl-center p-0 m-0">
+            <div className="col-4 col-xl-1 p-0">
                 <p><span className="fw-light">Followers</span> {followers}</p>
             </div>
-            <div  className="col-4 col-xl-1">
+            <div  className="col-4 col-xl-1 p-0">
                 <p><span className="fw-light">Following</span> {followed}</p>
             </div>
-            <div className="col-2 col-xl-1">
+            <div className="col-2 col-xl-1 p-0">
                 <i id="favsIcon" className="bi bi-heart icon p-2"><span> {favs}</span></i>  
             </div> 
-            <div className="col-2 col-xl-1">
+            <div className="col-2 col-xl-1 p-0">
                 <i id="commentsIcon"  className="bi bi-chat-square-text icon p-2" ><span> {comments}</span></i> 
             </div>
         </div>
