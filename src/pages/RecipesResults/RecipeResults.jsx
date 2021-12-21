@@ -35,11 +35,14 @@ const RecipeResults = (props) => {
     axios.get(API_URL).then((response) => {
       setRecipes(response.data);
       if(response.data.length === 0) setNoResults(true)
-
+      setNoResults(false)
       setSearchMessage(prevstate => `Found ${response.data.length} results for ` + prevstate)
-      console.log(searchMessage)
       setIsLoading(false)
-    });
+    })
+    .catch((error) => {
+        setNoResults(true)
+        setIsLoading(false)
+     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -53,7 +56,7 @@ const RecipeResults = (props) => {
         </div>}
         <div className="col-12 col-xl-10 mt-xl-0 ms-xl-5">
           <div className="row">
-           {searchMessage && !name && !noResults && 
+           {searchMessage && !name && !type && !noResults && 
             <div className="col-12">
               <p className="h3">{searchMessage}</p>
               <hr/>
