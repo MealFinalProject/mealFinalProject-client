@@ -39,7 +39,6 @@ export default function App() {
     setIsLoading(true);
     logout(accessToken).then((res) => {
       if (!res.status) {
-        // deal with error here
         console.error("Logout was unsuccessful: ", res);
       }
       USER_HELPERS.removeUserToken();
