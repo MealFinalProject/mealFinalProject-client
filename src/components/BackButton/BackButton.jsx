@@ -5,7 +5,7 @@ const BackButton = () => {
     const handleClick = () => navigate(-1)
   return (
       <>
-       <button className="btn btn-outline-secondary" onClick={handleClick}><i class="bi bi-caret-left-fill"></i></button>
+       <button className="btn btn-outline-secondary" onClick={handleClick}><i className="bi bi-caret-left-fill"></i></button>
       </>
 
   );
