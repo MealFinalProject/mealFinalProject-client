@@ -71,7 +71,6 @@ export default function Signup({ authenticate }) {
       <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5 align-items-center">
         <div className="col-12 mt-3 p-0 mb-3 text-center">
           <div className="h1"><i className="bi bi-egg-fried"></i><span className=" prueba-color">  Project-Meal </span></div>
-          {/* <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Sign up"/> */}
         </div>
         <div className="col-12 p-0 d-flex justify-content-center mt-xl-3">
             <form onSubmit={handleFormSubmission} className="col-12 col-xl-4 mb-2 Login border rounded py-3 shadow-lg" >
@@ -90,7 +89,7 @@ export default function Signup({ authenticate }) {
                     </span>
                   </div>
                 </div>
-               
+               {errorMessage && <p className="text-center text-danger">{errorMessage}</p>}
               </div>
               <div className="form-group col-12 text-center mt-4">
                   <button type="submit" className=" btn btn-block mybtn bg-color tx-tfm">Sign up</button>

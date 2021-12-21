@@ -1,11 +1,10 @@
-import Navbar from "../../components/Navbar/Navbar"
+
 import './Page404.css'
 
-const Page404 = ({handleLogout, user, profileImageState}) => {
+const Page404 = () => {
 
     return (
         <div className="Page404">
-            {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
             <div className="container">
             <div className="row">
                 <div className="col-sm-12 col-md-12 mt-5 mb-5">

@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 
 import "./ProfilePage.css";
 
-import Navbar     from "../../components/Navbar/Navbar";
-import UserIcons  from "../../components/UserIcons/UserIcons";
 import LoadingComponent from "../../components/Loading";
 
 import * as PATHS from "../../utils/paths";
@@ -17,7 +15,7 @@ import axios from "axios";
 import UserIconsCol from "../../components/UserIconsCol/UserIconsCol";
 
 const ProfilePage = (props) => {
-  const { user, handleLogout, profileImageState } = props;
+  const { user } = props;
   const [userFromDB, setUserFromDB] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
@@ -38,7 +36,6 @@ const ProfilePage = (props) => {
   
   return (
     <>
-      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
        {isLoading ? <LoadingComponent /> :
         userFromDB && (
         <div className="ProfilePage row p-0 m-0 text-center justify-content-center">

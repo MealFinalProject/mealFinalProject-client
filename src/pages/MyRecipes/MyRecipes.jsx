@@ -1,5 +1,4 @@
 import './MyRecipes.css'
-import Navbar   from '../../components/Navbar/Navbar'
 
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -12,10 +11,9 @@ import axios from 'axios'
 import FavsRecipeList from '../../components/FavsRecipeList/FavsRecipeList'
 
 
-const MyRecipes = (props) => {
+const MyRecipes = () => {
 
     const [recipesFavoritesOfUser, setRecipesFavoritesOfUser] = useState()
-    const { user, handleLogout, profileImageState } = props
     const checkrecipes = recipesFavoritesOfUser && recipesFavoritesOfUser.length > 0
     const userId = useParams().id
 
@@ -33,7 +31,6 @@ const MyRecipes = (props) => {
 
     return (
         <div>
-            {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
             <div className="row m-0 p-0 text-center justify-content-center">
             {checkrecipes ? (
                 <div className="col-12 col-xl-9 mb-2 mt-5">
