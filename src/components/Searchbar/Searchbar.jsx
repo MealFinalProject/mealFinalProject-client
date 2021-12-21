@@ -4,7 +4,7 @@ import "./Searchbar.css";
 
 const Searchbar = (props) => {
 
-  const { searchState, setSearchState, placeholder, } = props;
+  const { searchState, setSearchState } = props;
   
   return (
     <div className="Searchbar row flex-wrap ">

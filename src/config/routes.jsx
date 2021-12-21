@@ -10,8 +10,8 @@ import Recipe            from "../pages/Recipe/Recipe";
 import UpdateProfileInfo from "../pages/UpdateProfileInfo/UpdateProfileInfo";
 import MyRecipes         from "../pages/MyRecipes/MyRecipes";
 import SearchUsers       from "../pages/SearchUsers/SearchUsers"
-import UsersProfilePage from "../pages/UsersProfilePage/UsersProfilePage";
-import FollowListPage from "../pages/FollowListPage/FollowListPage";
+import UsersProfilePage  from "../pages/UsersProfilePage/UsersProfilePage";
+import FollowListPage    from "../pages/FollowListPage/FollowListPage";
 import Page404           from "../pages/Page404/Page404"
 
 
