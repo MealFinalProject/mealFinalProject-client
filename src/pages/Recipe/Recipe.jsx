@@ -22,7 +22,7 @@ const RecipeResults = (props) => {
   
   const { user, authenticate  } = props;
 
-  const API_URL = `${process.env.REACT_APP_SERVER_URL}/search/${id}`;
+  const API_URL = `${process.env.REACT_APP_SERVER_URL}/search-one/${id}`;
 
   useEffect(() => {
     axios.get(API_URL).then((response) => {
