@@ -19,6 +19,7 @@ const SearchUsers = ({ user, setUser}) => {
             setAllUsers(response.data.filter(users => users._id !== user._id))
             setloadUsers(true)
         })
+// eslint-disable-next-line react-hooks/exhaustive-deps        
     }, [])
 
     let filteredUsers = []

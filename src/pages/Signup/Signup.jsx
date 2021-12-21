@@ -15,7 +15,6 @@ export default function Signup({ authenticate }) {
     password: "",
   });
   const { username, password } = form;
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   function handleInputChange(event) {
@@ -39,9 +38,7 @@ export default function Signup({ authenticate }) {
       if (!res.status) {
         // unsuccessful signup
         console.error("Signup was unsuccessful: ", res);
-        return setError({
-          message: "Signup was unsuccessful! Please check the console.",
-        });
+        return 
       }
       // successful signup
       USER_HELPERS.setUserToken(res.data.accessToken);

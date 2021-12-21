@@ -45,6 +45,7 @@ const RecipeResults = (props) => {
     }).then((response) => {
       authenticate(response.data)
     })
+// eslint-disable-next-line react-hooks/exhaustive-deps    
   }, []);
 
   useEffect(() => {
@@ -76,7 +77,7 @@ const RecipeResults = (props) => {
           idApiRecipe: id,
         },
       })
-      .then((response) => {
+      .then(() => {
         setIsFav(false)
         setNumberFavs(numberFavs - 1)
       });

@@ -1,8 +1,9 @@
 import { Pie } from "react-chartjs-2";
 import { MDBContainer } from "mdbreact";
+
 import { Chart as ChartJS } from 'chart.js/auto'
 import { Chart }            from 'react-chartjs-2'
-  
+
 
 const DonutChart = ({macronutrients}) => {
    

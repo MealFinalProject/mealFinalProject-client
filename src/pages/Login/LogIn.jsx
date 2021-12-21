@@ -19,7 +19,6 @@ export default function LogIn({ authenticate }) {
     password: "",
   });
   const { username, password } = form;
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   function handleInputChange(event) {
@@ -42,7 +41,8 @@ export default function LogIn({ authenticate }) {
       }
       
       if (!res.status) {
-        return setError({ message: "Invalid credentials" });
+        console.log( "message: Invalid credentials" );
+        return
         
       }
       USER_HELPERS.setUserToken(res.data.accessToken);
