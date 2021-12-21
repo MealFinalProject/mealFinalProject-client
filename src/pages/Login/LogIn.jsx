@@ -69,10 +69,10 @@ export default function LogIn({ authenticate }) {
   return (
     <>
       <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5">
-        <div className="col-12 col-xl-6 p-0 mb-3 text-end">
+        <div className="col-12 col-xl-6 p-0 mb-3 align-login-image">
           <img id="login-image" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8&w=1000&q=80" alt="Log in"/>
         </div>
-        <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-5">
+        <div className="col-12 col-xl-6 p-0 justify-content-start mt-xl-5 width-form">
           <form onSubmit={handleFormSubmission} className="col-12 col-xl-6 mb-2 Login" >
             <div className="col-12 form-group mb-2">
                 <input onClick={() => setErrorMessage(null)} className="form-control input-username{" type="text" name="username" placeholder="Username" value={username} onChange={handleInputChange} required />

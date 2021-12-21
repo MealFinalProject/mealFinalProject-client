@@ -20,14 +20,14 @@ function HomePage(props) {
 
   return (
     <>
-      <div className="row m-0 p-0 text-center justify-content-center">
+      <div className="row m-0 p-0 text-center justify-content-center" >
         <div className="col-12 mt-5 mb-4">
           <p className="h3 mt-3">What do you want {msg} today?</p>
         </div>
         <div className="col-12 col-xl-6 mb-3">
           <Searchbar searchState={searchState} setSearchState={setSearchState}/>
         </div>
-        <div className="col-12 col-xl-10">
+        <div className="col-12 col-xl-10 ">
           <div className="row p-0 m-0  justify-content-center">
             <div className="col-6 col-xl-2 mx-xl-5 my-4">
               <Link className="link-categories" to={`category/country`} >  

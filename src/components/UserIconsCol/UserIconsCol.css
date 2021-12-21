@@ -1,5 +1,5 @@
 .UserIconsCol .icon {
-    font-size: 12px;
+    font-size: 14px;
     /* padding: 8px; */
     color: white;
     background-color: rgb(175, 160, 252);
@@ -12,4 +12,15 @@
 .UserIconsCol a :hover{
     background-color: rgb(175, 160, 252);
    border-radius: 15px;
+}
+@media (min-width: 1200px) {
+    .UserIconsCol p{
+        font-size: 20px;
+    }
+    .UserIconsCol #favsIcon{
+        font-size: 18px;
+    }
+    .UserIconsCol #commentsIcon{
+        font-size: 18px;
+    }
 }

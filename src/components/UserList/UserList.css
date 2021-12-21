@@ -1,0 +1,8 @@
+@media (min-width: 1200px){
+    .UserList #avatar-image{
+        width: 78px;
+    }
+    .UserList i{
+        font-size: 18px;
+    }
+}
