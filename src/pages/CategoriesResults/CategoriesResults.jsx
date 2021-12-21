@@ -15,14 +15,13 @@ const CategoriesResults = (props) => {
   if (name === "time") arrayOfCategories = mealType;
   return (
     <>
-      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
       <div className="row m-0 p-0 text-center justify-content-center">
         <div className="col-12 col-xl-10 mt-4 mt-xl-0 ms-xl-5">
           <div className="row">
               {arrayOfCategories.map((type, index) => {
               return (
-                <div className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0">
-                  <div className="CategoriesResults" key={index + 1}>
+                <div key={index + 1} className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0">
+                  <div className="CategoriesResults" >
                     <Link className="link-categories" to={type.name.toLowerCase()}>
                       <Card1
                         text={type.name}

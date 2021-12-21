@@ -1,4 +1,7 @@
 import axios from "axios";
+
+import './UserList.css'
+
 import { Image } from "cloudinary-react";
 import { Link } from "react-router-dom";
 
@@ -34,7 +37,7 @@ const UserList = ({ list, title, user, setUser }) => {
   };
 
   return (
-    <div className="row m-0 p-0 text-center">
+    <div className="row m-0 p-0 text-center UserList">
       {title && (
         <div className="col-12 mt-4">
           <div className="row m-0 p-0 align-items-center text-start">

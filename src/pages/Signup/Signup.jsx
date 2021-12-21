@@ -8,6 +8,7 @@ import "./Signup.css"
 import * as PATHS from "../../utils/paths";
 import * as USER_HELPERS from "../../utils/userToken";
 
+import greenLogo from '../../assets/images/EAT HOME_Logo verde.png'
 
 export default function Signup({ authenticate }) {
   const [form, setForm] = useState({
@@ -15,7 +16,6 @@ export default function Signup({ authenticate }) {
     password: "",
   });
   const { username, password } = form;
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   function handleInputChange(event) {
@@ -39,9 +39,7 @@ export default function Signup({ authenticate }) {
       if (!res.status) {
         // unsuccessful signup
         console.error("Signup was unsuccessful: ", res);
-        return setError({
-          message: "Signup was unsuccessful! Please check the console.",
-        });
+        return 
       }
       // successful signup
       USER_HELPERS.setUserToken(res.data.accessToken);
@@ -70,7 +68,7 @@ export default function Signup({ authenticate }) {
     <>
       <div className="row p-0 m-0 container-fluid justify-content-center mt-xl-5 align-items-center">
         <div className="col-12 mt-3 p-0 mb-3 text-center">
-          <div className="h1"><i className="bi bi-egg-fried"></i><span className=" prueba-color">  Project-Meal </span></div>
+          <div className="h1"><img src={greenLogo} width={350}/></div>
         </div>
         <div className="col-12 p-0 d-flex justify-content-center mt-xl-3">
             <form onSubmit={handleFormSubmission} className="col-12 col-xl-4 mb-2 Login border rounded py-3 shadow-lg" >

@@ -15,3 +15,9 @@
     border-radius: 12px;
     border-width: 1px 0px 1px 1px
  }
+@media (min-width: 1200px){
+    .SearchUsers {
+        font-size: 18px;
+    }
+
+}

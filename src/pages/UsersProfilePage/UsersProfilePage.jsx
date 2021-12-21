@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 import "./UsersProfilePage.css";
 
-import Navbar     from "../../components/Navbar/Navbar";
 import UserIconsCol  from "../../components/UserIconsCol/UserIconsCol";
 import LoadingComponent from "../../components/Loading";
 
@@ -14,8 +13,7 @@ import { useParams }   from "react-router-dom";
 import axios from "axios";
 import FavsRecipeList from "../../components/FavsRecipeList/FavsRecipeList";
 
-const UsersProfilePage = (props) => {
-    const { user, handleLogout, profileImageState } = props;
+const UsersProfilePage = () => {
     const {id} = useParams()
     const [targetedUser, setTargetedUser] = useState({})
     const [isLoading, setIsLoading] = useState(true);
@@ -31,9 +29,8 @@ const UsersProfilePage = (props) => {
 
   return (
       <>
-        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         {isLoading ? <LoadingComponent /> : 
-        <div className="row p-0 m-0 text-center justify-content-xl-center">
+        <div className="row p-0 m-0 text-center justify-content-xl-center UsersProfilePage">
             <div className="col-12 p-0 mb-2 col-xl-4">
                 {targetedUser.avatar_url ? 
                     <Image

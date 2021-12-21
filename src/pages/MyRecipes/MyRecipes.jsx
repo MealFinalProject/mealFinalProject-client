@@ -25,6 +25,7 @@ const MyRecipes = () => {
         setRecipesFavoritesOfUser(response.data.recipesFavoritesOfUser.favs_recipes)
         
         })
+// eslint-disable-next-line react-hooks/exhaustive-deps        
     }, [])
 
     

@@ -59,10 +59,13 @@
     margin-bottom: 0px !important;
 }
 
-@media (min-width: 600px){
+@media (min-width: 576px){
     #login-image{
         margin: 20px;
         border-radius: 15px;
+    }
+    .align-login-image{
+        text-align: center;
     }
     .Login p{
         font-size: 20px;
@@ -85,4 +88,18 @@
     .Login i{
         font-size: 30px;
     }
+    .width-form{
+        max-width: 622px;
+    }
+}
+@media (min-width: 1200px){
+    .align-login-image{
+        text-align: end;
+
+    }
+    .width-form{
+        max-width: 100vw;
+
+    }
+ 
 }
