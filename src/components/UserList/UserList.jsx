@@ -85,7 +85,7 @@ const UserList = ({ list, title, user, setUser }) => {
                     </Link>
                   </div>
                   <div className="col-4 text-end">
-                    {user.followed.includes(userFromList._id) ? (
+                    {(user._id !== userFromList._id) && (user.followed.includes(userFromList._id) ? (
                       <button
                         onClick={(event) => {
                           unFollowUser(event, userFromList._id);
@@ -103,7 +103,7 @@ const UserList = ({ list, title, user, setUser }) => {
                       >
                         <i className="fas fa-user-plus"></i>
                       </button>
-                    )}
+                    ))}
                   </div>
                   <div className="col-12">
                     <hr />
