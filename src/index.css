@@ -14,3 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.green{
+  background-color: rgb(42, 163, 135);
+}
+.orange{
+  background-color: rgb(238, 158, 11);
+}

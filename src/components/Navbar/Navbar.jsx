@@ -2,10 +2,13 @@ import React from "react";
 
 import { NavLink } from "react-router-dom";
 import {Image} from 'cloudinary-react';
+import { ThemeContext } from "../../context/theme.context";
+import { useContext } from 'react';
 
 import whiteLogo from '../../assets/images/EAT HOME_Logo blanco.png'
 
 import "./Navbar.css";
+import "../../index.css"
 
 import * as PATHS from "../../utils/paths";
 
@@ -14,14 +17,16 @@ import * as PATHS from "../../utils/paths";
 
 const Navbar = (props) => {
   
-  const activeStyle   = { color: 'rgb(175, 160, 252)'}
+  const activeStyle   = { color: 'black'}
   const noActiveWhite = { color: 'white' }
   const noActiveBlack = { color: 'black' }
+
+  const { theme, toggleTheme } = useContext(ThemeContext)
 
   const { user } = props
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light color-principal fixed-top">
+    <nav className={`navbar navbar-expand-lg navbar-light fixed-top ${theme}`}>
     {user && user.avatar_url &&
     <Image 
       className="rounded-circle z-depth-0 mr-3"
@@ -63,6 +68,9 @@ const Navbar = (props) => {
               </li>           
           )}
         </ul>
+        <button className="theme-btn btn btn-dark" onClick={toggleTheme}>
+                {theme === 'orange' ? 'green' : 'orange'}
+            </button>
       </div>
     </nav>
   );

@@ -1,7 +1,8 @@
 import "./Recipe.css";
 
 import { useParams } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { ThemeContext } from "../../context/theme.context";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -17,6 +18,8 @@ const RecipeResults = (props) => {
   const [isFav, setIsFav] = useState(false);
   const [numberFavs, setNumberFavs] = useState(0);
   const [comments, setComments] = useState([]);
+
+  const { theme } = useContext(ThemeContext)
 
   const { id } = useParams();
   
@@ -233,7 +236,6 @@ const RecipeResults = (props) => {
   return (
     (
       <div className="Recipe">
-        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         {loading ? <LoadingComponent/> :  
         <div className="container mt-xl-5">
           <div className="row text-center">
@@ -331,7 +333,7 @@ const RecipeResults = (props) => {
               </div>
               <div className="col-12 d-flex justify-content-center mb-2 mt-3">
                 <a
-                  className="border rounded p-2 text-light type-background mr-3"
+                  className={`border rounded p-2 text-light mr-3 ${theme}`}
                   href={url}
                 >
                   <i className="bi bi-file-text"></i> Instructions
@@ -360,7 +362,7 @@ const RecipeResults = (props) => {
                     className="me-2 mb-1 text-light"
                     to={`/category/country/${cuisine.toLocaleLowerCase()}`}
                   >
-                    <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                    <p className={`border rounded-pill m-0 px-3 opacity-75 ${theme}`}>
                       {cuisine.toLocaleLowerCase()}
                     </p>
                   </Link>
@@ -371,7 +373,7 @@ const RecipeResults = (props) => {
                     className="me-2 mb-1 text-light"
                     to={`/category/time/${meal.toLocaleLowerCase()}`}
                   >
-                    <p className="border rounded-pill m-0 px-3 type-background opacity-75">
+                    <p className={`border rounded-pill m-0 px-3 opacity-75 ${theme}`}>
                       {meal.toLocaleLowerCase()}
                     </p>
                   </Link>

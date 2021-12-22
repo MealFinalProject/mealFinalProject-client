@@ -1,7 +1,9 @@
 
 import './UpddateProfileInfo.css'
 
-import { useState, } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from '../../context/theme.context.js'
+
 import axios from "axios";
 import BackButton from '../../components/BackButton/BackButton';
 
@@ -18,6 +20,7 @@ const UpdateProfileInfo = (props) => {
     const [errorMessage, setErrorMessage]   = useState(false)
     const [updateMessage, setUpdateMessage] = useState(false)
 
+    const { theme } = useContext(ThemeContext)
     
     const uploadImage = () => {                                       
     const formData = new FormData()
@@ -69,7 +72,6 @@ const UpdateProfileInfo = (props) => {
 
     return (
       <div>
-        {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
         <div className="UpdateProfileInfo container mt-5">
           <div className="col-12 col-xl-8 mb-3">
             <div className="row m-0 p-0 align-items-center text-start">
@@ -113,7 +115,7 @@ const UpdateProfileInfo = (props) => {
 
         <p className="mt-4">Upload profile image:</p>
 
-        <label id="input-image" className="btn btn-block mybtn tx-tfm">
+        <label id="input-image" className={`${theme} btn btn-block mybtn tx-tfm `}>
           <p>Select file </p>
           <input
             id="input-files"

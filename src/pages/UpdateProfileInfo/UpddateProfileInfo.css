@@ -4,7 +4,6 @@
 }
 .UpdateProfileInfo #input-image{
     padding: 10px;
-    background-color: rgb(42, 163, 135);
     max-width: 300px;
     max-height: 50px;
 }
@@ -28,10 +27,13 @@
 .UpdateProfileInfo .color-text{
     color:rgb(42, 163, 135);
 }
+.green{
+    background-color: rgb(42, 163, 135);
+  }
+.orange{
+    background-color: rgb(238, 158, 11);
+  }
 @media (min-width: 992px){
-    .UpdateProfileInfo{
-        /* padding-top: 144px; */
-    }
     .UpdateProfileInfo button{
         max-width: 400px;
         height: 48px;
