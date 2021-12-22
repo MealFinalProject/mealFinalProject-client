@@ -4,7 +4,6 @@ import "./Home.css"
 
 import Card1 from "../../components/Card1/Card1.jsx"
 import Searchbar from "../../components/Searchbar/Searchbar";
-import Footer from "../../components/Footer/Footer.jsx";
 import { Link } from "react-router-dom";
 
 function HomePage(props) {
@@ -64,7 +63,6 @@ function HomePage(props) {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );      
     
