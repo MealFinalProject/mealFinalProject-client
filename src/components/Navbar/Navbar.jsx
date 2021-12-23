@@ -30,7 +30,7 @@ const Navbar = (props) => {
       <div className="container-fluid row p-0 m-0">
         <div className="col-12 col-xl-7 p-0">
           <div className="row p-0 m-0 align-items-center">
-            <div className="col-2 col-xl-3 text-end p-0">
+            <div className="col-2 col-xl-3  p-0">
               {user && user.avatar_url &&
               <Image 
                 className="rounded-circle z-depth-0 mr-3"
@@ -41,7 +41,7 @@ const Navbar = (props) => {
                 />
               }
             </div>
-            <div className="col-8 col-xl-9 text-center text-xl-start ps-xl-5">
+            <div className="col-8 col-xl-9 text-center text-xl-start ">
               <NavLink to={PATHS.HOMEPAGE}  className="navbar-brand font-weight-bold text-white"><img src={whiteLogo} width={100} alt="Logo"/></NavLink>
             </div>
             <div className="col-2">
@@ -54,7 +54,7 @@ const Navbar = (props) => {
         <div className="col-12 col-xl-3">
             <div className="row text-start">
               <div className="col-12">
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse " id="navbarSupportedContent">
                   <ul className="navbar-nav">
                     <li className="nav-item active">
                     <NavLink to={PATHS.HOMEPAGE} style={({ isActive }) => isActive ? activeStyle : noActiveWhite } className="nav-link font-weight-bold">Home </NavLink>

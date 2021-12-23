@@ -16,11 +16,11 @@ const CategoriesResults = (props) => {
   return (
     <>
       <div className="row m-0 p-0 text-center justify-content-center">
-        <div className="col-12 col-xl-10 mt-4 mt-xl-0 ms-xl-5">
-          <div className="row">
+        <div className="col-12 col-xl-10 mt-4 mt-xl-0 ms-xl-5 ">
+          <div className="row ">
               {arrayOfCategories.map((type, index) => {
               return (
-                <div key={index + 1} className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0">
+                <div key={index + 1} className="col-6 col-lg-4 col-xl-3 ps-3 ps-xl-0 my-3 my-xl-0 d-flex justify-content-center">
                   <div className="CategoriesResults" >
                     <Link className="link-categories" to={type.name.toLowerCase()}>
                       <Card1
