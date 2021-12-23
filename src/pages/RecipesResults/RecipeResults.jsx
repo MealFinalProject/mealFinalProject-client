@@ -48,7 +48,6 @@ const RecipeResults = (props) => {
 
   return (
     <div className="mt-5">
-      {/* <Navbar handleLogout={handleLogout} user={user} profileImageState={profileImageState} /> */}
       {isLoading ? <LoadingComponent /> : 
       <div className="row m-0 p-0 text-center justify-content-center">
         {noResults && <div className="col-12">
@@ -64,7 +63,7 @@ const RecipeResults = (props) => {
            }
            {recipes.map((element, index) => {
               return (
-                <div key={element.recipe.id}  className="col-6 col-lg-4 col-xl-3 px-3 my-3 my-xl-0">
+                <div key={element.recipe.id}  className="col-6 col-lg-4 col-xl-3 px-3 my-3 my-xl-0 d-flex justify-content-center">
                   <div className="RecipeResults">
                     <Link to={`/search/${element.recipe.id}`}>
                       <Card1
