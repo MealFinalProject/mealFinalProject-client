@@ -102,115 +102,7 @@ const RecipeResults = (props) => {
       });
   }
 
-  const JSONrecipeTest = {
-    uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_aee621fd197a61c324a15fec5d338802",
-    label: "Perfect Grilled Chicken recipes",
-    image:
-      "https://www.edamam.com/web-img/c60/c60dbe071bde7d54be9a78af89dfe8a0",
-    images: {
-      THUMBNAIL: {
-        url: "https://www.edamam.com/web-img/c60/c60dbe071bde7d54be9a78af89dfe8a0-s",
-        width: 100,
-        height: 100,
-      },
-      SMALL: {
-        url: "https://www.edamam.com/web-img/c60/c60dbe071bde7d54be9a78af89dfe8a0-m",
-        width: 200,
-        height: 200,
-      },
-      REGULAR: {
-        url: "https://www.edamam.com/web-img/c60/c60dbe071bde7d54be9a78af89dfe8a0",
-        width: 300,
-        height: 300,
-      },
-    },
-    source: "fashionablefoods.com",
-    url: "http://fashionablefoods.com/2015/05/19/perfect-grilled-chicken/",
-    shareAs:
-      "http://www.edamam.com/recipe/perfect-grilled-chicken-recipes-aee621fd197a61c324a15fec5d338802/-",
-    yield: 4,
-    dietLabels: [],
-    healthLabels: [],
-    cautions: [],
-    ingredientLines: [
-      "2 Large Chicken Breasts",
-      "1 Tablespoon Oil (Olive Oil, Melted Coconut Oil, etc.)",
-      "3 Tablespoons Herb or Spice Rub*",
-    ],
-    ingredients: [],
-    calories: 894.316,
-    totalWeight: 457.1,
-    totalTime: 20,
-    cuisineType: ["american", "italian"],
-    mealType: ["lunch", "dinner", "breakfast", "dinner", "lunch", "dinner"],
-    dishType: ["main course"],
-    totalNutrients: {
-      ENERC_KCAL: {
-        label: "Energy",
-        quantity: 5500.776949937501,
-        unit: "kcal"
-        },
-        FAT: {
-        label: "Fat",
-        quantity: 318.187832452,
-        unit: "g"
-        },
-        FASAT: {
-        label: "Saturated",
-        quantity: 170.77673228805003,
-        unit: "g"
-        },
-        FATRN: {
-        label: "Trans",
-        quantity: 0.06860000000000001,
-        unit: "g"
-        },
-        FAMS: {
-        label: "Monounsaturated",
-        quantity: 98.50478431885,
-        unit: "g"
-        },
-        FAPU: {
-        label: "Polyunsaturated",
-        quantity: 21.451428536650003,
-        unit: "g"
-        },
-        CHOCDF: {
-        label: "Carbs",
-        quantity: 654.639979165375,
-        unit: "g"
-        },
-        FIBTG: {
-        label: "Fiber",
-        quantity: 31.8314623725,
-        unit: "g"
-        },
-        SUGAR: {
-        label: "Sugars",
-        quantity: 390.93881316087504,
-        unit: "g"
-        },
-        PROCNT: {
-        label: "Protein",
-        quantity: 72.315883773,
-        unit: "g"
-        },
-    },
-    totalDaily: {},
-    digest: [],
-    id: "aee621fd197a61c324a15fec5d338802",
-  };
-  // const {
-  //   label,
-  //   image,
-  //   ingredientLines,
-  //   calories,
-  //   totalTime,
-  //   cuisineType,
-  //   mealType,
-  //   dishType,
-  //   url,
-  // } = JSONrecipeTest;
+  
   const {
     label,
     image,
@@ -222,17 +114,14 @@ const RecipeResults = (props) => {
     dishType,
     url,
   } = recipe?.recipe ?? {};
-  const serves = recipe?.recipe?.yield ?? {};
+
+  const serves = recipe?.recipe?.yield ?? {}
   const fat = recipe?.recipe?.totalNutrients.FAT ?? {}
   const carbs = recipe?.recipe?.totalNutrients.CHOCDF ?? {}
   const protein = recipe?.recipe?.totalNutrients.PROCNT ?? {}
   const kcal = recipe?.recipe?.totalNutrients.ENERC_KCAL ?? {}
-  // const fat = JSONrecipeTest.totalNutrients.FAT
-  // const carbs = JSONrecipeTest.totalNutrients.CHOCDF
-  // const protein = JSONrecipeTest.totalNutrients.PROCNT
-  // const kcal = JSONrecipeTest.totalNutrients.ENERC_KCAL
-  // const serves = JSONrecipeTest.yield ;
   const macro = {fat, carbs, protein, kcal}
+
   return (
     (
       <div className="Recipe">
