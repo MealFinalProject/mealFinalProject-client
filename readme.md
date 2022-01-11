@@ -5,6 +5,9 @@
 EatAtHome Client
 ==============================================================================================================================================
 
+![Captura de pantalla 2022-01-11 a las 10 55 35](https://user-images.githubusercontent.com/92530312/148921064-81a2e9ca-389f-4f84-ba9c-2eaab234e101.png)
+
+
 ### **Overview**
 
 It is used in the [EatAtHome application](https://mealproject-client.herokuapp.com/).
